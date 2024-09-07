@@ -1,0 +1,86 @@
+.card {
+  min-width: 320px;
+  min-height: 450px;
+  background-color: var(--background-color);
+  border-radius: 6px;
+  box-sizing: border-box;
+  border: none;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 20px 0px 3px 0px !important;
+  color: var(--text-color);
+}
+
+p {
+  font-size: 16px;
+  color: var(--text-color-light);
+  line-height: 160%;
+  margin: 8px 0px 10px 0px !important;
+}
+
+.img-area {
+  width: 100%;
+  height: 180px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 4px;
+}
+
+.badge {
+  height: auto;
+  width: min-content;
+  box-sizing: border-box;
+  padding: 8px 15px !important;
+  border: 1px solid var(--border-color);
+  border-radius: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color-light);
+  font-weight: 500;
+}
+
+.gap {
+  gap: 10px;
+  margin-top: 5px !important;
+  align-items: center;
+}
+
+.gap p {
+  font-weight: 400;
+  color: var(--primary-color);
+}
+
+.arrow {
+  color: var(--primary-color);
+}
+
+.view-project {
+  margin-top: 10px !important;
+  margin-bottom: 30px !important;
+}
+
+.view-project:hover {
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.view-project:hover .view-text {
+  transition: 0.5s;
+  color: var(--hover-color);
+}
+
+.view-project:hover .arrow {
+  transition: 0.5s;
+  color: var(--hover-color);
+}
+
+@media (max-width: 481px) {
+  .card {
+    min-width: 300px;
+  }
+}

@@ -1,0 +1,55 @@
+<section class="d-flex align-items-center justify-content-center" id="home">
+  <div
+    class="container container-about d-flex align-items-center justify-content-between"
+  >
+    <div class="text-area" data-aos="zoom-in-right">
+      <h5 class="text-home">
+        Olá, eu sou <span>Gustavo</span>
+        <img src="../../../assets/images/emoji-im.png" class="emoji-text" />
+      </h5>
+      <h1>
+        Front-end Developer <br />
+        e UI/UX Designer
+      </h1>
+      <h5>
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been.
+        <img
+          src="../../../assets/images/emoji-hand.png"
+          class="emoji-text emoji-animation"
+        />
+      </h5>
+      <nav>
+        <ul class="socials">
+          <app-social-card
+            [icon]="faLinkedin"
+            link="https://www.linkedin.com/in/gustavo-henrique-885918199/"
+          ></app-social-card>
+          <app-social-card
+            [icon]="faGithub"
+            link="https://github.com/gustavo-henrique1"
+          ></app-social-card>
+          <app-social-card
+            [icon]="faBehance"
+            link="https://www.behance.net/gustavohenrique63"
+          ></app-social-card>
+          <app-social-card [icon]="faFigma"></app-social-card>
+          <button class="button-cv" type="button" (click)="downloadCv()">
+            <span class="text-cv">Currículo</span>
+            <fa-icon
+              [icon]="faDownload"
+              class="d-flex align-items-center icon-mode icon-cv"
+              alt="Menu"
+            ></fa-icon>
+          </button>
+        </ul>
+      </nav>
+    </div>
+    <div
+      class="image-area d-flex align-items-center justify-content-center"
+      data-aos="zoom-in-left"
+    >
+      <img src="../assets/images/home.png" />
+    </div>
+  </div>
+</section>

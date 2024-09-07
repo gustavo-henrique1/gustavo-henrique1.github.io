@@ -1,0 +1,21 @@
+<div class="card">
+  <div
+    class="img-area"
+    [ngStyle]="{ 'background-image': 'url(' + imageUrl + ')' }"
+  ></div>
+  <h3>{{ title }}</h3>
+  <p>{{ text }}</p>
+  <div class="d-flex gap">
+    <span class="badge" *ngIf="badgeOne"> {{ badgeOne }} </span>
+    <span class="badge" *ngIf="badgeTwo"> {{ badgeTwo }} </span>
+  </div>
+  <div class="d-flex gap view-project">
+    <p class="view-text">Ver projeto</p>
+    <div class="arrow d-flex align-items-center justify-content-center">
+      <fa-icon
+        [icon]="faArrowRight"
+        class="d-flex align-items-center icon"
+      ></fa-icon>
+    </div>
+  </div>
+</div>

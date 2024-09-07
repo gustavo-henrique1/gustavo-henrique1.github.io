@@ -1,0 +1,106 @@
+.option-card {
+  width: 100%;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 30px;
+  border-bottom: 1px solid var(--border-color);
+  margin-top: 20px;
+}
+
+.option {
+  width: auto;
+  padding: 10px 0 !important;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.option:hover {
+  color: var(--secondary-color);
+  border-bottom: 4px solid var(--secondary-color);
+}
+
+.active-option {
+  border-bottom: 4px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.experience-area {
+  gap: 60px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column !important;
+  margin-top: 70px !important;
+}
+
+.img-experience {
+  width: 29%;
+  max-width: 330px;
+  max-height: 309px;
+}
+
+.text-experience {
+  width: 60%;
+}
+
+.experience {
+  display: none;
+}
+
+.experience-visible {
+  display: flex !important;
+}
+
+.experience h2 {
+  font-size: 20px;
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.experience h5 {
+  margin: 15px 0 !important;
+}
+
+.experience h3 {
+  font-size: 20px;
+  color: var(--primary-color);
+  font-weight: 500;
+  margin: 25px 0 !important;
+}
+
+@media (max-width: 1200px) {
+  .experience-area {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+
+  .option-card {
+    width: 100%;
+  }
+
+  .experience {
+    width: 100% !important;
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+
+  .text-experience {
+    width: 100%;
+    margin-bottom: 50px !important;
+  }
+
+  .experience .d-flex {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 30px;
+  }
+
+  .img-experience {
+    width: 400px;
+  }
+}
