@@ -1,0 +1,24 @@
+.container-menu {
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  box-sizing: border-box;
+  padding: 40px 0;
+}
+
+.copy {
+  padding: 40px 0;
+}
+
+h4 {
+  color: var(--text-color);
+  font-style: normal;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 0;
+}

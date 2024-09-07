@@ -5,11 +5,26 @@
   background: var(--background-color);
   padding: 0 100px 0 100px !important;
   position: fixed !important;
+  z-index: 1;
+}
+
+.container-menu {
+  box-sizing: border-box;
+  padding: 20px 0px;
+  margin-top: 40px;
+  transition: 0.6s ease-in-out;
+  border: 1px solid transparent;
 }
 
 .menu-shadow {
   background: var(--background-footer-color);
-  transition: box-shadow 0.3s ease-in-out;
+  border: 1px solid var(--border-color);
+  padding: 20px 30px;
+  border-radius: 10px;
+}
+
+.menu-background {
+  background-color: transparent;
 }
 
 .navbar-brand {
@@ -19,22 +34,6 @@
   text-decoration: none;
   color: var(--text-color);
   cursor: pointer;
-}
-
-.navbar-brand img {
-  opacity: 1;
-}
-
-.navbar-brand::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--background-color);
-  animation: showRight 1s ease forwards;
-  animation-delay: 0.4s;
 }
 
 .icon {
@@ -48,61 +47,15 @@
   border: none;
   outline: none;
   color: var(--secondary-color);
-  background: var(--background-color);
+  background: transparent;
   cursor: auto;
 }
 
 .icon-mode {
-  font-size: 20px;
+  font-size: 24px;
   cursor: pointer;
   color: var(--primary-color);
-}
-
-.button-cv {
-  display: flex;
-  align-items: center;
-  border: none;
-  outline: none;
-  box-sizing: border-box;
-  padding: 8px 16px !important;
-  gap: 10px;
-  border-radius: 5px;
-  background-color: var(--primary-color);
-  color: #ffffff;
-  position: relative;
-  overflow: hidden;
-}
-
-.button-cv::before {
-  border-radius: 5px !important;
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  z-index: -1;
-  background-color: var(--background-color);
-  border: 2px solid var(--primary-color);
-  transition: 0.5s;
-}
-
-.button-cv:hover::before {
-  width: 100%;
-  z-index: 1;
-}
-
-.button-cv:hover {
-  span,
-  .icon-cv {
-    z-index: 2;
-    color: var(--primary-color) !important;
-  }
-}
-
-.icon-cv {
-  font-size: 16px;
-  color: #ffffff !important;
+  transition: 0s !important;
 }
 
 .logo {
@@ -132,6 +85,7 @@
 
 .nav-link.active {
   color: var(--primary-color);
+  font-weight: 500;
 }
 
 .logo {
@@ -158,6 +112,7 @@
 @media (max-width: 1200px) {
   .navbar {
     padding: 35px 0 35px 0 !important;
+    background: transparent;
   }
 
   .container-menu {

@@ -12,6 +12,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { ExperienceComponent } from './pages/experience/experience.component';
 import { TechnologiesComponent } from './pages/technologies/technologies.component';
 import { PortfolioComponent } from './pages/portfolio/portfolio.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { PortfolioComponent } from './pages/portfolio/portfolio.component';
     ExperienceComponent,
     TechnologiesComponent,
     PortfolioComponent,
+    FooterComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
   providers: [],
