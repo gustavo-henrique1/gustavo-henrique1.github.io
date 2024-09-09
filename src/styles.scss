@@ -3,23 +3,24 @@
 
 body {
   --background-color: #{$background-color};
-  --background-footer-color: #{$background-footer-color};
+  --background-card: #{$background-card};
   --primary-color: #{$primary-color};
   --primary-color-light: #{$primary-color-light};
+  --title-color: #{$title-color};
+  --subtitle-color: #{$subtitle-color};
   --text-color: #{$text-color};
-  --text-color-light: #{$text-color-light};
   --border-color: #{$border-color};
   --secondary-color: #{$secondary-color};
-  --hover-color: #{$hover-color};
 }
 
 body.dark-mode {
   --background-color: #{$background-color-dark};
-  --background-footer-color: #{$background-footer-color-dark};
+  --background-card: #{$background-card-dark};
   --primary-color: #{$primary-color};
   --primary-color-light: #{$primary-color-light-dark};
+  --title-color: #{$title-color-dark};
+  --subtitle-color: #{$subtitle-color-dark};
   --text-color: #{$text-color-dark};
-  --text-color-light: #{$text-color-light-dark};
   --border-color: #{$border-color-dark};
   --secondary-color: #{$secondary-color};
 }
@@ -84,15 +85,17 @@ section {
 h1 {
   font-size: 45px;
   font-weight: 700;
-  color: var(--text-color);
+  color: var(--title-color);
   margin: 0 !important;
 }
 
 // title
 h2 {
-  font-size: 36px;
-  color: var(--text-color);
+  font-size: 30px;
+  color: var(--title-color);
   font-weight: bold;
+  width: fit-content;
+  margin: 0;
 }
 
 // text-home
@@ -107,34 +110,41 @@ h4 {
 // sub-title
 h5 {
   width: 100%;
-  font-size: 18px;
-  color: var(--text-color);
+  font-size: 16px;
+  color: var(--subtitle-color);
   line-height: 1.6rem;
   font-weight: normal;
+  margin: 0;
 }
 
 // id-page
 h6 {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--primary-color);
   font-weight: bold;
   letter-spacing: 0.1rem;
+  margin: 0;
 }
 
 // normal-text
 p {
   font-size: 16px;
-  color: var(--text-color-light);
+  color: var(--text-color);
   line-height: 1.6rem;
   font-weight: normal;
 }
 
-// ------------------------
-
-.emoji-p {
-  width: 28px;
-  margin-right: 8px !important;
+.icon-title {
+  color: var(--title-color);
 }
+
+.header-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 60px;
+}
+// ------------------------
 
 // mediaframe
 

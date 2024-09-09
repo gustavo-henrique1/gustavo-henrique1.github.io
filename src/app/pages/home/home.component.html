@@ -5,7 +5,10 @@
     <div class="text-area" data-aos="zoom-in-right">
       <h5 class="text-home">
         Olá, eu sou <span>Gustavo</span>
-        <img src="../../../assets/images/emoji-im.png" class="emoji-text" />
+        <img
+          src="../../../assets/images/emoji-studant.png"
+          class="emoji-text"
+        />
       </h5>
       <h1>
         Front-end Developer <br />
@@ -15,7 +18,7 @@
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been.
         <img
-          src="../../../assets/images/emoji-hand.png"
+          src="../../../assets/images/emoji-hi.png"
           class="emoji-text emoji-animation"
         />
       </h5>
@@ -36,11 +39,9 @@
           <app-social-card [icon]="faFigma"></app-social-card>
           <button class="button-cv" type="button" (click)="downloadCv()">
             <span class="text-cv">Currículo</span>
-            <fa-icon
-              [icon]="faDownload"
-              class="d-flex align-items-center icon-mode icon-cv"
-              alt="Menu"
-            ></fa-icon>
+            <span class="material-symbols-rounded icon-mode icon-cv">
+              download
+            </span>
           </button>
         </ul>
       </nav>

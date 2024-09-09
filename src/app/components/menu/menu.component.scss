@@ -17,7 +17,7 @@
 }
 
 .menu-shadow {
-  background: var(--background-footer-color);
+  background: var(--background-card);
   border: 1px solid var(--border-color);
   padding: 20px 30px;
   border-radius: 10px;
@@ -32,13 +32,13 @@
   font-weight: 600;
   position: relative;
   text-decoration: none;
-  color: var(--text-color);
+  color: var(--title-color);
   cursor: pointer;
 }
 
 .icon {
   font-size: 24px;
-  color: var(--text-color);
+  color: var(--title-color);
 }
 
 .button-mode {
@@ -70,7 +70,7 @@
 .navbar-nav {
   display: flex;
   flex-direction: row;
-  gap: 30px;
+  gap: 20px;
 }
 
 .nav-link {
@@ -84,8 +84,8 @@
 }
 
 .nav-link.active {
+  transition-delay: 0.2s;
   color: var(--primary-color);
-  font-weight: 500;
 }
 
 .logo {

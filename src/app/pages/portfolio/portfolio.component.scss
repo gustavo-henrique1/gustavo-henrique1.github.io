@@ -1,1 +1,19 @@
 @import "aos/dist/aos.css";
+
+.container-technologies {
+  flex-direction: column;
+}
+
+h6 {
+  margin-top: 70px;
+}
+
+.card-area {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.card-area app-technologie-card {
+  flex: 1 1 calc(25% - 30px);
+}

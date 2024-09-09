@@ -1,3 +1,92 @@
 .p-top {
-  margin: 40px 0 26px 0;
+  margin: 0 0 26px 0;
 }
+
+p {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.emoji-p {
+  color: var(--title-color);
+}
+
+.image-area {
+  background: var(--background-card);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  height: 430px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  padding: 30px;
+}
+
+.skills-area {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.skills {
+  display: flex;
+  flex-grow: 1;
+  position: relative;
+}
+
+.skills app-technologie-card {
+  position: absolute;
+}
+
+.skills #card0 {
+  top: 40px;
+  left: 0;
+}
+
+.skills #card1 {
+  top: 20px;
+  left: 250px;
+}
+
+.skills #card2 {
+  top: 150px;
+  left: 30px;
+}
+
+.skills #card3 {
+  top: 130px;
+  left: 200px;
+}
+
+.skills #card4 {
+  top: 250px;
+  left: 0;
+}
+
+.skills #card5 {
+  top: 230px;
+  left: 240px;
+}
+
+// .skills app-technologie-card {
+//   animation: move var(--duration) ease-in-out infinite;
+// }
+
+// @keyframes move {
+//   0% {
+//     transform: translate(0, 0);
+//   }
+//   40% {
+//     transform: translate(var(--x), var(--y));
+//   }
+//   60% {
+//     transform: translate(var(--x), var(--y));
+//   }
+//   100% {
+//     transform: translate(0, 0);
+//   }
+// }

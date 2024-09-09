@@ -8,13 +8,7 @@
     <div class="header-section" data-aos="fade-in" data-aos-duration="1400">
       <h6>EXPERIÊNCIA</h6>
       <h2>Trajetória profissional</h2>
-      <h5>
-        Como adquiri minhas habilidades e conhecimentos
-        <img
-          src="../assets/images/emoji-shirt.png"
-          style="width: 22px; margin: 0 0 5px 4px !important"
-        />
-      </h5>
+      <h5>Como adquiri minhas habilidades e conhecimentos</h5>
     </div>
 
     <div
@@ -23,85 +17,179 @@
       data-aos-duration="1500"
     >
       <div class="option-card">
-        <div
-          id="front-end-option"
-          class="option active-option option-one"
-          (click)="showContent('front')"
-        >
-          Front-end
-        </div>
-        <div
-          id="ui-ux-option"
-          class="option option-two"
-          (click)="showContent('ux')"
-        >
-          UI/UX
-        </div>
-      </div>
-      <div class="experience-text">
-        <div
-          class="experience d-flex align-items-center justify-content-between d-none"
-          id="experience-front"
-        >
-          <div class="text-experience">
-            <h2>Desenvolvedor front-end Junior</h2>
-
-            <h5>
-              Set 2021 - Nov 2023 (2 Anos
-              <img
-                src="../assets/images/emoji-time.png"
-                style="width: 25px; margin-bottom: 5px !important"
-              />)
-            </h5>
-            <h3>Alpe</h3>
-            <p>
-              Comecei a implementar fluxos mais complexos e completos nos
-              projetos, e então passei a me envolver mais nas regras de negócios
-              tomando conta do portal da empresa junto ao site institucional
-              para implementar novas funcionalidades e trabalhando em
-              manutenções para manter o funcionamento correto, recebi mais
-              responsabilidades como por exemplo, auxiliar no desenvolvimento
-              técnico e profissionaal de novos estagiários.
-            </p>
-          </div>
-          <img
-            src="../../../assets/images/home-image.png"
-            class="img-experience"
-            data-aos="zoom-in"
-          />
-        </div>
+        <p>Profissional</p>
 
         <div
-          class="experience d-flex align-items-center justify-content-between d-none"
-          id="experience-ux"
+          class="option d-flex align-items-center justify-content-between"
+          [class.active-option]="0 === activeIndex"
+          (click)="showContent(0)"
         >
-          <div class="text-experience">
-            <h2>Estagiário UI/UX</h2>
-            <h5>
-              Set 2020 - Set 2021 (1 Ano
-              <img
-                src="../assets/images/emoji-time.png"
-                style="width: 25px; margin-bottom: 5px !important"
-              />)
-            </h5>
-            <h3>Alpe</h3>
-            <p>
-              Meu primeiro contato com um produto no mundo corporativo, em um
-              time que apoiava todas squads na ideação de novos projetos, minha
-              primeira tarefa foi ligar para os clientes aplicando uma
-              entrevista para analisar e mapear suas dores, criando algo que de
-              fato supria suas necessidades. Ainda como estagiário, tive contato
-              também com o desenvolvimento web Angular nos projetos que
-              posteriormente seriam minha responsabilidade.
-            </p>
+          <div
+            class="d-flex align-items-center justify-content-center icon-text"
+          >
+            <span class="material-symbols-rounded">{{ optionOne.icon }}</span>
+            <p>{{ optionOne.text }}</p>
           </div>
-          <img
-            src="../../../assets/images/home-image.png"
-            class="img-experience"
-            data-aos="zoom-in"
-          />
+          <span class="material-symbols-rounded icon-arrow">chevron_right</span>
+        </div>
+
+        <p class="mt-4">Educação</p>
+
+        <div
+          *ngFor="let option of options; let i = index"
+          class="option d-flex align-items-center justify-content-between"
+          [class.active-option]="option.id === activeIndex"
+          (click)="showContent(option.id)"
+        >
+          <div
+            class="d-flex align-items-center justify-content-center icon-text"
+          >
+            <span class="material-symbols-rounded">{{ option.icon }}</span>
+            <p>{{ option.text }}</p>
+          </div>
+          <span class="material-symbols-rounded icon-arrow">chevron_right</span>
         </div>
       </div>
+
+      <!-- ---------------- -->
+      <div class="box-experience">
+        <div class="experience-information">
+          <div
+            class="information d-flex align-items-center justify-content-between"
+          >
+            <div class="header">
+              <div
+                class="photo d-flex align-items-center justify-content-center"
+              >
+                <img src="../../../assets/images/alpe-logo.png" />
+              </div>
+              <div>
+                <p>ALPE • Desenvolvedor Front-end Jr</p>
+                <span>São Paulo - SP • Brasil</span>
+              </div>
+            </div>
+            <span class="timing"
+              ><span class="material-symbols-rounded"> calendar_month </span>
+              Set 2021 • Nov 2023 (2 Anos)
+            </span>
+          </div>
+          <p>
+            Comecei a implementar fluxos mais complexos e completos nos
+            projetos, e então passei a me envolver mais nas regras de negócios
+            tomando conta do portal da empresa junto ao site institucional para
+            implementar novas funcionalidades e trabalhando em manutenções para
+            manter o funcionamento correto, recebi mais responsabilidades como
+            por exemplo, auxiliar no desenvolvimento técnico e profissionaal de
+            novos estagiários.
+          </p>
+        </div>
+        <div class="divider"></div>
+        <div class="experience-information">
+          <div
+            class="information d-flex align-items-center justify-content-between"
+          >
+            <div class="header">
+              <div
+                class="photo d-flex align-items-center justify-content-center"
+              >
+                <img src="../../../assets/images/alpe-logo.png" />
+              </div>
+              <div>
+                <p>ALPE • Desenvolvedor Front-end Jr</p>
+                <span>São Paulo - SP • Brasil</span>
+              </div>
+            </div>
+            <span class="timing"
+              ><span class="material-symbols-rounded"> calendar_month </span>
+              Set 2021 • Nov 2023 (2 Anos)
+            </span>
+          </div>
+          <p>
+            Comecei a implementar fluxos mais complexos e completos nos
+            projetos, e então passei a me envolver mais nas regras de negócios
+            tomando conta do portal da empresa junto ao site institucional para
+            implementar novas funcionalidades e trabalhando em manutenções para
+            manter o funcionamento correto, recebi mais responsabilidades como
+            por exemplo, auxiliar no desenvolvimento técnico e profissionaal de
+            novos estagiários.
+          </p>
+        </div>
+      </div>
+      <!-- ---------------- -->
+      <div class="box-experience">
+        <div class="experience-information">
+          <div
+            class="information d-flex align-items-center justify-content-between"
+          >
+            <div class="header">
+              <div
+                class="photo d-flex align-items-center justify-content-center"
+              >
+                <img src="../../../assets/images/sptech-logo.png" />
+              </div>
+              <div>
+                <p>Análise e desenvolvimento de sistemas</p>
+                <span>SPTECH • Graduação</span>
+              </div>
+            </div>
+            <div class="timing-area">
+              <span class="timing"
+                ><span class="material-symbols-rounded"> calendar_month </span>
+                Jan 2020 • Dez 2021 (2 Anos)
+              </span>
+              <span class="timing"> São Paulo - SP • Brasil </span>
+            </div>
+          </div>
+          <p>
+            Durante o curso de Análise e Desenvolvimento de Sistemas na São
+            Paulo Tech School, pude adquirir uma base sólida em programação, a
+            metodologia prática foi essencial para o desenvolvimento das minhas
+            habilidades, com foco em resolução de problemas reais. Tive a
+            oportunidade de trabalhar com diversas tecnologias e frameworks
+            atuais, como Angular, o que me preparou para o mercado,e a interação
+            professores qualificados me proporcionou um ambiente colaborativo e
+            desafiador.
+          </p>
+        </div>
+        <div class="divider"></div>
+        <div class="experience-information">
+          <div
+            class="information d-flex align-items-center justify-content-between"
+          >
+            <div class="header">
+              <div
+                class="photo d-flex align-items-center justify-content-center"
+              >
+                <img src="../../../assets/images/sptech-logo.png" />
+              </div>
+              <div>
+                <p>Liderança e Gestão em tecnologia</p>
+                <span>SPTECH • Pós-Graduação</span>
+              </div>
+            </div>
+            <div class="timing-area">
+              <span class="timing"
+                ><span class="material-symbols-rounded"> calendar_month </span>
+                Out 2022 • Nov 2023 (1 Ano)
+              </span>
+              <span class="timing"> São Paulo - SP • Brasil </span>
+            </div>
+          </div>
+          <p>
+            A pós-graduação em Liderança e Gestão em Tecnologia na São Paulo
+            Tech School foi transformadora. Aprendi a gerenciar equipes e
+            projetos tecnológicos com eficácia, além de desenvolver habilidades
+            de comunicação e tomada de decisão. O curso me proporcionou insights
+            sobre estratégias de liderança e como aplicar metodologias ágeis no
+            dia a dia. A troca de experiências com profissionais do mercado foi
+            enriquecedora e me preparou para desafios em cargos de liderança na
+            área de TI.
+          </p>
+        </div>
+      </div>
+      <div class="box-experience"></div>
+      <!-- ---------------- -->
+      <div class="box-experience"></div>
     </div>
   </div>
 </section>

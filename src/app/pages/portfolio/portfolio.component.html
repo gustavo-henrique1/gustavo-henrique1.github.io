@@ -1,3 +1,23 @@
-<section id="portfolio">
-  <div class="container"></div>
+<section
+  id="portfolio"
+  class="d-flex align-items-center justify-content-center"
+>
+  <div
+    class="container container-technologies d-flex justify-content-start align-items-start flex-column"
+  >
+    <div class="header-section" data-aos="fade-in" data-aos-duration="1400">
+      <h6>PORTFÓLIO</h6>
+      <h2>Ultimos Projetos</h2>
+      <h5>Minhas principais criações e trabalhos recentes</h5>
+    </div>
+    <div class="card-area">
+      <app-project-card
+        *ngFor="let project of projects; let i = index"
+        data-aos="fade-up"
+        data-aos-easing="ease-in-back"
+        [attr.data-aos-delay]="50 * (i + 1)"
+        [imageUrl]="project.imageUrl"
+      ></app-project-card>
+    </div>
+  </div>
 </section>

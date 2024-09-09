@@ -25,18 +25,10 @@
       aria-label="Toggle navigation"
       (click)="toggleIconMenu()"
     >
-      <fa-icon
-        [icon]="faBars"
-        class="d-flex align-items-center icon"
-        alt="Menu"
-        id="menu-icon"
-      ></fa-icon>
-      <fa-icon
-        [icon]="faClose"
-        class="d-flex align-items-center icon d-none"
-        alt="Close"
-        id="close-icon"
-      ></fa-icon>
+      <span class="material-symbols-rounded menu" id="menu-icon"> menu </span>
+      <span class="material-symbols-rounded icon d-none" id="close-icon">
+        close
+      </span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto justify-content-center align-items-center">
@@ -46,15 +38,18 @@
         <li class="nav-item">
           <a class="nav-link" href="#about">Sobre</a>
         </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#technologies">Conhecimento</a>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link" href="#experience">Experiência</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#technologies">Conhecimento</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="#portfolio">Portfólio</a>
         </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#contact">Contato</a>
+        </li> -->
         <li
           class="nav-item nav-icon d-flex align-items-center justify-content-center"
         >
@@ -72,18 +67,6 @@
             >
               light_mode
             </span>
-            <!-- <fa-icon
-              [icon]="faLightbulb"
-              class="d-flex align-items-center icon-mode"
-              alt="Menu"
-              id="menu-icon-light"
-            ></fa-icon>
-            <fa-icon
-              [icon]="faLightbulbRegular"
-              class="d-flex align-items-center icon-mode d-none"
-              alt="Close"
-              id="menu-icon-dark"
-            ></fa-icon> -->
           </button>
         </li>
       </ul>

@@ -2,20 +2,11 @@
   <div
     class="container container-about d-flex align-items-center justify-content-between"
   >
-    <div
-      class="image-area d-flex align-items-center justify-content-center"
-      data-aos="zoom-in-right"
-    >
-      <img src="../../../assets/images/home-image.png" />
-    </div>
-    <div class="text-area" data-aos="zoom-in-left">
+    <div class="text-area" data-aos="zoom-in-right">
       <div class="header-section">
         <h6>SOBRE</h6>
         <h2>Desenvolvedor front-end</h2>
-        <h5>
-          Residente de São Paulo - Brasil
-          <img src="../assets/images/emoji-pin.png" class="emoji-p" />
-        </h5>
+        <h5>Residente de São Paulo - Brasil</h5>
       </div>
 
       <p class="p-top">
@@ -25,22 +16,34 @@
         concentrado em performance, animações, e responsividade.
       </p>
       <p>
-        <img src="../assets/images/emoji-dev.png" class="emoji-p" />
+        <span class="material-symbols-rounded emoji-p"> developer_mode </span>
         Desenvolvimento web Angular desde 2020.
       </p>
       <p>
-        <img src="../assets/images/emoji-studant.png" class="emoji-p" />
+        <span class="material-symbols-rounded emoji-p"> school </span>
         Formado em análise e desenvolvimento de sistemas.
       </p>
-
       <p>
-        <img src="../assets/images/emoji-bulb.png" class="emoji-p" />
+        <span class="material-symbols-rounded emoji-p"> code_blocks </span>
         Interesse em desenvolvimento front-end.
       </p>
       <p>
-        <img src="../assets/images/emoji-rocket.png" class="emoji-p" />
+        <span class="material-symbols-rounded emoji-p"> rocket_launch </span>
         Buscando uma oportunidade para atuar.
       </p>
+    </div>
+    <div class="image-area" data-aos="zoom-in-left">
+      <div class="skills-area">
+        <h5>Skills</h5>
+        <div class="skills">
+          <app-technologie-card
+            *ngFor="let card of cards; let i = index"
+            [icon]="card.icon"
+            [title]="card.title"
+            [id]="'card' + i"
+          ></app-technologie-card>
+        </div>
+      </div>
     </div>
   </div>
 </section>

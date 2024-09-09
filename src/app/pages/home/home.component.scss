@@ -2,7 +2,7 @@
 
 h5 {
   margin: 25px 0px 25px 0px !important;
-  color: var(--text-color-light);
+  color: var(--text-color);
 }
 
 .text-home {
@@ -15,7 +15,7 @@ h5 span {
   color: var(--primary-color);
 }
 
-h5 img {
+h5 .emoji-text {
   margin: 0 0 8px 10px !important;
 }
 
@@ -28,7 +28,8 @@ h5 img {
   margin-left: 5px !important;
 }
 
-.emoji-animation {
+h5 .emoji-animation {
+  margin: 0 0 8px 5px !important;
   -webkit-animation: balance 0.3s alternate infinite ease-in-out;
   animation: balance 0.3s alternate infinite ease-in-out;
 }
@@ -44,8 +45,8 @@ nav ul {
 
 .button-cv {
   height: 52px;
-  background-color: var(--primary-color-light);
-  border: 0;
+  background-color: var(--background-card);
+  border: 1px solid var(--border-color);
   border-radius: 6px;
   box-sizing: border-box;
   padding: 16px !important;

@@ -1,17 +1,4 @@
-<div class="card">
-  <div class="icons d-flex align-items-center justify-content-between">
-    <div class="circle d-flex align-items-center justify-content-center">
-      <fa-icon [icon]="icon" class="d-flex align-items-center icon"></fa-icon>
-    </div>
-    <div class="stars d-flex">
-      <div *ngFor="let star of stars">
-        <fa-icon
-          [icon]="faStar"
-          class="d-flex align-items-center star"
-        ></fa-icon>
-      </div>
-    </div>
-  </div>
+<div class="card d-flex align-items-center justify-content-between">
+  <fa-icon [icon]="icon" class="d-flex align-items-center icon"></fa-icon>
   <h3 class="title">{{ title }}</h3>
-  <p class="text">{{ text }}</p>
 </div>
