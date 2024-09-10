@@ -1,0 +1,23 @@
+<div class="experience-information">
+  <div class="information d-flex align-items-center justify-content-between">
+    <div class="header">
+      <div class="photo d-flex align-items-center justify-content-center">
+        <img [src]="imageUrl" />
+      </div>
+      <div>
+        <p>{{ title }}</p>
+        <span>{{ subtitle }}</span>
+      </div>
+    </div>
+    <div class="timing-area">
+      <span class="timing"
+        ><span class="material-symbols-rounded"> calendar_month </span>
+        {{ timing }}
+      </span>
+      <span class="timing"> {{ local }} </span>
+    </div>
+  </div>
+  <p>
+    {{ text }}
+  </p>
+</div>
