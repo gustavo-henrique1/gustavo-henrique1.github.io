@@ -17,8 +17,7 @@
       data-aos-duration="1500"
     >
       <div class="option-card">
-        <p>Profissional</p>
-
+        <p class="sub-menu-text">Profissional</p>
         <div
           class="option d-flex align-items-center justify-content-between"
           [class.active-option]="0 === activeIndex"
@@ -32,9 +31,7 @@
           </div>
           <span class="material-symbols-rounded icon-arrow">chevron_right</span>
         </div>
-
-        <p class="mt-4">Educação</p>
-
+        <p class="sub-menu-text">Educação</p>
         <div
           *ngFor="let option of options; let i = index"
           class="option d-flex align-items-center justify-content-between"
@@ -51,144 +48,45 @@
         </div>
       </div>
 
-      <!-- ---------------- -->
       <div class="box-experience">
-        <div class="experience-information">
-          <div
-            class="information d-flex align-items-center justify-content-between"
-          >
-            <div class="header">
-              <div
-                class="photo d-flex align-items-center justify-content-center"
-              >
-                <img src="../../../assets/images/alpe-logo.png" />
-              </div>
-              <div>
-                <p>ALPE • Desenvolvedor Front-end Jr</p>
-                <span>São Paulo - SP • Brasil</span>
-              </div>
-            </div>
-            <span class="timing"
-              ><span class="material-symbols-rounded"> calendar_month </span>
-              Set 2021 • Nov 2023 (2 Anos)
-            </span>
-          </div>
-          <p>
-            Comecei a implementar fluxos mais complexos e completos nos
-            projetos, e então passei a me envolver mais nas regras de negócios
-            tomando conta do portal da empresa junto ao site institucional para
-            implementar novas funcionalidades e trabalhando em manutenções para
-            manter o funcionamento correto, recebi mais responsabilidades como
-            por exemplo, auxiliar no desenvolvimento técnico e profissionaal de
-            novos estagiários.
-          </p>
-        </div>
-        <div class="divider"></div>
-        <div class="experience-information">
-          <div
-            class="information d-flex align-items-center justify-content-between"
-          >
-            <div class="header">
-              <div
-                class="photo d-flex align-items-center justify-content-center"
-              >
-                <img src="../../../assets/images/alpe-logo.png" />
-              </div>
-              <div>
-                <p>ALPE • Desenvolvedor Front-end Jr</p>
-                <span>São Paulo - SP • Brasil</span>
-              </div>
-            </div>
-            <span class="timing"
-              ><span class="material-symbols-rounded"> calendar_month </span>
-              Set 2021 • Nov 2023 (2 Anos)
-            </span>
-          </div>
-          <p>
-            Comecei a implementar fluxos mais complexos e completos nos
-            projetos, e então passei a me envolver mais nas regras de negócios
-            tomando conta do portal da empresa junto ao site institucional para
-            implementar novas funcionalidades e trabalhando em manutenções para
-            manter o funcionamento correto, recebi mais responsabilidades como
-            por exemplo, auxiliar no desenvolvimento técnico e profissionaal de
-            novos estagiários.
-          </p>
+        <div *ngFor="let card of experiences; let i = index">
+          <app-card-experience
+            [imageUrl]="card.imageUrl"
+            [title]="card.title"
+            [subtitle]="card.subtitle"
+            [timing]="card.timing"
+            [local]="card.local"
+            [text]="card.text"
+          ></app-card-experience>
+          <div *ngIf="i == 0" class="divider"></div>
         </div>
       </div>
-      <!-- ---------------- -->
       <div class="box-experience">
-        <div class="experience-information">
-          <div
-            class="information d-flex align-items-center justify-content-between"
-          >
-            <div class="header">
-              <div
-                class="photo d-flex align-items-center justify-content-center"
-              >
-                <img src="../../../assets/images/sptech-logo.png" />
-              </div>
-              <div>
-                <p>Análise e desenvolvimento de sistemas</p>
-                <span>SPTECH • Graduação</span>
-              </div>
-            </div>
-            <div class="timing-area">
-              <span class="timing"
-                ><span class="material-symbols-rounded"> calendar_month </span>
-                Jan 2020 • Dez 2021 (2 Anos)
-              </span>
-              <span class="timing"> São Paulo - SP • Brasil </span>
-            </div>
-          </div>
-          <p>
-            Durante o curso de Análise e Desenvolvimento de Sistemas na São
-            Paulo Tech School, pude adquirir uma base sólida em programação, a
-            metodologia prática foi essencial para o desenvolvimento das minhas
-            habilidades, com foco em resolução de problemas reais. Tive a
-            oportunidade de trabalhar com diversas tecnologias e frameworks
-            atuais, como Angular, o que me preparou para o mercado,e a interação
-            professores qualificados me proporcionou um ambiente colaborativo e
-            desafiador.
-          </p>
-        </div>
-        <div class="divider"></div>
-        <div class="experience-information">
-          <div
-            class="information d-flex align-items-center justify-content-between"
-          >
-            <div class="header">
-              <div
-                class="photo d-flex align-items-center justify-content-center"
-              >
-                <img src="../../../assets/images/sptech-logo.png" />
-              </div>
-              <div>
-                <p>Liderança e Gestão em tecnologia</p>
-                <span>SPTECH • Pós-Graduação</span>
-              </div>
-            </div>
-            <div class="timing-area">
-              <span class="timing"
-                ><span class="material-symbols-rounded"> calendar_month </span>
-                Out 2022 • Nov 2023 (1 Ano)
-              </span>
-              <span class="timing"> São Paulo - SP • Brasil </span>
-            </div>
-          </div>
-          <p>
-            A pós-graduação em Liderança e Gestão em Tecnologia na São Paulo
-            Tech School foi transformadora. Aprendi a gerenciar equipes e
-            projetos tecnológicos com eficácia, além de desenvolver habilidades
-            de comunicação e tomada de decisão. O curso me proporcionou insights
-            sobre estratégias de liderança e como aplicar metodologias ágeis no
-            dia a dia. A troca de experiências com profissionais do mercado foi
-            enriquecedora e me preparou para desafios em cargos de liderança na
-            área de TI.
-          </p>
+        <div *ngFor="let card of superior; let i = index">
+          <app-card-experience
+            [imageUrl]="card.imageUrl"
+            [title]="card.title"
+            [subtitle]="card.subtitle"
+            [timing]="card.timing"
+            [local]="card.local"
+            [text]="card.text"
+          ></app-card-experience>
+          <div *ngIf="i == 0" class="divider"></div>
         </div>
       </div>
-      <div class="box-experience"></div>
-      <!-- ---------------- -->
+      <div class="box-experience">
+        <div *ngFor="let card of tecnico; let i = index">
+          <app-card-experience
+            [imageUrl]="card.imageUrl"
+            [title]="card.title"
+            [subtitle]="card.subtitle"
+            [timing]="card.timing"
+            [local]="card.local"
+            [text]="card.text"
+          ></app-card-experience>
+          <div *ngIf="i == 0" class="divider"></div>
+        </div>
+      </div>
       <div class="box-experience"></div>
     </div>
   </div>

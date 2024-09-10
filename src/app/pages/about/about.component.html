@@ -2,6 +2,31 @@
   <div
     class="container container-about d-flex align-items-center justify-content-between"
   >
+    <div class="image-area" data-aos="zoom-in-left">
+      <h5>Especialização</h5>
+
+      <div class="card-skill-area">
+        <div class="card-skill" *ngFor="let specialization of specializations">
+          <h3>
+            <fa-icon [icon]="specialization.icon"></fa-icon>
+            {{ specialization.title }}
+          </h3>
+          <div class="progress">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              [style]="specialization.progress"
+              aria-valuenow="25"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></div>
+          </div>
+          <p>
+            {{ specialization.description }}
+          </p>
+        </div>
+      </div>
+    </div>
     <div class="text-area" data-aos="zoom-in-right">
       <div class="header-section">
         <h6>SOBRE</h6>
@@ -13,7 +38,11 @@
         Focado no desenvolvimento de novas features juntamente com integração de
         API's REST, atendendo as regras de negócio e contexto das tarefas
         realizadas. Desenvolvo interfaces modernas e de alta qualidade,
-        concentrado em performance, animações, e responsividade.
+        concentrado em performance, animações, e responsividade. Busco sempre
+        aplicar as melhores práticas de desenvolvimento para garantir
+        escalabilidade e facilidade de manutenção do código. Trabalho com uma
+        abordagem colaborativa, focando na entrega contínua de valor ao usuário
+        final.
       </p>
       <p>
         <span class="material-symbols-rounded emoji-p"> developer_mode </span>
@@ -31,19 +60,6 @@
         <span class="material-symbols-rounded emoji-p"> rocket_launch </span>
         Buscando uma oportunidade para atuar.
       </p>
-    </div>
-    <div class="image-area" data-aos="zoom-in-left">
-      <div class="skills-area">
-        <h5>Skills</h5>
-        <div class="skills">
-          <app-technologie-card
-            *ngFor="let card of cards; let i = index"
-            [icon]="card.icon"
-            [title]="card.title"
-            [id]="'card' + i"
-          ></app-technologie-card>
-        </div>
-      </div>
     </div>
   </div>
 </section>

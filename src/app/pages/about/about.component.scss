@@ -1,5 +1,13 @@
+.container-about {
+  align-items: flex-start !important;
+}
+
+.header-section {
+  margin-bottom: 35px;
+}
+
 .p-top {
-  margin: 0 0 26px 0;
+  margin: 0 0 28px 0;
 }
 
 p {
@@ -13,80 +21,85 @@ p {
   color: var(--title-color);
 }
 
+.text-area {
+  width: 65%;
+}
+
 .image-area {
-  background: var(--background-card);
-  border: 1px solid var(--border-color);
-  border-radius: 10px;
-  height: 430px;
+  width: 32%;
+  height: 450px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   box-sizing: border-box;
-  padding: 30px;
+  gap: 30px;
+  border-right: 1px solid var(--border-color);
 }
 
-.skills-area {
+.image-area h5 {
+  font-weight: 500;
+  color: var(--title-color);
+  font-size: 18px;
+}
+
+.card-skill-area {
   display: flex;
-  gap: 20px;
   flex-direction: column;
-  flex-grow: 1;
+  gap: 25px;
+  overflow-y: hidden;
+  padding-right: 40px;
 }
 
-.skills {
+.card-skill-area:hover {
+  overflow-y: scroll;
+}
+
+.card-skill-area::-webkit-scrollbar {
+  width: 2px !important;
+}
+
+.card-skill-area::-webkit-scrollbar-thumb {
+  background-color: var(--subtitle-color);
+}
+
+.card-skill-area::-webkit-scrollbar-track {
+  background: var(--background-color);
+}
+
+.card-skill {
+  min-width: 100%;
+  box-sizing: border-box;
   display: flex;
-  flex-grow: 1;
-  position: relative;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.skills app-technologie-card {
-  position: absolute;
+.card-skill h3 {
+  font-size: 16px;
+  color: var(--title-color);
+  font-weight: normal;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
 }
 
-.skills #card0 {
-  top: 40px;
-  left: 0;
+.card-skill h3 fa-icon {
+  font-size: 18px;
 }
 
-.skills #card1 {
-  top: 20px;
-  left: 250px;
+.progress {
+  height: 6px;
 }
 
-.skills #card2 {
-  top: 150px;
-  left: 30px;
+.progress-bar {
+  background: var(--primary-color);
 }
 
-.skills #card3 {
-  top: 130px;
-  left: 200px;
+.card-skill p {
+  font-size: 14px;
+  color: var(--title-color);
+  margin: 0;
+  line-height: 1.4rem;
 }
-
-.skills #card4 {
-  top: 250px;
-  left: 0;
-}
-
-.skills #card5 {
-  top: 230px;
-  left: 240px;
-}
-
-// .skills app-technologie-card {
-//   animation: move var(--duration) ease-in-out infinite;
-// }
-
-// @keyframes move {
-//   0% {
-//     transform: translate(0, 0);
-//   }
-//   40% {
-//     transform: translate(var(--x), var(--y));
-//   }
-//   60% {
-//     transform: translate(var(--x), var(--y));
-//   }
-//   100% {
-//     transform: translate(0, 0);
-//   }
-// }

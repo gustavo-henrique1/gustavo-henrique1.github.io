@@ -12,7 +12,7 @@ import { AboutComponent } from "./pages/about/about.component";
 import { ExperienceComponent } from "./pages/experience/experience.component";
 import { PortfolioComponent } from "./pages/portfolio/portfolio.component";
 import { FooterComponent } from "./components/footer/footer.component";
-import { ContactComponent } from "./pages/contact/contact.component";
+import { CardExperienceComponent } from './components/card-experience/card-experience.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { ContactComponent } from "./pages/contact/contact.component";
     ExperienceComponent,
     PortfolioComponent,
     FooterComponent,
-    ContactComponent,
+    CardExperienceComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
   providers: [],
