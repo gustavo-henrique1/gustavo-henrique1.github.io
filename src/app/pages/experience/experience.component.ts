@@ -80,7 +80,7 @@ export class ExperienceComponent implements OnInit {
     },
   ];
 
-  tecnico = [
+  tecnic = [
     {
       imageUrl: "../../../assets/images/logo-etec.png",
       title: "Desenvolvimento de Sistemas",
@@ -105,6 +105,42 @@ export class ExperienceComponent implements OnInit {
             me deu uma visão ampla da área de TI. A prática constante e os projetos desenvolvidos
             ao longo das aulas foram essenciais para o aprendizado. O suporte dos professores,
             sempre dispostos a ajudar, tornou o processo ainda mais enriquecedor.`,
+    },
+  ];
+
+  certifications = [
+    {
+      imageUrl: "../../../assets/images/logo-udemy.png",
+      title: "Aprendendo Redux utilizano NGRX com Angular 13+",
+      subtitle: "Instrutor: Fredddy Cristian Maldonado Parra",
+      timing: "Certificaddo de conclusão",
+      local: "2024 • 4 horas totais",
+      text: `Implementação de gerenciamento de estado em projetos Angular utilizando a biblioteca NGRX, 
+            focado em conceitos como actions, reducers, effects e selectors.`,
+    },
+    {
+      imageUrl: "../../../assets/images/cellep-logo.webp",
+      title: "Encoding Essential Skills UI/UX",
+      subtitle: "Diretora: Patrícia McKay Aronis",
+      timing: "Certificaddo de conclusão",
+      local: "2019 • 32 horas totais",
+      text: `A certificação básica de UI/UX de 32 horas na Estação Hack foi uma experiência transformadora. 
+            O curso abordou desde os princípios fundamentais de design até as melhores práticas para criar interfaces
+            intuitivas e agradáveis. Com atividades práticas, pude aplicar conceitos de usabilidade e design centrado
+            no usuário em projetos reais. A interação com colegas e instrutores foi enriquecedora, proporcionando
+            feedback constante e novas perspectivas.`,
+    },
+    {
+      imageUrl: "../../../assets/images/madcode-logo.png",
+      title: "App Development Kotlin",
+      subtitle: "Diretora: Patrícia McKay Aronis",
+      timing: "Certificaddo de conclusão",
+      local: "2019 • 32 horas totais",
+      text: `O curso proporcionou uma imersão prática e teórica na linguagem, com foco em desenvolver
+            habilidades desde o básico até a criação de pequenas aplicações. A didática clara e os exercícios
+            desafiadores foram fundamentais para consolidar o conhecimento. Além disso, o ambiente colaborativo
+            da Estação Hack incentivou a troca de experiências e o aprendizado em grupo. Foi uma excelente oportunidade
+            para fortalecer a base em Kotlin e abrir portas para projetos futuros.`,
     },
   ];
 

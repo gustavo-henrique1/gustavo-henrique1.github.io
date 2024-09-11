@@ -14,6 +14,7 @@
 
 .information {
   flex-grow: 1;
+  min-width: 810px;
 
   p {
     font-weight: 600;
@@ -25,6 +26,10 @@
     font-size: 14px;
     color: var(--subtitle-color);
   }
+}
+
+.icon {
+  font-size: 18px !important;
 }
 
 .header {
@@ -42,6 +47,10 @@
   img {
     width: 26px;
   }
+
+  .image-udemy {
+    width: 18px;
+  }
 }
 
 .timing-area {
@@ -56,4 +65,14 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
+}
+
+.p-certfication {
+  margin: 10px 0 !important;
+  color: var(--subtitle-color);
+
+  span {
+    color: var(--title-color);
+    font-weight: 500;
+  }
 }

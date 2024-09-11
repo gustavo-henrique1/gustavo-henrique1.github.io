@@ -75,7 +75,7 @@
         </div>
       </div>
       <div class="box-experience">
-        <div *ngFor="let card of tecnico; let i = index">
+        <div *ngFor="let card of tecnic; let i = index">
           <app-card-experience
             [imageUrl]="card.imageUrl"
             [title]="card.title"
@@ -87,7 +87,19 @@
           <div *ngIf="i == 0" class="divider"></div>
         </div>
       </div>
-      <div class="box-experience"></div>
+      <div class="box-experience box-experience-scroll">
+        <div *ngFor="let card of certifications; let i = index">
+          <app-card-experience
+            [imageUrl]="card.imageUrl"
+            [title]="card.title"
+            [subtitle]="card.subtitle"
+            [timing]="card.timing"
+            [local]="card.local"
+            [text]="card.text"
+          ></app-card-experience>
+          <div *ngIf="i != 2" class="divider"></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
