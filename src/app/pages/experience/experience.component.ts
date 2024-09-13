@@ -113,7 +113,7 @@ export class ExperienceComponent implements OnInit {
       imageUrl: "../../../assets/images/logo-udemy.png",
       title: "Aprendendo Redux utilizano NGRX com Angular 13+",
       subtitle: "Instrutor: Fredddy Cristian Maldonado Parra",
-      timing: "Certificaddo de conclusão",
+      timing: "Certificado de conclusão",
       local: "2024 • 4 horas totais",
       text: `Implementação de gerenciamento de estado em projetos Angular utilizando a biblioteca NGRX, 
             focado em conceitos como actions, reducers, effects e selectors.`,
@@ -122,7 +122,7 @@ export class ExperienceComponent implements OnInit {
       imageUrl: "../../../assets/images/cellep-logo.webp",
       title: "Encoding Essential Skills UI/UX",
       subtitle: "Diretora: Patrícia McKay Aronis",
-      timing: "Certificaddo de conclusão",
+      timing: "Certificado de conclusão",
       local: "2019 • 32 horas totais",
       text: `A certificação básica de UI/UX de 32 horas na Estação Hack foi uma experiência transformadora. 
             O curso abordou desde os princípios fundamentais de design até as melhores práticas para criar interfaces
@@ -134,7 +134,7 @@ export class ExperienceComponent implements OnInit {
       imageUrl: "../../../assets/images/madcode-logo.png",
       title: "App Development Kotlin",
       subtitle: "Diretora: Patrícia McKay Aronis",
-      timing: "Certificaddo de conclusão",
+      timing: "Certificado de conclusão",
       local: "2019 • 32 horas totais",
       text: `O curso proporcionou uma imersão prática e teórica na linguagem, com foco em desenvolver
             habilidades desde o básico até a criação de pequenas aplicações. A didática clara e os exercícios

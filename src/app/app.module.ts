@@ -12,7 +12,10 @@ import { AboutComponent } from "./pages/about/about.component";
 import { ExperienceComponent } from "./pages/experience/experience.component";
 import { PortfolioComponent } from "./pages/portfolio/portfolio.component";
 import { FooterComponent } from "./components/footer/footer.component";
-import { CardExperienceComponent } from './components/card-experience/card-experience.component';
+import { CardExperienceComponent } from "./components/card-experience/card-experience.component";
+import { AngularFireModule } from "@angular/fire/compat";
+import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
+import { environment } from "../environments/environment";
 
 @NgModule({
   declarations: [
@@ -28,7 +31,13 @@ import { CardExperienceComponent } from './components/card-experience/card-exper
     FooterComponent,
     CardExperienceComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FontAwesomeModule,
+    AngularFirestoreModule,
+    AngularFireModule.initializeApp(environment.firebase),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

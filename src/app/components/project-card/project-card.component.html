@@ -1,5 +1,28 @@
-<div class="card" [ngStyle]="{ 'background-image': 'url(' + imageUrl + ')' }">
-  <div class="card-hover">
-    <a href="#">Visualizar</a>
+<div class="card">
+  <div
+    class="image"
+    [ngStyle]="{ 'background-image': 'url(' + imageUrl + ')' }"
+  ></div>
+  <div class="text">
+    <div class="about-project">
+      <div class="icon-project"></div>
+      <p>SafeRoute</p>
+    </div>
+    <div class="views">
+      <div class="icon-text">
+        <span
+          class="material-symbols-outlined icon"
+          (click)="toggleLike()"
+          [ngClass]="{ liked: userHasLiked }"
+        >
+          favorite
+        </span>
+        <p class="likes">{{ likes || 0 }}</p>
+      </div>
+      <div class="icon-text">
+        <span class="material-symbols-outlined"> visibility </span>
+        <p>85</p>
+      </div>
+    </div>
   </div>
 </div>
