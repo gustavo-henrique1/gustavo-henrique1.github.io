@@ -9,12 +9,12 @@
   padding: 40px 0;
 
   p {
-    color: var(--title-color);
+    color: var(--text-color);
   }
 }
 
 h4 {
-  color: var(--title-color);
+  color: var(--text-color);
   font-style: normal;
 }
 
@@ -35,7 +35,7 @@ nav ul {
   flex-direction: column;
   gap: 14px !important;
   list-style-type: none;
-  color: var(--title-color);
+  color: var(--text-color);
 }
 
 @media (max-width: 1200px) {

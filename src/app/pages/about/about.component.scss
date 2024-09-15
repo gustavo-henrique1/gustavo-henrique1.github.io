@@ -18,7 +18,7 @@ p {
 }
 
 .emoji-p {
-  color: var(--title-color);
+  color: var(--text-color);
 }
 
 .text-area {
@@ -38,7 +38,7 @@ p {
 
 .image-area h5 {
   font-weight: 500;
-  color: var(--title-color);
+  color: var(--text-color);
   font-size: 18px;
 }
 
@@ -59,7 +59,7 @@ p {
 }
 
 .card-skill-area::-webkit-scrollbar-thumb {
-  background-color: var(--subtitle-color);
+  background-color: var(--subtext-color);
 }
 
 .card-skill-area::-webkit-scrollbar-track {
@@ -76,8 +76,8 @@ p {
 
 .card-skill h3 {
   font-size: 16px;
-  color: var(--title-color);
-  font-weight: normal;
+  color: var(--text-color);
+  font-weight: 500;
   margin: 0;
   display: flex;
   align-items: center;
@@ -98,8 +98,8 @@ p {
 }
 
 .card-skill p {
-  font-size: 14px;
-  color: var(--title-color);
+  font-size: 16px;
+  color: var(--text-color);
   margin: 0;
   line-height: 1.4rem;
 }

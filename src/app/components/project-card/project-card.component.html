@@ -2,14 +2,16 @@
   <div
     class="image"
     [ngStyle]="{ 'background-image': 'url(' + imageUrl + ')' }"
-  ></div>
+  >
+    <div class="image-view"></div>
+  </div>
   <div class="text">
     <div class="about-project">
       <div class="icon-project"></div>
       <p>SafeRoute</p>
     </div>
     <div class="views">
-      <div class="icon-text">
+      <div class="icon-text favorite">
         <span
           class="material-symbols-outlined icon"
           (click)="toggleLike()"

@@ -1,13 +1,16 @@
-import { Component, OnInit } from "@angular/core";
-import { PortfolioService } from "src/app/services/portfolio.service";
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { PortfolioService } from 'src/app/services/portfolio.service';
+import * as bootstrap from 'bootstrap';
 
 @Component({
-  selector: "app-portfolio",
-  templateUrl: "./portfolio.component.html",
-  styleUrl: "./portfolio.component.scss",
+  selector: 'app-portfolio',
+  templateUrl: './portfolio.component.html',
+  styleUrl: './portfolio.component.scss',
+  encapsulation: ViewEncapsulation.None,
 })
 export class PortfolioComponent implements OnInit {
   projects: any[] = [];
+  selectedProject: any;
 
   constructor(private portfolioService: PortfolioService) {}
 
@@ -22,7 +25,7 @@ export class PortfolioComponent implements OnInit {
         this.projects = projects;
       })
       .catch((error) => {
-        console.error("Error loading projects:", error);
+        console.error('Error loading projects:', error);
       });
   }
 
@@ -31,13 +34,19 @@ export class PortfolioComponent implements OnInit {
       this.portfolioService
         .incrementLikes(id)
         .then(() => {
-          console.log("Likes incremented");
+          console.log('Likes incremented');
         })
         .catch((error) => {
-          console.error("Error liking project:", error);
+          console.error('Error liking project:', error);
         });
     } else {
-      console.error("Project ID is not defined");
+      console.error('Project ID is not defined');
     }
+  }
+
+  openModal(project: any) {
+    this.selectedProject = project;
+    const modal = new bootstrap.Modal(document.getElementById('projectModal')!);
+    modal.show();
   }
 }

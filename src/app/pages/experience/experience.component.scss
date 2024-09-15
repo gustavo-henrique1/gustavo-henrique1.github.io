@@ -34,18 +34,18 @@
     p {
       font-size: 16px;
       font-weight: 500;
-      color: var(--title-color);
+      color: var(--text-color);
       margin: 0;
       transition: 0.3s;
     }
 
     span {
-      color: var(--title-color);
+      color: var(--text-color);
     }
   }
 
   .icon-arrow {
-    color: var(--title-color);
+    color: var(--text-color);
     opacity: 0;
     padding-right: 10px;
     transition: 0.3s;
@@ -118,7 +118,7 @@
 }
 
 .box-experience-scroll::-webkit-scrollbar-thumb {
-  background-color: var(--subtitle-color);
+  background-color: var(--subtext-color);
 }
 
 .box-experience-scroll::-webkit-scrollbar-track {

@@ -18,13 +18,13 @@
 
   p {
     font-weight: 600;
-    color: var(--title-color);
+    color: var(--text-color);
     margin: 0;
   }
 
   span {
     font-size: 14px;
-    color: var(--subtitle-color);
+    color: var(--subtext-color);
   }
 }
 
@@ -69,10 +69,10 @@
 
 .p-certfication {
   margin: 10px 0 !important;
-  color: var(--subtitle-color);
+  color: var(--subtext-color);
 
   span {
-    color: var(--title-color);
+    color: var(--text-color);
     font-weight: 500;
   }
 }

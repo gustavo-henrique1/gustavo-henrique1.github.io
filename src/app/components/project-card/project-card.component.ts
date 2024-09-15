@@ -1,11 +1,11 @@
-import { Component, Input, OnInit } from "@angular/core";
-import { Observable } from "rxjs";
-import { PortfolioService } from "src/app/services/portfolio.service";
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Observable } from 'rxjs';
+import { PortfolioService } from 'src/app/services/portfolio.service';
 
 @Component({
-  selector: "app-project-card",
-  templateUrl: "./project-card.component.html",
-  styleUrl: "./project-card.component.scss",
+  selector: 'app-project-card',
+  templateUrl: './project-card.component.html',
+  styleUrl: './project-card.component.scss',
 })
 export class ProjectCardComponent implements OnInit {
   @Input() imageUrl: string | undefined;
@@ -33,7 +33,7 @@ export class ProjectCardComponent implements OnInit {
         this.updateLikes();
       })
       .catch((error) => {
-        console.error("Error adding like:", error);
+        console.error('Error adding like:', error);
       });
   }
 
@@ -45,7 +45,7 @@ export class ProjectCardComponent implements OnInit {
         this.updateLikes();
       })
       .catch((error) => {
-        console.error("Error removing like:", error);
+        console.error('Error removing like:', error);
       });
   }
 
@@ -55,7 +55,7 @@ export class ProjectCardComponent implements OnInit {
         this.likes = project.likes;
       },
       (error) => {
-        console.error("Error fetching project:", error);
+        console.error('Error fetching project:', error);
       }
     );
   }

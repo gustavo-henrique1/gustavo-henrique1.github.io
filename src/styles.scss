@@ -6,9 +6,8 @@ body {
   --background-card: #{$background-card};
   --primary-color: #{$primary-color};
   --primary-color-light: #{$primary-color-light};
-  --title-color: #{$title-color};
-  --subtitle-color: #{$subtitle-color};
   --text-color: #{$text-color};
+  --subtext-color: #{$subtext-color};
   --border-color: #{$border-color};
   --secondary-color: #{$secondary-color};
 }
@@ -18,9 +17,8 @@ body.dark-mode {
   --background-card: #{$background-card-dark};
   --primary-color: #{$primary-color};
   --primary-color-light: #{$primary-color-light-dark};
-  --title-color: #{$title-color-dark};
-  --subtitle-color: #{$subtitle-color-dark};
   --text-color: #{$text-color-dark};
+  --subtext-color: #{$subtext-color-dark};
   --border-color: #{$border-color-dark};
   --secondary-color: #{$secondary-color};
 }
@@ -28,7 +26,8 @@ body.dark-mode {
 * {
   margin: 0;
   padding: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
+  vertical-align: baseline;
 }
 
 html {
@@ -84,16 +83,16 @@ section {
 // big-text-home
 h1 {
   font-size: 45px;
-  font-weight: 700;
-  color: var(--title-color);
+  font-weight: 900;
+  color: var(--text-color);
   margin: 0 !important;
 }
 
 // title
 h2 {
   font-size: 30px;
-  color: var(--title-color);
-  font-weight: bold;
+  color: var(--text-color);
+  font-weight: 700;
   width: fit-content;
   margin: 0;
 }
@@ -110,19 +109,19 @@ h4 {
 // sub-title
 h5 {
   width: 100%;
-  font-size: 16px;
-  color: var(--subtitle-color);
+  font-size: 18px;
+  color: var(--subtext-color);
   line-height: 1.6rem;
-  font-weight: normal;
+  font-weight: 400;
   margin: 0;
 }
 
 // id-page
 h6 {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--primary-color);
   font-weight: bold;
-  letter-spacing: 0.1rem;
+  letter-spacing: 1px;
   margin: 0;
 }
 
@@ -131,11 +130,11 @@ p {
   font-size: 16px;
   color: var(--text-color);
   line-height: 1.6rem;
-  font-weight: normal;
+  font-weight: 400;
 }
 
 .icon-title {
-  color: var(--title-color);
+  color: var(--text-color);
 }
 
 .header-section {
