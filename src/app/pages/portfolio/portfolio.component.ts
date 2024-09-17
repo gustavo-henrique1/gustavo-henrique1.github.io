@@ -10,7 +10,8 @@ import * as bootstrap from 'bootstrap';
 })
 export class PortfolioComponent implements OnInit {
   projects: any[] = [];
-  selectedProject: any;
+  selectedProject: any = {};
+  teste: any;
 
   constructor(private portfolioService: PortfolioService) {}
 
@@ -46,7 +47,8 @@ export class PortfolioComponent implements OnInit {
 
   openModal(project: any) {
     this.selectedProject = project;
-    const modal = new bootstrap.Modal(document.getElementById('projectModal')!);
+    const modalElement = document.getElementById('projectModal');
+    const modal = new bootstrap.Modal(modalElement!);
     modal.show();
   }
 }

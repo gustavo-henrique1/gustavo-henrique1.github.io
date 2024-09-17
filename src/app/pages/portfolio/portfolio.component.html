@@ -16,10 +16,8 @@
         data-aos="fade-up"
         data-aos-easing="ease-in-back"
         [attr.data-aos-delay]="50 * (i + 1)"
-        [imageUrl]="project.imageUrl"
-        [projectId]="project.id"
-        [likes]="project.likes"
-        (click)="openModal(project)"
+        [project]="project"
+        [handleClick]="openModal.bind(this)"
       ></app-project-card>
     </div>
   </div>
@@ -31,6 +29,7 @@
   tabindex="-1"
   aria-labelledby="modalLabel"
   aria-hidden="true"
+  *ngIf="selectedProject"
 >
   <button type="button" data-bs-dismiss="modal">
     <span class="material-symbols-rounded"> close </span>
@@ -47,7 +46,7 @@
       <div class="container-modal">
         <div class="modal-body">
           <div class="header">
-            <h3>{{ selectedProject?.title }} é um app para acesso a cultura</h3>
+            <h3>{{ selectedProject.title }} é um app para acesso a cultura</h3>
 
             <div class="d-flex align-items-center justify-content-between">
               <div class="d-flex description-area">
@@ -80,7 +79,7 @@
           </div>
 
           <img
-            [src]="selectedProject?.imageUrl"
+            [src]="selectedProject.imageUrl"
             class="img-fluid"
             alt="Project Image"
           />

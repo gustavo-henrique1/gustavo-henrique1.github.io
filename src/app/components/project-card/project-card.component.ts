@@ -1,5 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, Input, OnInit } from '@angular/core';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 
 @Component({
@@ -8,10 +7,9 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
   styleUrl: './project-card.component.scss',
 })
 export class ProjectCardComponent implements OnInit {
-  @Input() imageUrl: string | undefined;
-  @Input() likes: number | undefined;
-  @Input() projectId: any | undefined;
   @Input() userHasLiked: boolean = false;
+  @Input() handleClick!: (project: any) => void;
+  @Input() project: any;
 
   constructor(private portfolioService: PortfolioService) {}
 
@@ -27,7 +25,7 @@ export class ProjectCardComponent implements OnInit {
 
   private addLike(): void {
     this.portfolioService
-      .incrementLikes(this.projectId)
+      .incrementLikes(this.project.id)
       .then(() => {
         this.userHasLiked = true;
         this.updateLikes();
@@ -39,7 +37,7 @@ export class ProjectCardComponent implements OnInit {
 
   private removeLike(): void {
     this.portfolioService
-      .removeLike(this.projectId)
+      .removeLike(this.project.id)
       .then(() => {
         this.userHasLiked = false;
         this.updateLikes();
@@ -50,9 +48,9 @@ export class ProjectCardComponent implements OnInit {
   }
 
   private updateLikes(): void {
-    this.portfolioService.getProjectById(this.projectId).then(
+    this.portfolioService.getProjectById(this.project.id).then(
       (project) => {
-        this.likes = project.likes;
+        this.project.likes = project.likes;
       },
       (error) => {
         console.error('Error fetching project:', error);

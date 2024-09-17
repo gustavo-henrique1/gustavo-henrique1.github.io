@@ -157,13 +157,22 @@
 }
 
 @media (max-width: 1200px) {
+  .container-technologies,
+  section {
+    max-height: unset;
+    height: auto !important;
+  }
+
   .experience-area {
     flex-direction: column !important;
     align-items: flex-start !important;
+    gap: 75px;
   }
 
   .box-experience {
     border: 0 !important;
+    max-height: unset;
+    min-height: unset;
   }
 
   .experience-information {
@@ -201,5 +210,9 @@
     flex-direction: column;
     align-items: flex-start !important;
     gap: 20px;
+  }
+
+  .timing-area {
+    align-items: flex-start !important;
   }
 }

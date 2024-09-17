@@ -1,19 +1,201 @@
-.navbar {
-  min-height: 100px;
-  height: auto;
+// .navbar {
+//   min-height: 100px;
+//   height: auto;
+//   box-sizing: border-box;
+//   background: var(--background-color) !important;
+//   padding: 0 100px 0 100px !important;
+//   position: fixed !important;
+//   z-index: 1;
+// }
+
+// .container-menu {
+//   box-sizing: border-box;
+//   padding: 20px 0px;
+//   margin-top: 40px;
+//   transition: 0.6s ease-in-out;
+//   border: 1px solid transparent;
+// }
+
+// .menu-shadow {
+//   background: var(--background-card);
+//   border: 1px solid var(--border-color);
+//   padding: 20px 30px;
+//   border-radius: 10px;
+// }
+
+// .menu-background {
+//   background-color: transparent;
+// }
+
+// .navbar-brand {
+//   font-size: 22px;
+//   font-weight: 600;
+//   position: relative;
+//   text-decoration: none;
+//   color: var(--text-color);
+//   cursor: pointer;
+// }
+
+// .icon {
+//   font-size: 24px;
+//   color: var(--text-color);
+// }
+
+// .button-mode {
+//   display: flex;
+//   justify-content: flex-end;
+//   border: none;
+//   outline: none;
+//   color: var(--secondary-color);
+//   background: transparent;
+//   cursor: auto;
+// }
+
+// .icon-mode {
+//   font-size: 24px;
+//   cursor: pointer;
+//   color: var(--primary-color);
+//   transition: 0s !important;
+// }
+
+// .logo {
+//   width: 130px !important;
+// }
+
+// .container {
+//   min-width: 1140px;
+//   width: 60%;
+// }
+
+// .navbar-nav {
+//   display: flex;
+//   flex-direction: row;
+//   gap: 20px;
+// }
+
+// .nav-link {
+//   font-size: 16px;
+//   color: var(--text-color);
+// }
+
+// .nav-link:hover {
+//   transition: 0.3s;
+//   color: var(--primary-color);
+// }
+
+// .nav-link.active {
+//   transition-delay: 0.2s;
+//   color: var(--primary-color);
+// }
+
+// .logo {
+//   width: 60px;
+// }
+
+// .navbar-toggler {
+//   border: none !important;
+// }
+
+// .navbar-toggler:focus {
+//   box-shadow: none !important;
+// }
+
+// .navbar-toggler-icon img {
+//   width: 30px;
+//   transition: transform 0.3s ease;
+// }
+
+// .d-none {
+//   display: none;
+// }
+
+// .collapse {
+//   transition: 0.5s ease-in-out;
+//   background: red !important;
+// }
+
+// .collapse-expand {
+//   height: 300px !important;
+// }
+
+// .collapse-retract {
+//   height: 0 !important;
+// }
+
+// @media (max-width: 1200px) {
+//   .navbar {
+//     padding: 35px 0 35px 0 !important;
+//     background: transparent;
+//   }
+
+//   .container-menu {
+//     min-width: 90%;
+//     margin-top: 0 !important;
+//   }
+// }
+
+// @media (max-width: 988px) {
+//   .navbar {
+//     padding-top: 100px;
+//   }
+
+//   .navbar-nav {
+//     margin-top: 40px !important;
+//     flex-direction: column;
+//     align-items: flex-start !important;
+//   }
+
+//   .nav-icon {
+//     justify-content: flex-start !important;
+//   }
+// }
+
+// .button-mode:hover {
+//   .icon-mode {
+//     transition: 0.5s;
+//     color: var(--primary-color);
+//     -webkit-animation: balance 0.3s alternate infinite ease-in-out;
+//     animation: balance 0.3s alternate infinite ease-in-out;
+//   }
+// }
+
+// @keyframes showRight {
+//   100% {
+//     width: 0;
+//   }
+// }
+
+// @keyframes balance {
+//   from {
+//     transform: rotate(8deg);
+//   }
+//   to {
+//     transform: rotate(-8deg);
+//   }
+// }
+
+.nav-menu {
+  height: 120px;
   box-sizing: border-box;
   background: var(--background-color);
-  padding: 0 100px 0 100px !important;
-  position: fixed !important;
+  padding: 0 100px 0 100px;
+  position: fixed;
   z-index: 1;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 .container-menu {
-  box-sizing: border-box;
-  padding: 20px 0px;
-  margin-top: 40px;
-  transition: 0.6s ease-in-out;
+  min-width: 1140px;
+  width: 60%;
+  height: 77px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
   border: 1px solid transparent;
+  transition: 0.6s ease-in-out;
 }
 
 .menu-shadow {
@@ -21,10 +203,6 @@
   border: 1px solid var(--border-color);
   padding: 20px 30px;
   border-radius: 10px;
-}
-
-.menu-background {
-  background-color: transparent;
 }
 
 .navbar-brand {
@@ -58,19 +236,16 @@
   transition: 0s !important;
 }
 
-.logo {
-  width: 130px !important;
-}
-
-.container {
-  min-width: 1140px;
-  width: 60%;
-}
-
 .navbar-nav {
   display: flex;
   flex-direction: row;
   gap: 20px;
+}
+
+ul {
+  list-style-type: none;
+  gap: 30px;
+  margin: 0;
 }
 
 .nav-link {
@@ -88,75 +263,63 @@
   color: var(--primary-color);
 }
 
-.logo {
-  width: 60px;
-}
+.btn-expand {
+  border: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
 
-.navbar-toggler {
-  border: none !important;
-}
-
-.navbar-toggler:focus {
-  box-shadow: none !important;
-}
-
-.navbar-toggler-icon img {
-  width: 30px;
-  transition: transform 0.3s ease;
-}
-
-.d-none {
-  display: none;
+  span {
+    font-size: 24px !important;
+  }
 }
 
 @media (max-width: 1200px) {
-  .navbar {
-    padding: 35px 0 35px 0 !important;
-    background: transparent;
+  .nav-menu {
+    padding: 0 5%;
+    min-height: 120px;
+    height: auto;
   }
 
   .container-menu {
-    min-width: 90%;
-    margin-top: 0 !important;
-  }
-}
-
-@media (max-width: 988px) {
-  .navbar {
-    padding-top: 100px;
-  }
-
-  .navbar-nav {
-    margin-top: 40px !important;
+    width: 100%;
+    height: auto;
+    min-width: unset;
     flex-direction: column;
-    align-items: flex-start !important;
+    height: auto;
+    margin-top: 43px;
   }
 
-  .nav-icon {
-    justify-content: flex-start !important;
+  .brand-icon {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .list-menu {
+    display: none;
+  }
+
+  .list-menu {
+    width: 100%;
+    margin-top: 40px;
+
+    ul {
+      padding: 0 !important;
+      flex-direction: column !important;
+      display: flex;
+      align-items: flex-start !important;
+    }
+  }
+
+  .btn-expand {
+    display: unset !important;
   }
 }
 
-.button-mode:hover {
-  .icon-mode {
-    transition: 0.5s;
-    color: var(--primary-color);
-    -webkit-animation: balance 0.3s alternate infinite ease-in-out;
-    animation: balance 0.3s alternate infinite ease-in-out;
-  }
-}
-
-@keyframes showRight {
-  100% {
-    width: 0;
-  }
-}
-
-@keyframes balance {
-  from {
-    transform: rotate(8deg);
-  }
-  to {
-    transform: rotate(-8deg);
-  }
+.d-block {
+  display: block !important;
 }

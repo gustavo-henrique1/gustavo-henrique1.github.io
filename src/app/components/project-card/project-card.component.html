@@ -1,7 +1,8 @@
 <div class="card">
   <div
     class="image"
-    [ngStyle]="{ 'background-image': 'url(' + imageUrl + ')' }"
+    [ngStyle]="{ 'background-image': 'url(' + project.imageUrl + ')' }"
+    (click)="handleClick(project)"
   >
     <div class="image-view"></div>
   </div>
@@ -19,7 +20,7 @@
         >
           favorite
         </span>
-        <p class="likes">{{ likes || 0 }}</p>
+        <p class="likes">{{ project.likes || 0 }}</p>
       </div>
       <div class="icon-text">
         <span class="material-symbols-outlined"> visibility </span>

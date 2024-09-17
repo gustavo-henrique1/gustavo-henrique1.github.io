@@ -144,4 +144,35 @@ nav ul {
 // mediaframe
 
 @media (max-width: 1200px) {
+  .container {
+    align-items: flex-start !important;
+  }
+
+  .background-image {
+    display: flex;
+    align-items: flex-start !important;
+  }
+
+  .bg-color {
+    top: 40px;
+    left: 45px !important;
+    right: unset;
+  }
+
+  .bg-border {
+    top: 100px;
+    left: 0px !important;
+  }
+}
+
+@media (max-width: 800px) {
+  .bg-color {
+    width: 240px !important;
+    height: 240px !important;
+  }
+
+  .bg-border {
+    width: 240px !important;
+    height: 240px !important;
+  }
 }
