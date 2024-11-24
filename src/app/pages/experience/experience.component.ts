@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-experience',
@@ -144,6 +145,9 @@ export class ExperienceComponent implements OnInit {
     },
   ];
 
+  arrowVisible = true;
+  faChevronDown = faChevronDown;
+
   ngOnInit(): void {
     this.showContent(0);
   }
@@ -157,5 +161,14 @@ export class ExperienceComponent implements OnInit {
         item.classList.remove('show-experience');
       }
     });
+  }
+
+  onScroll(event: Event) {
+    const element = event.target as HTMLElement;
+    if (element.scrollTop === 0) {
+      this.arrowVisible = true;
+    } else {
+      this.arrowVisible = false;
+    }
   }
 }

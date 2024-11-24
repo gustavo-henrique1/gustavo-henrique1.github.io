@@ -26,16 +26,16 @@ export class MenuComponent {
     this.isMenuOpen = !this.isMenuOpen;
     const menuIcon = document.getElementById('menu-icon');
     const closeIcon = document.getElementById('close-icon');
-    const navbar = document.getElementById('listMenu');
+    const navbar = document.getElementById('containerMenu');
 
     if (this.isMenuOpen) {
       menuIcon?.classList.add('d-none');
       closeIcon?.classList.remove('d-none');
-      navbar?.classList.add('d-block');
+      navbar?.classList.add('expand');
     } else {
       menuIcon?.classList.remove('d-none');
       closeIcon?.classList.add('d-none');
-      navbar?.classList.remove('d-block');
+      navbar?.classList.remove('expand');
     }
   }
 

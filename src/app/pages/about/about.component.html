@@ -3,9 +3,12 @@
     class="container container-about d-flex align-items-center justify-content-between"
   >
     <div class="image-area" data-aos="zoom-in-left">
-      <h5>Especialização</h5>
+      <h5>Especializações</h5>
 
-      <div class="card-skill-area">
+      <div class="card-skill-area" (scroll)="onScroll($event)">
+        <div class="arrow-bottom" *ngIf="arrowVisible">
+          <fa-icon [icon]="faChevronDown"></fa-icon>
+        </div>
         <div class="card-skill" *ngFor="let specialization of specializations">
           <h3>
             <fa-icon [icon]="specialization.icon"></fa-icon>

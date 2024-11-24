@@ -46,11 +46,18 @@
       <div class="container-modal">
         <div class="modal-body">
           <div class="header">
-            <h3>{{ selectedProject.title }} é um app para acesso a cultura</h3>
+            <h3>{{ selectedProject.title }}</h3>
 
-            <div class="d-flex align-items-center justify-content-between">
+            <div
+              class="d-flex align-items-center justify-content-between data-user"
+            >
               <div class="d-flex description-area">
-                <div class="image-header"></div>
+                <div
+                  class="image-header"
+                  [ngStyle]="{
+                    'background-image': 'url(' + selectedProject.icon + ')'
+                  }"
+                ></div>
                 <div class="dev-description">
                   <h5>Gustavo Henrique</h5>
                   <p>
@@ -83,6 +90,33 @@
             class="img-fluid"
             alt="Project Image"
           />
+
+          <p class="description-project">
+            {{ selectedProject.description }}
+          </p>
+
+          <div
+            class="footer-modal d-flex align-items-center justify-content-between"
+          >
+            <div class="line"></div>
+            <div
+              class="circle-image"
+              [ngStyle]="{
+                'background-image': 'url(' + selectedProject.icon + ')'
+              }"
+            ></div>
+            <div class="line"></div>
+          </div>
+          <div class="footer-information">
+            <h5>Gustavo Henrique</h5>
+            <p>
+              We create digital solutions that rock
+              <span class="material-symbols-rounded rocket-icon">
+                rocket_launch
+              </span>
+            </p>
+            <div class="button-view">Ver projeto</div>
+          </div>
         </div>
       </div>
     </div>

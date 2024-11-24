@@ -106,11 +106,16 @@
   overflow: hidden;
   transition: 0.5s;
   padding-right: 2px;
+  position: relative !important;
 }
 
 .box-experience-scroll:hover {
   overflow-y: scroll;
   padding-right: 18px !important;
+
+  .arrow-bottom {
+    opacity: 0;
+  }
 }
 
 .box-experience-scroll::-webkit-scrollbar {
@@ -203,6 +208,14 @@
   .img-experience {
     width: 400px;
   }
+
+  .divider {
+    margin: 35px 0 35px 0;
+  }
+
+  .arrow-bottom {
+    display: none !important;
+  }
 }
 
 @media (max-width: 740px) {
@@ -215,4 +228,32 @@
   .timing-area {
     align-items: flex-start !important;
   }
+}
+
+.arrow-bottom {
+  max-width: 862px;
+  width: 862px;
+  height: 80px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background: -moz-linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 10%,
+    rgb(255, 255, 255) 65%
+  );
+  background: -webkit-linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 10%,
+    rgb(255, 255, 255) 65%
+  );
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 10%,
+    rgb(255, 255, 255) 65%
+  );
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  transition: opacity 0.3s ease-in-out;
 }

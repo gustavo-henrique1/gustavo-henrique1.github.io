@@ -61,7 +61,11 @@
 <span class="navbar-toggler-icon"></span> -->
 
 <div class="nav-menu fixed-top d-flex">
-  <div class="container-menu" [ngClass]="{ 'menu-shadow': isScrolled }">
+  <div
+    class="container-menu"
+    [ngClass]="{ 'menu-shadow': isScrolled }"
+    id="containerMenu"
+  >
     <div class="brand-icon">
       <a class="navbar-brand" href="#home">
         <span data-aos="fade-up" data-aos-delay="100">G</span>

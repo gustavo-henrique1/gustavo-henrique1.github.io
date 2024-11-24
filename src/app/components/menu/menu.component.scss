@@ -285,11 +285,13 @@ ul {
 
   .container-menu {
     width: 100%;
-    height: auto;
+    height: 75px !important;
+    overflow: hidden !important;
     min-width: unset;
     flex-direction: column;
     height: auto;
     margin-top: 43px;
+    transition: 0.5s ease-in-out;
   }
 
   .brand-icon {
@@ -300,12 +302,8 @@ ul {
   }
 
   .list-menu {
-    display: none;
-  }
-
-  .list-menu {
     width: 100%;
-    margin-top: 40px;
+    margin-top: 30px;
 
     ul {
       padding: 0 !important;
@@ -320,6 +318,6 @@ ul {
   }
 }
 
-.d-block {
-  display: block !important;
+.expand {
+  height: 345px !important;
 }

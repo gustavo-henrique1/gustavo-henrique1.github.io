@@ -8,8 +8,11 @@
   </div>
   <div class="text">
     <div class="about-project">
-      <div class="icon-project"></div>
-      <p>SafeRoute</p>
+      <div
+        class="icon-project"
+        [style.backgroundImage]="'url(' + project.icon + ')'"
+      ></div>
+      <p>{{ project.name }}</p>
     </div>
     <div class="views">
       <div class="icon-text favorite">

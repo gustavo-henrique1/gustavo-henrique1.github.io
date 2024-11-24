@@ -87,7 +87,13 @@
           <div *ngIf="i == 0" class="divider"></div>
         </div>
       </div>
-      <div class="box-experience box-experience-scroll">
+      <div
+        class="box-experience box-experience-scroll"
+        (scroll)="onScroll($event)"
+      >
+        <div class="arrow-bottom" *ngIf="arrowVisible">
+          <fa-icon [icon]="faChevronDown"></fa-icon>
+        </div>
         <div *ngFor="let card of certifications; let i = index">
           <app-card-experience
             [imageUrl]="card.imageUrl"
