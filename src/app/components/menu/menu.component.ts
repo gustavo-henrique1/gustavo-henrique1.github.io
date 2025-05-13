@@ -22,6 +22,19 @@ export class MenuComponent {
   faDownload = faCloudArrowDown;
   isMenuOpen = false;
 
+  darkMode = false;
+  iconMenuDarkModeString = 'light_mode';
+
+  ngOnInit() {
+    this.onWindowScroll();
+    const darkModeCookie = this.getCookie('darkMode');
+    this.darkMode = darkModeCookie === 'true';
+    document.body.classList.toggle('dark-mode', this.darkMode);
+    this.togleIconMenuDarkMode();
+    window.addEventListener('resize', this.onResize.bind(this));
+    this.onResize();
+  }
+
   toggleIconMenu() {
     this.isMenuOpen = !this.isMenuOpen;
     const menuIcon = document.getElementById('menu-icon');
@@ -65,30 +78,17 @@ export class MenuComponent {
     });
   }
 
-  ngOnInit() {
-    this.onWindowScroll();
-    const darkModeCookie = this.getCookie('darkMode');
-    this.darkMode = darkModeCookie === 'true';
-    document.body.classList.toggle('dark-mode', this.darkMode);
-  }
-
-  darkMode = false;
-
   toggleDarkMode() {
     this.darkMode = !this.darkMode;
     document.body.classList.toggle('dark-mode', this.darkMode);
     this.setCookie('darkMode', this.darkMode ? 'true' : 'false', 30);
 
-    const menuLight = document.getElementById('menu-icon-light');
-    const menuDark = document.getElementById('menu-icon-dark');
+    this.togleIconMenuDarkMode();
+  }
 
-    if (this.darkMode) {
-      menuLight?.classList.add('d-none');
-      menuDark?.classList.remove('d-none');
-    } else {
-      menuLight?.classList.remove('d-none');
-      menuDark?.classList.add('d-none');
-    }
+  togleIconMenuDarkMode() {
+    if (this.darkMode) this.iconMenuDarkModeString = 'dark_mode';
+    else this.iconMenuDarkModeString = 'light_mode';
   }
 
   setCookie(name: string, value: string, days: number) {
@@ -107,5 +107,14 @@ export class MenuComponent {
       if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
     }
     return '';
+  }
+
+  onResize() {
+    const width = window.innerWidth;
+    const navbar = document.getElementById('containerMenu');
+
+    if (width > 1200) {
+      navbar?.classList.remove('expand');
+    }
   }
 }
