@@ -16,6 +16,7 @@ import { CardExperienceComponent } from "./components/card-experience/card-exper
 import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
 import { environment } from "../environments/environment";
+import { TecnologiesComponent } from './pages/tecnologies/tecnologies.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { environment } from "../environments/environment";
     PortfolioComponent,
     FooterComponent,
     CardExperienceComponent,
+    TecnologiesComponent,
   ],
   imports: [
     BrowserModule,

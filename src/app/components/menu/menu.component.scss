@@ -303,7 +303,7 @@ ul {
 
   .list-menu {
     width: 100%;
-    margin-top: 30px;
+    margin-top: 40px;
 
     ul {
       padding: 0 !important;
@@ -315,9 +315,10 @@ ul {
 
   .btn-expand {
     display: unset !important;
+    color: var(--text-color);
   }
 }
 
 .expand {
-  height: 345px !important;
+  height: 355px !important;
 }

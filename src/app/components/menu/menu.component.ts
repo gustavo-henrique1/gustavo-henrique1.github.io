@@ -91,12 +91,6 @@ export class MenuComponent {
     }
   }
 
-  downloadCv() {
-    const url =
-      'https://www.dropbox.com/scl/fi/ezifaj3lnbsdgfkc3sln0/curriculo-gustavo.pdf?rlkey=zlc9wljs98sbwxqj895gyf79a&st=kysvkdyb&dl=1';
-    saveAs(url, '_blank');
-  }
-
   setCookie(name: string, value: string, days: number) {
     const date = new Date();
     date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
