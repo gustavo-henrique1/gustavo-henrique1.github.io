@@ -51,4 +51,8 @@ export class PortfolioComponent implements OnInit {
     const modal = new bootstrap.Modal(modalElement!);
     modal.show();
   }
+
+  goToLink() {
+    window.open(this.selectedProject.urlProject, '_blank');
+  }
 }

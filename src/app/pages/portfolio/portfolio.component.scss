@@ -58,6 +58,12 @@
   font-size: 14px;
 }
 
+.button-view:hover {
+  transition: 0.3s;
+  background: var(--primary-color);
+  cursor: pointer;
+}
+
 .modal {
   button {
     width: 32px;
