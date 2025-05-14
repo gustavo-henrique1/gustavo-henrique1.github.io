@@ -1,8 +1,27 @@
-<div class="card d-flex">
-  <div class="icon-border">
-    <fa-icon [icon]="icon" class="d-flex icon"></fa-icon>
+<div
+  class="card d-flex position-relative star-card"
+  (mouseenter)="!isMobile && (showStars = true)"
+  (mouseleave)="!isMobile && (showStars = false)"
+  (click)="toggleStars()"
+>
+  <div>
+    <div class="icon-border">
+      <fa-icon [icon]="icon" class="d-flex icon"></fa-icon>
+    </div>
   </div>
+
   <p>
     <span class="title">{{ title }}</span> {{ description }}
   </p>
+
+  <div class="stars-container" *ngIf="showStars">
+    <fa-icon
+      *ngFor="let star of stars; let i = index"
+      [icon]="['fas', 'star']"
+      [ngClass]="{
+        'text-warning': i < knowledgeLevel,
+        'text-secondary': i >= knowledgeLevel
+      }"
+    ></fa-icon>
+  </div>
 </div>

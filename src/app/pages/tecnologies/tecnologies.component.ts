@@ -20,6 +20,7 @@ export class TecnologiesComponent {
       icon: faAngular,
       title: 'Angular',
       progress: 'width: 90%',
+      knowledgeLevel: 4,
       description: `é um framework JavaScript para desenvolver aplicações web
             escaláveis e de alto desempenho.`,
     },
@@ -27,6 +28,7 @@ export class TecnologiesComponent {
       icon: faJs,
       title: 'JavaScript',
       progress: 'width: 70%',
+      knowledgeLevel: 4,
       description: `é uma linguagem de programação versátil usada para criar
             interatividade em páginas web e aplicativos.`,
     },
@@ -34,6 +36,7 @@ export class TecnologiesComponent {
       icon: faSass,
       title: 'SCSS',
       progress: 'width: 90%',
+      knowledgeLevel: 4,
       description: `é uma linguagem de extensão do CSS, oferecendo recursos como
             variáveis e reutilização de estilos.`,
     },
@@ -41,6 +44,7 @@ export class TecnologiesComponent {
       icon: faCss3,
       title: 'CSS',
       progress: 'width: 90%',
+      knowledgeLevel: 4,
       description: `é uma linguagem de estilo usada para definir a estilização, aparência e o
             layout de páginas web.`,
     },
@@ -48,6 +52,7 @@ export class TecnologiesComponent {
       icon: faBootstrap,
       title: 'Bootstrap',
       progress: 'width: 60%',
+      knowledgeLevel: 3,
       description: `é um framework CSS que facilita a criação de sites
             responsivos com componentes pré-estilizados e flexível.`,
     },
@@ -55,6 +60,7 @@ export class TecnologiesComponent {
       icon: faFigma,
       title: 'Figma',
       progress: 'width: 70%',
+      knowledgeLevel: 4,
       description: `é uma ferramenta de design colaborativo para criar interfaces
             e protótipos de forma interativa.`,
     },
@@ -62,6 +68,7 @@ export class TecnologiesComponent {
       icon: faGithub,
       title: 'GitHub',
       progress: 'width: 70%',
+      knowledgeLevel: 3,
       description: `é uma plataforma de hospedagem de código-fonte que facilita
             colaboração e controle de versões.`,
     },
@@ -69,6 +76,7 @@ export class TecnologiesComponent {
       icon: faGithub,
       title: 'GitHub',
       progress: 'width: 70%',
+      knowledgeLevel: 3,
       description: `é uma plataforma de hospedagem de código-fonte que facilita
             colaboração e controle de versões.`,
     },

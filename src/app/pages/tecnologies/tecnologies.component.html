@@ -11,19 +11,12 @@
       <h5>Principais tecnologias que adquiri conhecimento</h5>
     </div>
     <div class="card-area">
-      <!-- <app-project-card
-        *ngFor="let project of specializations; let i = index"
-        data-aos="fade-up"
-        data-aos-easing="ease-in-back"
-        [attr.data-aos-delay]="50 * (i + 1)"
-        [project]="project"
-      ></app-project-card> -->
-
       <app-technologie-card
         *ngFor="let specialization of specializations; let i = index"
         [icon]="specialization.icon"
         [title]="specialization.title"
         [description]="specialization.description"
+        [knowledgeLevel]="specialization.knowledgeLevel"
       ></app-technologie-card>
     </div>
   </div>
