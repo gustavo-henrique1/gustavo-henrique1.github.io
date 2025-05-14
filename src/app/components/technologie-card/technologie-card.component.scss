@@ -33,16 +33,11 @@ p {
   }
 }
 
-.card:hover {
-  transition: 0.3s;
-  cursor: pointer;
-  border: 1px solid var(--primary-color);
-}
-
 .star-card {
   position: relative;
 
   .stars-container {
+    opacity: 0;
     position: absolute;
     top: 40px;
     right: 20px;
@@ -56,5 +51,16 @@ p {
 
   .text-secondary {
     color: #ccc;
+  }
+}
+
+.card:hover {
+  transition: 0.3s;
+  cursor: pointer;
+  border: 1px solid var(--primary-color);
+
+  .stars-container {
+    transition: 0.4s;
+    opacity: 1;
   }
 }

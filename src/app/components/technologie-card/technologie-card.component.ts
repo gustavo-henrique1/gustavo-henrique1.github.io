@@ -1,5 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IconDefinition } from '@fortawesome/free-brands-svg-icons';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+
+import {
+  FontAwesomeModule,
+  FaIconLibrary,
+} from '@fortawesome/angular-fontawesome';
 
 @Component({
   selector: 'app-technologie-card',
@@ -13,19 +19,8 @@ export class TechnologieCardComponent implements OnInit {
   @Input() knowledgeLevel: number = 0;
 
   showStars: boolean = false;
+
   stars = new Array(5);
-  isMobile: boolean = false;
 
-  ngOnInit(): void {
-    this.isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-  }
-
-  toggleStars() {
-    if (this.isMobile) {
-      this.showStars = true;
-      setTimeout(() => {
-        this.showStars = false;
-      }, 5000);
-    }
-  }
+  ngOnInit(): void {}
 }

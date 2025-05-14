@@ -1,9 +1,4 @@
-<div
-  class="card d-flex position-relative star-card"
-  (mouseenter)="!isMobile && (showStars = true)"
-  (mouseleave)="!isMobile && (showStars = false)"
-  (click)="toggleStars()"
->
+<div class="card d-flex position-relative star-card">
   <div>
     <div class="icon-border">
       <fa-icon [icon]="icon" class="d-flex icon"></fa-icon>
@@ -14,7 +9,7 @@
     <span class="title">{{ title }}</span> {{ description }}
   </p>
 
-  <div class="stars-container" *ngIf="showStars">
+  <div class="stars-container">
     <fa-icon
       *ngFor="let star of stars; let i = index"
       [icon]="['fas', 'star']"
