@@ -2,11 +2,11 @@
   <div class="information d-flex align-items-center justify-content-between">
     <div class="header">
       <div class="photo d-flex align-items-center justify-content-center">
-        <img [src]="imageUrl" *ngIf="local != '2024 • 4 horas totais'" />
+        <img [src]="imageUrl" *ngIf="local != '2024 - 4 horas totais'" />
         <img
           class="image-udemy"
           [src]="imageUrl"
-          *ngIf="local === '2024 • 4 horas totais'"
+          *ngIf="local === '2024 - 4 horas totais'"
         />
       </div>
       <div>
@@ -16,13 +16,6 @@
     </div>
     <div class="timing-area">
       <span class="timing">
-        <span
-          class="material-symbols-rounded"
-          *ngIf="timing != 'Certificaddo de conclusão'"
-        >
-          calendar_month
-        </span>
-
         <span
           class="material-symbols-rounded icon"
           *ngIf="timing === 'Certificaddo de conclusão'"
@@ -35,13 +28,13 @@
     </div>
   </div>
   <div>
-    <p>
+    <p class="text">
       {{ text }}
     </p>
-    <p class="p-certfication" *ngIf="local === '2024 • 4 horas totais'">
+    <p class="p-certfication" *ngIf="local === '2024 - 4 horas totais'">
       <span>Nº do ertificado:</span> UC-f1033a08-829c-4969-9ad7-3d712a2c5e01
     </p>
-    <p class="p-certfication" *ngIf="local === '2024 • 4 horas totais'">
+    <p class="p-certfication" *ngIf="local === '2024 - 4 horas totais'">
       <span>URL:</span> ude.my/UC-f1033a08-829c-4969-9ad7-3d712a2c5e01
     </p>
   </div>

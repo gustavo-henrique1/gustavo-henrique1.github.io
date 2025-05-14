@@ -240,20 +240,24 @@
   background: -moz-linear-gradient(
     180deg,
     rgba(255, 255, 255, 0) 10%,
-    rgb(255, 255, 255) 65%
+    var(--background-color) 65%
   );
   background: -webkit-linear-gradient(
     180deg,
     rgba(255, 255, 255, 0) 10%,
-    rgb(255, 255, 255) 65%
+    var(--background-color) 65%
   );
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0) 10%,
-    rgb(255, 255, 255) 65%
+    var(--background-color) 65%
   );
   display: flex;
   align-items: flex-end;
   justify-content: center;
   transition: opacity 0.3s ease-in-out;
+
+  fa-icon {
+    color: var(--text-color);
+  }
 }

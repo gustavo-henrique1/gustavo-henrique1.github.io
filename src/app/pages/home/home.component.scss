@@ -1,44 +1,8 @@
 @import "aos/dist/aos.css";
 
-.background-image {
-  width: 100%;
-  height: 440px;
-  position: relative;
-
-  .bg-color {
-    width: 340px;
-    height: 340px;
-    background: var(--primary-color);
-    border-radius: 10px;
-    position: absolute;
-    top: 40px;
-    right: 0;
-    z-index: 1;
-  }
-
-  .bg-border {
-    width: 340px;
-    height: 340px;
-    border: 2px solid var(--border-color);
-    border-radius: 10px;
-    position: absolute;
-    top: 100px;
-    left: 40px;
-    z-index: 2;
-  }
-
-  img {
-    width: 320px !important;
-    position: absolute;
-    top: 0px;
-    left: 80px;
-    z-index: 3 !important;
-  }
-}
-
 h5 {
-  margin: 25px 0px 25px 0px !important;
-  color: var(--text-color);
+  margin: 40px 0px 40px 0px !important;
+  color: var(--subtext-color);
 }
 
 .text-home {
@@ -71,7 +35,6 @@ nav ul {
   align-items: center;
   gap: 16px;
   flex-wrap: wrap;
-  gap: 16px;
   padding: 0;
   margin: 0;
 }
@@ -130,6 +93,10 @@ nav ul {
   }
 }
 
+.image-area {
+  width: 50%;
+}
+
 // keyframes
 
 @keyframes balance {
@@ -156,27 +123,15 @@ nav ul {
     display: flex;
     align-items: flex-start !important;
   }
-
-  .bg-color {
-    top: 40px;
-    left: 45px !important;
-    right: unset;
-  }
-
-  .bg-border {
-    top: 100px;
-    left: 0px !important;
-  }
 }
 
 @media (max-width: 800px) {
-  .bg-color {
-    width: 240px !important;
-    height: 240px !important;
+  .container-about {
+    gap: 20px;
   }
-
-  .bg-border {
-    width: 240px !important;
-    height: 240px !important;
+  .image-area {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
   }
 }

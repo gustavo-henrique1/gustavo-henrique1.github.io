@@ -10,6 +10,9 @@ body {
   --subtext-color: #{$subtext-color};
   --border-color: #{$border-color};
   --secondary-color: #{$secondary-color};
+  --gradient-color: #{$gradient-color};
+  --subtext-item-color: #{$subtext-item-color};
+  --button-bg-color: #{$button-bg-color};
 }
 
 body.dark-mode {
@@ -21,6 +24,7 @@ body.dark-mode {
   --subtext-color: #{$subtext-color-dark};
   --border-color: #{$border-color-dark};
   --secondary-color: #{$secondary-color};
+  --button-bg-color: #{$button-bg-color-dark};
 }
 
 * {
@@ -95,6 +99,7 @@ h2 {
   font-weight: 700;
   width: fit-content;
   margin: 0;
+  margin-bottom: 10px;
 }
 
 // text-home
@@ -110,17 +115,16 @@ h4 {
 h5 {
   width: 100%;
   font-size: 18px;
-  color: var(--subtext-color);
+  color: var(--subtext-item-color);
   line-height: 1.6rem;
-  font-weight: 400;
   margin: 0;
+  margin-bottom: 10px;
 }
 
 // id-page
 h6 {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--primary-color);
-  font-weight: bold;
   letter-spacing: 1px;
   margin: 0;
 }
@@ -140,8 +144,28 @@ p {
 .header-section {
   display: flex;
   flex-direction: column;
-  gap: 6px;
   margin-bottom: 60px;
+}
+
+.tag {
+  width: fit-content;
+  background: var(--primary-color-light);
+  border-radius: 5px;
+  padding: 10px 25px;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+}
+
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--gradient-color)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 // ------------------------
 

@@ -30,21 +30,6 @@ export class PortfolioComponent implements OnInit {
       });
   }
 
-  likeProject(id: any): void {
-    if (id) {
-      this.portfolioService
-        .incrementLikes(id)
-        .then(() => {
-          console.log('Likes incremented');
-        })
-        .catch((error) => {
-          console.error('Error liking project:', error);
-        });
-    } else {
-      console.error('Project ID is not defined');
-    }
-  }
-
   openModal(project: any) {
     this.selectedProject = project;
     const modalElement = document.getElementById('projectModal');
@@ -54,5 +39,28 @@ export class PortfolioComponent implements OnInit {
 
   goToLink() {
     window.open(this.selectedProject.urlProject, '_blank');
+  }
+
+  shareProject(): void {
+    const url = window.location.href;
+
+    if (navigator.share) {
+      navigator
+        .share({
+          title: 'Confira este projeto!',
+          text: 'Dê uma olhada nesse projeto incrível:',
+          url: url,
+        })
+        .catch((error) => console.error('Erro ao compartilhar', error));
+    } else {
+      navigator.clipboard.writeText(url).then(
+        () => {
+          alert('Link copiado para a área de transferência!');
+        },
+        () => {
+          alert('Não foi possível copiar o link.');
+        }
+      );
+    }
   }
 }

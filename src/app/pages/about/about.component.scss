@@ -15,6 +15,7 @@ p {
   align-items: center;
   justify-content: flex-start;
   gap: 10px;
+  color: var(--subtext-color);
 }
 
 .emoji-p {
@@ -22,18 +23,16 @@ p {
 }
 
 .text-area {
-  width: 65%;
+  width: 50%;
 }
 
 .image-area {
-  width: 32%;
-  height: 450px;
+  width: 46%;
+  height: max-content;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
   box-sizing: border-box;
-  gap: 30px;
-  border-right: 1px solid var(--border-color);
 }
 
 .image-area h5 {
@@ -139,9 +138,18 @@ p {
 }
 
 @media (max-width: 1200px) {
-  .image-area,
   .text-area {
     width: 100%;
     border: 0;
+  }
+
+  .image-area {
+    width: 50% !important;
+  }
+}
+
+@media (max-width: 800px) {
+  .container-about {
+    gap: 20px;
   }
 }

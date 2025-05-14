@@ -32,6 +32,7 @@
   padding: 80px;
   display: flex;
   flex-direction: column !important;
+  background-color: var(--background-color);
 }
 
 .description-project {
@@ -48,7 +49,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--text-color);
+  background: var(--button-bg-color);
   color: #ffffff;
   font-weight: 500;
   font-size: 14px;
@@ -113,6 +114,7 @@
       font-size: 26px;
       font-weight: 700;
       line-height: 1.5;
+      color: var(--text-color);
     }
 
     .image-header {
@@ -130,6 +132,10 @@
       justify-content: center;
       flex-direction: column;
       gap: 4px;
+
+      h5 {
+        margin: 0 !important;
+      }
 
       p {
         font-size: 14px;
@@ -163,11 +169,22 @@
 
       span {
         font-size: 16px;
+        color: var(--text-color);
       }
     }
 
     .description-buttons {
       gap: 13px;
+    }
+  }
+
+  .icon-button:hover {
+    transition: 0.4s;
+    cursor: pointer;
+    background-color: var(--primary-color);
+
+    span {
+      color: #ffffff;
     }
   }
 
@@ -230,6 +247,10 @@
   }
 }
 
+.header-section {
+  margin-bottom: 35px !important;
+}
+
 .img-fluid {
   border-radius: 10px;
   margin-top: 30px;
@@ -240,6 +261,10 @@
     align-items: flex-start !important;
     flex-direction: column !important;
     gap: 20px;
+  }
+
+  .description-project {
+    font-size: 16px;
   }
 }
 

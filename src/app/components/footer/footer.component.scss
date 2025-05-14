@@ -13,9 +13,8 @@
   }
 }
 
-h4 {
-  color: var(--text-color);
-  font-style: normal;
+img {
+  margin-bottom: 15px;
 }
 
 p {
@@ -46,5 +45,9 @@ nav ul {
   .itens-menu ul {
     padding: 0 !important;
     margin-top: 35px;
+  }
+
+  .container {
+    margin-top: 30px !important;
   }
 }

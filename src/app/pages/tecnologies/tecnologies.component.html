@@ -6,9 +6,13 @@
     class="container container-technologies d-flex justify-content-start align-items-start flex-column"
   >
     <div class="header-section" data-aos="fade-in" data-aos-duration="1400">
-      <h6>Conhecimento</h6>
+      <div class="tag">
+        <h6>SKILLS</h6>
+      </div>
       <h2>Tecnologias</h2>
-      <h5>Principais tecnologias que adquiri conhecimento</h5>
+      <h5 class="gradient-text">
+        Principais tecnologias que adquiri conhecimento
+      </h5>
     </div>
     <div class="card-area">
       <app-technologie-card
@@ -17,6 +21,9 @@
         [title]="specialization.title"
         [description]="specialization.description"
         [knowledgeLevel]="specialization.knowledgeLevel"
+        data-aos="fade-up"
+        data-aos-easing="ease-in-back"
+        [attr.data-aos-delay]="50 * (i + 1)"
       ></app-technologie-card>
     </div>
   </div>

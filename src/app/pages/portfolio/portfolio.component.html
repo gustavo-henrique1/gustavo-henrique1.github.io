@@ -6,9 +6,14 @@
     class="container container-technologies d-flex justify-content-start align-items-start flex-column"
   >
     <div class="header-section" data-aos="fade-in" data-aos-duration="1400">
-      <h6>PORTFÓLIO</h6>
+      <div class="tag">
+        <h6>PORTFÓLIO</h6>
+      </div>
       <h2>Ultimos Projetos</h2>
-      <h5>Minhas principais criações e trabalhos recentes</h5>
+
+      <h5 class="gradient-text">
+        Minhas principais criações e trabalhos recentes
+      </h5>
     </div>
     <div class="card-area">
       <app-project-card
@@ -33,12 +38,6 @@
 >
   <button type="button" data-bs-dismiss="modal">
     <span class="material-symbols-rounded"> close </span>
-  </button>
-  <button class="button-left" type="button">
-    <span class="material-symbols-rounded"> arrow_back </span>
-  </button>
-  <button class="button-right" type="button">
-    <span class="material-symbols-rounded"> arrow_forward </span>
   </button>
 
   <div class="modal-dialog">
@@ -72,10 +71,7 @@
                 </div>
               </div>
               <div class="description-buttons d-flex">
-                <div class="icon-button">
-                  <span class="material-symbols-rounded"> favorite </span>
-                </div>
-                <div class="icon-button">
+                <div class="icon-button" (click)="shareProject()">
                   <span class="material-symbols-outlined">
                     prompt_suggestion
                   </span>

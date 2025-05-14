@@ -12,6 +12,10 @@
   }
 }
 
+.text {
+  color: var(--subtext-color);
+}
+
 .information {
   flex-grow: 1;
   min-width: 810px;
@@ -24,7 +28,11 @@
 
   span {
     font-size: 14px;
-    color: var(--subtext-color);
+    color: var(--text-color);
+  }
+
+  .timing {
+    color: var(--subtext-item-color) !important;
   }
 }
 

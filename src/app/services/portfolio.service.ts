@@ -1,6 +1,6 @@
-import { Injectable } from "@angular/core";
-import { environment } from "@environment/environment";
-import { initializeApp } from "firebase/app";
+import { Injectable } from '@angular/core';
+import { environment } from '@environment/environment';
+import { initializeApp } from 'firebase/app';
 import {
   getFirestore,
   collection,
@@ -9,16 +9,16 @@ import {
   updateDoc,
   increment,
   getDoc,
-} from "firebase/firestore";
+} from 'firebase/firestore';
 
 const app = initializeApp(environment.firebase);
 const firestore = getFirestore(app);
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class PortfolioService {
-  private projectsCollection = collection(firestore, "projects");
+  private projectsCollection = collection(firestore, 'projects');
 
   constructor() {}
 
@@ -27,7 +27,7 @@ export class PortfolioService {
       const querySnapshot = await getDocs(this.projectsCollection);
       return querySnapshot.docs.map((doc) => doc.data());
     } catch (error) {
-      console.error("Error fetching projects:", error);
+      console.error('Error fetching projects:', error);
       return [];
     }
   }
@@ -40,41 +40,11 @@ export class PortfolioService {
       if (projectDoc.exists()) {
         return { id: projectDoc.id, ...projectDoc.data() };
       } else {
-        throw new Error("Project not found");
+        throw new Error('Project not found');
       }
     } catch (error) {
-      console.error("Error fetching project by ID:", error);
+      console.error('Error fetching project by ID:', error);
       throw error;
-    }
-  }
-
-  async incrementLikes(projectId: string): Promise<void> {
-    try {
-      if (!projectId) {
-        throw new Error("Invalid project ID");
-      }
-
-      const projectDoc = doc(firestore, `projects/${projectId}`);
-      await updateDoc(projectDoc, {
-        likes: increment(1),
-      });
-    } catch (error) {
-      console.error("Error updating likes:", error);
-    }
-  }
-
-  async removeLike(projectId: string): Promise<void> {
-    try {
-      if (!projectId) {
-        throw new Error("Invalid project ID");
-      }
-
-      const projectDoc = doc(firestore, `projects/${projectId}`);
-      await updateDoc(projectDoc, {
-        likes: increment(-1),
-      });
-    } catch (error) {
-      console.error("Error updating likes:", error);
     }
   }
 }

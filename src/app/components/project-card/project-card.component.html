@@ -15,20 +15,7 @@
       <p>{{ project.name }}</p>
     </div>
     <div class="views">
-      <div class="icon-text favorite">
-        <span
-          class="material-symbols-outlined icon"
-          (click)="toggleLike()"
-          [ngClass]="{ liked: userHasLiked }"
-        >
-          favorite
-        </span>
-        <p class="likes">{{ project.likes || 0 }}</p>
-      </div>
-      <div class="icon-text">
-        <span class="material-symbols-outlined"> visibility </span>
-        <p>85</p>
-      </div>
+      <div class="tag-project">{{ project.tag }}</div>
     </div>
   </div>
 </div>

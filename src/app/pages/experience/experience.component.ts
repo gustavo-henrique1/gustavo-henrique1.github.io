@@ -22,8 +22,8 @@ export class ExperienceComponent implements OnInit {
       imageUrl: '../../../assets/images/alpe-logo.png',
       title: 'Desenvolvedor Front-end Jr',
       subtitle: 'ALPE',
-      timing: 'Set 2021 • Nov 2023 (2 Anos)',
-      local: 'São Paulo - SP • Brasil',
+      timing: 'Set 2021 - Nov 2023 (2 Anos)',
+      local: 'São Paulo - SP - Brasil',
       text: `Comecei a implementar fluxos mais complexos e completos nos
             projetos, e então passei a me envolver mais nas regras de negócios
             tomando conta do portal da empresa junto ao site institucional para
@@ -36,8 +36,8 @@ export class ExperienceComponent implements OnInit {
       imageUrl: '../../../assets/images/alpe-logo.png',
       title: 'Estagiário UI/UX',
       subtitle: 'ALPE',
-      timing: 'Set 2020 • Set 2021 (1 Ano)',
-      local: 'São Paulo - SP • Brasil',
+      timing: 'Set 2020 - Set 2021 (1 Ano)',
+      local: 'São Paulo - SP - Brasil',
       text: `Meu primeiro contato com um produto no mundo corporativo, em um
               time que apoiava todas squads na ideação de novos projetos, minha
               primeira tarefa foi ligar para os clientes aplicando uma
@@ -52,9 +52,9 @@ export class ExperienceComponent implements OnInit {
     {
       imageUrl: '../../../assets/images/sptech-logo.png',
       title: 'Análise e desenvolvimento de sistemas',
-      subtitle: 'SPTECH • Graduação',
-      timing: 'Jan 2020 • Dez 2021 (2 Anos)',
-      local: 'São Paulo - SP • Brasil',
+      subtitle: 'SPTECH - Graduação',
+      timing: 'Jan 2020 - Dez 2021 (2 Anos)',
+      local: 'São Paulo - SP - Brasil',
       text: `Durante o curso de Análise e Desenvolvimento de Sistemas na São
             Paulo Tech School, pude adquirir uma base sólida em programação, a
             metodologia prática foi essencial para o desenvolvimento das minhas
@@ -67,9 +67,9 @@ export class ExperienceComponent implements OnInit {
     {
       imageUrl: '../../../assets/images/sptech-logo.png',
       title: 'Liderança e Gestão em tecnologia',
-      subtitle: 'SPTECH • Pós-Graduação',
-      timing: 'Out 2022 • Nov 2023 (1 Ano)',
-      local: 'São Paulo - SP • Brasil',
+      subtitle: 'SPTECH - Pós-Graduação',
+      timing: 'Out 2022 - Nov 2023 (1 Ano)',
+      local: 'São Paulo - SP - Brasil',
       text: `A pós-graduação em Liderança e Gestão em Tecnologia na São Paulo
             Tech School foi transformadora. Aprendi a gerenciar equipes e
             projetos tecnológicos com eficácia, além de desenvolver habilidades
@@ -85,9 +85,9 @@ export class ExperienceComponent implements OnInit {
     {
       imageUrl: '../../../assets/images/logo-etec.png',
       title: 'Desenvolvimento de Sistemas',
-      subtitle: 'ETEC de Guaianazes • Técnico',
-      timing: 'Out 2018 • Dez 2019 (1 ano e 6 meses)',
-      local: 'São Paulo - SP • Brasil',
+      subtitle: 'ETEC de Guaianazes - Técnico',
+      timing: 'Out 2018 - Dez 2019 (1 ano e 6 meses)',
+      local: 'São Paulo - SP - Brasil',
       text: `O curso técnico de Desenvolvimento de Sistemas na ETEC de Guaianazes
             me proporcionou uma base sólida em programação. Durante o curso, aprendi diversas
             linguagens e conceitos fundamentais, o que facilitou meu entendimento de algoritmos
@@ -98,9 +98,9 @@ export class ExperienceComponent implements OnInit {
     {
       imageUrl: '../../../assets/images/logo-etec.png',
       title: 'Informática',
-      subtitle: 'ETEC de Guaianazes • Técnico',
-      timing: 'Out 2016 • Dez 2017 (1 ano e 6 meses)',
-      local: 'São Paulo - SP • Brasil',
+      subtitle: 'ETEC de Guaianazes - Técnico',
+      timing: 'Out 2016 - Dez 2017 (1 ano e 6 meses)',
+      local: 'São Paulo - SP - Brasil',
       text: `Cursar o técnico em Informática na ETEC de Guaianazes foi uma vivência muito positiva. 
             O curso abrangeu desde fundamentos de redes e hardware até introduções à programação, o que
             me deu uma visão ampla da área de TI. A prática constante e os projetos desenvolvidos
@@ -115,7 +115,7 @@ export class ExperienceComponent implements OnInit {
       title: 'Aprendendo Redux utilizano NGRX com Angular 13+',
       subtitle: 'Instrutor: Fredddy Cristian Maldonado Parra',
       timing: 'Certificado de conclusão',
-      local: '2024 • 4 horas totais',
+      local: '2024 - 4 horas totais',
       text: `Implementação de gerenciamento de estado em projetos Angular utilizando a biblioteca NGRX, 
             focado em conceitos como actions, reducers, effects e selectors.`,
     },
@@ -124,7 +124,7 @@ export class ExperienceComponent implements OnInit {
       title: 'Encoding Essential Skills UI/UX',
       subtitle: 'Diretora: Patrícia McKay Aronis',
       timing: 'Certificado de conclusão',
-      local: '2019 • 32 horas totais',
+      local: '2019 - 32 horas totais',
       text: `A certificação básica de UI/UX de 32 horas na Estação Hack foi uma experiência transformadora. 
             O curso abordou desde os princípios fundamentais de design até as melhores práticas para criar interfaces
             intuitivas e agradáveis. Com atividades práticas, pude aplicar conceitos de usabilidade e design centrado
@@ -136,7 +136,7 @@ export class ExperienceComponent implements OnInit {
       title: 'App Development Kotlin',
       subtitle: 'Diretora: Patrícia McKay Aronis',
       timing: 'Certificado de conclusão',
-      local: '2019 • 32 horas totais',
+      local: '2019 - 32 horas totais',
       text: `O curso proporcionou uma imersão prática e teórica na linguagem, com foco em desenvolver
             habilidades desde o básico até a criação de pequenas aplicações. A didática clara e os exercícios
             desafiadores foram fundamentais para consolidar o conhecimento. Além disso, o ambiente colaborativo
