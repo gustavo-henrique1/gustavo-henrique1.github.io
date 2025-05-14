@@ -10,11 +10,7 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 export class TechnologieCardComponent implements OnInit {
   @Input() icon!: IconDefinition;
   @Input() title!: String;
+  @Input() description!: String;
 
-  faStar = faStar;
-  stars: any = 0;
-
-  ngOnInit(): void {
-    // this.stars = new Array(this.avaliation);
-  }
+  ngOnInit(): void {}
 }

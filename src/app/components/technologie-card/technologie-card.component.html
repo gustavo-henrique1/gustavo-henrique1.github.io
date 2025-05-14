@@ -1,4 +1,8 @@
-<div class="card d-flex align-items-center justify-content-between">
-  <fa-icon [icon]="icon" class="d-flex align-items-center icon"></fa-icon>
-  <h3 class="title">{{ title }}</h3>
+<div class="card d-flex">
+  <div class="icon-border">
+    <fa-icon [icon]="icon" class="d-flex icon"></fa-icon>
+  </div>
+  <p>
+    <span class="title">{{ title }}</span> {{ description }}
+  </p>
 </div>
