@@ -7,6 +7,7 @@ import {
   faGithub,
   faFigma,
   faBootstrap,
+  faGitAlt,
 } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
@@ -73,12 +74,12 @@ export class TecnologiesComponent {
             colaboração e controle de versões.`,
     },
     {
-      icon: faGithub,
-      title: 'GitHub',
+      icon: faGitAlt,
+      title: 'GitFlow',
       progress: 'width: 70%',
       knowledgeLevel: 3,
-      description: `é uma plataforma de hospedagem de código-fonte que facilita
-            colaboração e controle de versões.`,
+      description: `é uma ramificação que organiza o desenvolvimento com
+       branches para features, releases e correções.`,
     },
   ];
 }

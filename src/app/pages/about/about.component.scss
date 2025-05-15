@@ -146,10 +146,20 @@ p {
   .image-area {
     width: 50% !important;
   }
+
+  .container-about {
+    gap: 30px;
+  }
 }
 
 @media (max-width: 800px) {
   .container-about {
     gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .image-area {
+    width: 100% !important;
   }
 }
