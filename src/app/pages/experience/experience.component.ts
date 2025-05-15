@@ -19,7 +19,7 @@ export class ExperienceComponent implements OnInit {
 
   experiences = [
     {
-      imageUrl: '../../../assets/images/alpe-logo.png',
+      imageUrl: 'assets/images/alpe-logo.png',
       title: 'Desenvolvedor Front-end Jr',
       subtitle: 'ALPE',
       timing: 'Set 2021 - Nov 2023 (2 Anos)',
@@ -33,7 +33,7 @@ export class ExperienceComponent implements OnInit {
             novos estagiários.`,
     },
     {
-      imageUrl: '../../../assets/images/alpe-logo.png',
+      imageUrl: 'assets/images/alpe-logo.png',
       title: 'Estagiário UI/UX',
       subtitle: 'ALPE',
       timing: 'Set 2020 - Set 2021 (1 Ano)',
@@ -50,7 +50,7 @@ export class ExperienceComponent implements OnInit {
 
   superior = [
     {
-      imageUrl: '../../../assets/images/sptech-logo.png',
+      imageUrl: 'assets/images/sptech-logo.png',
       title: 'Análise e desenvolvimento de sistemas',
       subtitle: 'SPTECH - Graduação',
       timing: 'Jan 2020 - Dez 2021 (2 Anos)',
@@ -65,7 +65,7 @@ export class ExperienceComponent implements OnInit {
             desafiador.`,
     },
     {
-      imageUrl: '../../../assets/images/sptech-logo.png',
+      imageUrl: 'assets/images/sptech-logo.png',
       title: 'Liderança e Gestão em tecnologia',
       subtitle: 'SPTECH - Pós-Graduação',
       timing: 'Out 2022 - Nov 2023 (1 Ano)',
@@ -83,7 +83,7 @@ export class ExperienceComponent implements OnInit {
 
   tecnic = [
     {
-      imageUrl: '../../../assets/images/logo-etec.png',
+      imageUrl: 'assets/images/logo-etec.png',
       title: 'Desenvolvimento de Sistemas',
       subtitle: 'ETEC de Guaianazes - Técnico',
       timing: 'Out 2018 - Dez 2019 (1 ano e 6 meses)',
@@ -96,7 +96,7 @@ export class ExperienceComponent implements OnInit {
             e o ambiente de aprendizado colaborativo ajudaram a aprimorar minhas capacidades.`,
     },
     {
-      imageUrl: '../../../assets/images/logo-etec.png',
+      imageUrl: 'assets/images/logo-etec.png',
       title: 'Informática',
       subtitle: 'ETEC de Guaianazes - Técnico',
       timing: 'Out 2016 - Dez 2017 (1 ano e 6 meses)',
@@ -111,7 +111,7 @@ export class ExperienceComponent implements OnInit {
 
   certifications = [
     {
-      imageUrl: '../../../assets/images/logo-udemy.png',
+      imageUrl: 'assets/images/logo-udemy.png',
       title: 'Aprendendo Redux utilizano NGRX com Angular 13+',
       subtitle: 'Instrutor: Fredddy Cristian Maldonado Parra',
       timing: 'Certificado de conclusão',
@@ -120,7 +120,7 @@ export class ExperienceComponent implements OnInit {
             focado em conceitos como actions, reducers, effects e selectors.`,
     },
     {
-      imageUrl: '../../../assets/images/cellep-logo.webp',
+      imageUrl: 'assets/images/cellep-logo.webp',
       title: 'Encoding Essential Skills UI/UX',
       subtitle: 'Diretora: Patrícia McKay Aronis',
       timing: 'Certificado de conclusão',
@@ -132,7 +132,7 @@ export class ExperienceComponent implements OnInit {
             feedback constante e novas perspectivas.`,
     },
     {
-      imageUrl: '../../../assets/images/madcode-logo.png',
+      imageUrl: 'assets/images/madcode-logo.png',
       title: 'App Development Kotlin',
       subtitle: 'Diretora: Patrícia McKay Aronis',
       timing: 'Certificado de conclusão',
