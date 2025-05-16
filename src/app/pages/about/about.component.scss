@@ -15,11 +15,17 @@ p {
   align-items: center;
   justify-content: flex-start;
   gap: 10px;
-  color: var(--subtext-color);
+  color: var(--text-color);
 }
 
-.emoji-p {
-  color: var(--text-color);
+.line-and-title {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  .line-title {
+    width: 60px;
+  }
 }
 
 .text-area {
@@ -37,7 +43,7 @@ p {
 
 .image-area h5 {
   font-weight: 500;
-  color: var(--text-color);
+  color: var(--title-color);
   font-size: 18px;
 }
 
@@ -91,11 +97,11 @@ p {
 }
 
 .card-skill-area::-webkit-scrollbar-thumb {
-  background-color: var(--subtext-color);
+  background-color: var(--text-color);
 }
 
 .card-skill-area::-webkit-scrollbar-track {
-  background: var(--background-color);
+  background: var(--background-white-color);
 }
 
 .card-skill {
@@ -108,7 +114,7 @@ p {
 
 .card-skill h3 {
   font-size: 16px;
-  color: var(--text-color);
+  color: var(--title-color);
   font-weight: 500;
   margin: 0;
   display: flex;
@@ -127,12 +133,12 @@ p {
 }
 
 .progress-bar {
-  background: var(--primary-color);
+  background: var(--title-color);
 }
 
 .card-skill p {
   font-size: 16px;
-  color: var(--text-color);
+  color: var(--title-color);
   margin: 0;
   line-height: 1.4rem;
 }

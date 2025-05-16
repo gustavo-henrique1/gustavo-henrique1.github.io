@@ -21,6 +21,7 @@ import {
   FaIconLibrary,
 } from '@fortawesome/angular-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { ProjectsComponent } from './pages/projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
     FooterComponent,
     CardExperienceComponent,
     TecnologiesComponent,
+    ProjectsComponent,
   ],
   imports: [
     BrowserModule,

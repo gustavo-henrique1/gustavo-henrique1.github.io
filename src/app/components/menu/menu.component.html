@@ -1,11 +1,15 @@
 <div class="nav-menu fixed-top d-flex">
   <div
     class="container-menu"
-    [ngClass]="{ 'menu-shadow': isScrolled }"
+    [ngClass]="{
+      'menu-shadow': isScrolled,
+      'background-gray': isGraySection,
+      'background-white': !isGraySection
+    }"
     id="containerMenu"
   >
     <div class="brand-icon">
-      <a class="navbar-brand gradient-text" href="#home">
+      <a class="navbar-brand" href="#home">
         <img src="assets/images/logo-gustavo.png" alt="" style="width: 120px" />
       </a>
       <button
@@ -28,10 +32,10 @@
           <a class="nav-link" href="#about">Sobre</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#experience">Experiência</a>
+          <a class="nav-link" href="#tecnologies">Tecnologias</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#tecnologies">Tecnologias</a>
+          <a class="nav-link" href="#experience">Experiência</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#portfolio">Portfólio</a>

@@ -1,7 +1,7 @@
 .nav-menu {
   height: 120px;
   box-sizing: border-box;
-  background: var(--background-color);
+  background: transparent;
   padding: 0 100px 0 100px;
   position: fixed;
   z-index: 999;
@@ -23,24 +23,15 @@
 }
 
 .menu-shadow {
-  background: var(--background-card);
+  background: var(--background-gray-color);
   border: 1px solid var(--border-color);
   padding: 20px 30px;
   border-radius: 10px;
 }
 
-.navbar-brand {
-  font-size: 22px;
-  font-weight: 600;
-  position: relative;
-  text-decoration: none;
-  color: var(--text-color);
-  cursor: pointer;
-}
-
 .icon {
   font-size: 24px;
-  color: var(--text-color);
+  color: var(--title-color);
 }
 
 .button-mode {
@@ -48,7 +39,7 @@
   justify-content: flex-end;
   border: none;
   outline: none;
-  color: var(--secondary-color);
+  color: var(--title-color);
   background: transparent;
   cursor: auto;
 }
@@ -56,7 +47,7 @@
 .icon-mode {
   font-size: 24px;
   cursor: pointer;
-  color: var(--primary-color);
+  color: var(--title-color);
   transition: 0s !important;
 }
 
@@ -79,12 +70,13 @@ ul {
 
 .nav-link:hover {
   transition: 0.3s;
-  color: var(--primary-color);
+  color: var(--title-color);
 }
 
 .nav-link.active {
   transition-delay: 0.2s;
-  color: var(--primary-color);
+  color: var(--title-color);
+  font-weight: bold;
 }
 
 .btn-expand {
@@ -143,7 +135,7 @@ ul {
 
   .btn-expand {
     display: unset !important;
-    color: var(--text-color);
+    color: var(--title-color);
   }
 }
 

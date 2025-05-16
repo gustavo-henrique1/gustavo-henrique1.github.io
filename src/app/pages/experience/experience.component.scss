@@ -10,11 +10,21 @@
 
 .sub-menu-text {
   margin: 0 0 10px 0 !important;
-  color: var(--text-color);
+  color: var(--title-color);
 }
 
 .sub-menu-text:nth-of-type(2) {
   margin: 25px 0 10px 0 !important;
+}
+
+.line-and-title {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  .line-title {
+    width: 60px;
+  }
 }
 
 .option {
@@ -25,8 +35,8 @@
   padding: 15px !important;
   cursor: pointer;
   transition: 0.5s;
-  background: var(--background-color);
-  border: 1px solid var(--background-color);
+  background: var(--background-white-color);
+  border: 1px solid var(--background-white-color);
 
   .icon-text {
     gap: 12px;
@@ -34,18 +44,18 @@
     p {
       font-size: 16px;
       font-weight: 500;
-      color: var(--text-color);
+      color: var(--title-color);
       margin: 0;
       transition: 0.3s;
     }
 
     span {
-      color: var(--text-color);
+      color: var(--title-color);
     }
   }
 
   .icon-arrow {
-    color: var(--text-color);
+    color: var(--title-color);
     opacity: 0;
     padding-right: 10px;
     transition: 0.3s;
@@ -53,7 +63,7 @@
 }
 
 .active-option {
-  background: var(--background-card);
+  background: var(--background-gray-color);
   border: 1px solid var(--border-color);
 
   .icon-arrow {
@@ -65,10 +75,10 @@
 .option:hover {
   .icon-text {
     p {
-      color: var(--primary-color);
+      color: var(--title-color);
     }
     span {
-      color: var(--primary-color);
+      color: var(--title-color);
     }
   }
 }
@@ -76,10 +86,10 @@
 .active-option:hover {
   .icon-text {
     p {
-      color: var(--text-color);
+      color: var(--title-color);
     }
     span {
-      color: var(--text-color);
+      color: var(--title-color);
     }
   }
 }
@@ -123,11 +133,11 @@
 }
 
 .box-experience-scroll::-webkit-scrollbar-thumb {
-  background-color: var(--subtext-color);
+  background-color: var(--text-color);
 }
 
 .box-experience-scroll::-webkit-scrollbar-track {
-  background: var(--background-color);
+  background: var(--background-white-color);
 }
 
 .divider {
@@ -146,7 +156,7 @@
 
 .experience h2 {
   font-size: 20px;
-  color: var(--text-color);
+  color: var(--title-color);
   font-weight: 600;
 }
 
@@ -156,7 +166,7 @@
 
 .experience h3 {
   font-size: 20px;
-  color: var(--primary-color);
+  color: var(--title-color);
   font-weight: 500;
   margin: 25px 0 !important;
 }
@@ -165,7 +175,9 @@
   .container-technologies,
   section {
     max-height: unset;
-    height: auto !important;
+    height: max-content !important;
+    box-sizing: border-box;
+    padding-bottom: 100px;
   }
 
   .experience-area {
@@ -240,17 +252,17 @@
   background: -moz-linear-gradient(
     180deg,
     rgba(255, 255, 255, 0) 10%,
-    var(--background-color) 65%
+    var(--background-white-color) 65%
   );
   background: -webkit-linear-gradient(
     180deg,
     rgba(255, 255, 255, 0) 10%,
-    var(--background-color) 65%
+    var(--background-white-color) 65%
   );
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0) 10%,
-    var(--background-color) 65%
+    var(--background-white-color) 65%
   );
   display: flex;
   align-items: flex-end;
@@ -258,6 +270,6 @@
   transition: opacity 0.3s ease-in-out;
 
   fa-icon {
-    color: var(--text-color);
+    color: var(--title-color);
   }
 }

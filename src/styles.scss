@@ -2,29 +2,22 @@
 @import "aos/dist/aos.css";
 
 body {
-  --background-color: #{$background-color};
-  --background-card: #{$background-card};
-  --primary-color: #{$primary-color};
-  --primary-color-light: #{$primary-color-light};
-  --text-color: #{$text-color};
-  --subtext-color: #{$subtext-color};
+  --background-white-color: #{$background-white-color};
+  --background-gray-color: #{$background-gray-color};
   --border-color: #{$border-color};
-  --secondary-color: #{$secondary-color};
-  --gradient-color: #{$gradient-color};
-  --subtext-item-color: #{$subtext-item-color};
-  --button-bg-color: #{$button-bg-color};
+  --title-color: #{$title-color};
+  --text-color: #{$text-color};
+  --text-gray: #{$text-gray};
+  --button-color: #{$button-color};
 }
 
 body.dark-mode {
-  --background-color: #{$background-color-dark};
-  --background-card: #{$background-card-dark};
-  --primary-color: #{$primary-color};
-  --primary-color-light: #{$primary-color-light-dark};
+  --background-white-color: #{$background-white-color-dark};
+  --background-gray-color: #{$background-gray-color-dark};
+  --title-color: #{$title-color-dark};
   --text-color: #{$text-color-dark};
-  --subtext-color: #{$subtext-color-dark};
-  --border-color: #{$border-color-dark};
-  --secondary-color: #{$secondary-color};
-  --button-bg-color: #{$button-bg-color-dark};
+  --text-gray: #{$text-gray-dark};
+  --button-color: #{$button-color-dark};
 }
 
 * {
@@ -39,7 +32,7 @@ html {
 }
 
 body {
-  background: var(--background-color);
+  background: var(--background-white-color);
 }
 
 ::-webkit-scrollbar {
@@ -49,7 +42,7 @@ body {
   background-color: var(--border-color);
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #{$primary-color};
+  background-color: var(--title-color);
   border-radius: 8px;
 }
 
@@ -61,6 +54,14 @@ section {
   max-width: 100vw !important;
   padding: 120px 100px 0 100px !important;
   margin-top: -24px !important;
+}
+
+.background-white {
+  background: var(--background-white-color) !important;
+}
+
+.background-gray {
+  background: var(--background-gray-color) !important;
 }
 
 .container {
@@ -88,24 +89,24 @@ section {
 h1 {
   font-size: 45px;
   font-weight: 900;
-  color: var(--text-color);
+  color: var(--title-color);
   margin: 0 !important;
 }
 
 // title
 h2 {
-  font-size: 30px;
-  color: var(--text-color);
+  font-size: 34px;
+  color: var(--title-color);
   font-weight: 700;
   width: fit-content;
   margin: 0;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 // text-home
 h4 {
   box-sizing: border-box;
-  color: var(--primary-color);
+  color: var(--title-color);
   font-size: 22px;
   font-style: italic;
   margin-bottom: 15px;
@@ -114,17 +115,18 @@ h4 {
 // sub-title
 h5 {
   width: 100%;
-  font-size: 18px;
-  color: var(--subtext-item-color);
+  font-size: 16px;
+  color: var(--title-color);
   line-height: 1.6rem;
   margin: 0;
   margin-bottom: 10px;
+  font-weight: 600;
 }
 
 // id-page
 h6 {
   font-size: 15px;
-  color: var(--primary-color);
+  color: var(--title-color);
   letter-spacing: 1px;
   margin: 0;
 }
@@ -132,13 +134,13 @@ h6 {
 // normal-text
 p {
   font-size: 16px;
-  color: var(--text-color);
+  color: var(--title-color);
   line-height: 1.6rem;
   font-weight: 400;
 }
 
 .icon-title {
-  color: var(--text-color);
+  color: var(--title-color);
 }
 
 .header-section {
@@ -149,24 +151,32 @@ p {
 
 .tag {
   width: fit-content;
-  background: var(--primary-color-light);
+  background: var(--background-gray-color);
   border-radius: 5px;
   padding: 10px 25px;
   box-sizing: border-box;
-  margin-bottom: 30px;
+  margin-bottom: 16px;
 }
 
-.gradient-text {
-  background: linear-gradient(
-    90deg,
-    var(--primary-color),
-    var(--gradient-color)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
+// line-title
+
+.lines-and-title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 30px;
 }
+
+.line-title {
+  min-width: 10px;
+  width: 100%;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--title-color);
+}
+
 // ------------------------
 
 // mediaframe
@@ -217,6 +227,14 @@ p {
 
   .header-section {
     align-items: flex-start !important;
+  }
+
+  .line-title {
+    display: none !important;
+  }
+
+  .lines-and-title {
+    justify-content: flex-start;
   }
 }
 

@@ -1,7 +1,7 @@
 .card {
   width: 262.5px;
   height: 250px;
-  background: var(--background-color);
+  background: var(--background-white-color);
   border: none;
 }
 
@@ -58,7 +58,7 @@
 p {
   font-size: 14px;
   margin: 0;
-  color: var(--text-color);
+  color: var(--title-color);
 }
 
 .icon-project {
@@ -80,11 +80,11 @@ p {
     box-sizing: border-box;
     padding: 2px 15px;
     border-radius: 3px;
-    background: var(--primary-color-light) !important;
+    background: var(--title-color-light) !important;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--primary-color);
+    color: var(--title-color);
     font-size: 14px;
     font-weight: 600;
   }
@@ -95,11 +95,11 @@ p {
   align-items: center;
   justify-content: center;
   gap: 5px;
-  color: var(--text-color);
+  color: var(--title-color);
 
   p {
     font-size: 12px;
-    color: var(--text-color);
+    color: var(--title-color);
   }
 
   span {

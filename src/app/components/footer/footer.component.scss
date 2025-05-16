@@ -9,7 +9,7 @@
   padding: 40px 0;
 
   p {
-    color: var(--text-color);
+    color: var(--title-color);
   }
 }
 
@@ -34,7 +34,7 @@ nav ul {
   flex-direction: column;
   gap: 14px !important;
   list-style-type: none;
-  color: var(--text-color);
+  color: var(--title-color);
 }
 
 @media (max-width: 1200px) {

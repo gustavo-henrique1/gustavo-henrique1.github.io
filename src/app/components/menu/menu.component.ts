@@ -25,6 +25,8 @@ export class MenuComponent {
   darkMode = false;
   iconMenuDarkModeString = 'light_mode';
 
+  isGraySection = true;
+
   ngOnInit() {
     this.onWindowScroll();
     const darkModeCookie = this.getCookie('darkMode');
@@ -76,6 +78,24 @@ export class MenuComponent {
         link.classList.add('active');
       }
     });
+
+    const sectionOrder = [
+      'home',
+      'about',
+      'tecnologies',
+      'experience',
+      'portfolio',
+    ];
+    const currentIndex = sectionOrder.indexOf(current);
+
+    let isSectionGray = true;
+    if (currentIndex >= 0) {
+      isSectionGray = currentIndex % 2 === 0;
+    }
+    this.isGraySection = !isSectionGray;
+    if (window.pageYOffset <= 5) {
+      this.isGraySection = true;
+    }
   }
 
   toggleDarkMode() {
