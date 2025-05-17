@@ -22,3 +22,13 @@
 .tag {
   background: var(--background-white-color);
 }
+
+@media (max-width: 600px) {
+  .card-area app-technologie-card {
+    width: 100% !important;
+
+    .card {
+      width: max-content !important;
+    }
+  }
+}

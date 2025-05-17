@@ -11,7 +11,6 @@ import * as bootstrap from 'bootstrap';
 export class PortfolioComponent implements OnInit {
   projects: any[] = [];
   selectedProject: any = {};
-  teste: any;
 
   constructor(private portfolioService: PortfolioService) {}
 

@@ -32,7 +32,6 @@ h5 .emoji-text {
 
 .tag {
   background: var(--background-white-color);
-  // border: 1px solid var(--border-color);
   margin-bottom: 10px !important;
 }
 
@@ -101,17 +100,6 @@ nav ul {
 
 .image-area {
   width: 50%;
-}
-
-// keyframes
-
-@keyframes balance {
-  from {
-    transform: rotate(8deg);
-  }
-  to {
-    transform: rotate(-8deg);
-  }
 }
 
 // mediaframe

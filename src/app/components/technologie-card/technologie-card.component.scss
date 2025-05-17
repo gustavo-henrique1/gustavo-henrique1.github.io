@@ -64,3 +64,13 @@ p {
     opacity: 1;
   }
 }
+
+@media (max-width: 600px) {
+  .card {
+    width: 100% !important;
+  }
+
+  .stars-container {
+    top: 60px !important;
+  }
+}
