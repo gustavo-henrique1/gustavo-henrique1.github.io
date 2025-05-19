@@ -1,5 +1,4 @@
 .container-menu {
-  border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
   box-sizing: border-box;
   padding: 60px 0;
@@ -19,6 +18,21 @@ img {
 
 p {
   margin-bottom: 24px;
+}
+
+.quote {
+  font-size: 30px;
+  color: var(--title-color);
+  margin-bottom: 2px;
+}
+
+.itens-menu h5 {
+  font-style: italic;
+  margin: 0;
+}
+
+.itens-menu p {
+  color: var(--text-color);
 }
 
 nav ul {
@@ -49,5 +63,9 @@ nav ul {
 
   .container {
     margin-top: 30px !important;
+  }
+
+  .quote {
+    margin-top: 20px;
   }
 }

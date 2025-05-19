@@ -3,7 +3,16 @@
     class="container container-menu d-flex align-itens-center justify-content-between"
   >
     <div class="">
-      <img src="assets/images/logo-gustavo.png" alt="" style="width: 100px" />
+      <img
+        src="assets/images/logo-gustavo.png"
+        style="width: 100px"
+        *ngIf="!isDarkMode"
+      />
+      <img
+        src="assets/images/logo-gustavo-dark.png"
+        style="width: 100px"
+        *ngIf="isDarkMode"
+      />
       <p>
         Design e código com propósito. <br />
         Projetado com paixão e desenvolvido <br />
@@ -47,23 +56,9 @@
       </ul>
     </div>
     <div class="itens-menu">
-      <ul>
-        <li class="nav-item">
-          <a class="nav-link" href="#home">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#about">Sobre</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#experience">Experiência</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#technologies">Conhecimento</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#portfolio">Portfólio</a>
-        </li>
-      </ul>
+      <i class="fa-solid fa-quote-left quote"></i>
+      <h5>A interface é a alma de uma aplicação.</h5>
+      <p>Linus Torvalds.</p>
     </div>
   </div>
   <div class="copy">

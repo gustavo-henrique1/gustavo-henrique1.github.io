@@ -26,6 +26,7 @@ export class MenuComponent {
   iconMenuDarkModeString = 'light_mode';
 
   isGraySection = true;
+  isDarkMode = false;
 
   ngOnInit() {
     this.onWindowScroll();
@@ -35,6 +36,13 @@ export class MenuComponent {
     this.togleIconMenuDarkMode();
     window.addEventListener('resize', this.onResize.bind(this));
     this.onResize();
+
+    this.checkDarkMode();
+    const observer = new MutationObserver(() => this.checkDarkMode());
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ['class'],
+    });
   }
 
   toggleIconMenu() {
@@ -136,5 +144,9 @@ export class MenuComponent {
     if (width > 1200) {
       navbar?.classList.remove('expand');
     }
+  }
+
+  checkDarkMode() {
+    this.isDarkMode = document.body.classList.contains('dark-mode');
   }
 }

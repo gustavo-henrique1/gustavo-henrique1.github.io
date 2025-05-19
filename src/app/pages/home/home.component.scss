@@ -93,7 +93,7 @@ nav ul {
 .button-cv:hover {
   .icon-cv,
   .text-cv {
-    color: #ffffff !important;
+    color: var(--hover-text-button) !important;
     z-index: 2;
   }
 }

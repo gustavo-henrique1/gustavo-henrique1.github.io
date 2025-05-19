@@ -10,7 +10,18 @@
   >
     <div class="brand-icon">
       <a class="navbar-brand" href="#home">
-        <img src="assets/images/logo-gustavo.png" alt="" style="width: 120px" />
+        <img
+          src="assets/images/logo-gustavo.png"
+          alt=""
+          style="width: 120px"
+          *ngIf="!isDarkMode"
+        />
+        <img
+          src="assets/images/logo-gustavo-dark.png"
+          alt=""
+          style="width: 120px"
+          *ngIf="isDarkMode"
+        />
       </a>
       <button
         type="button"

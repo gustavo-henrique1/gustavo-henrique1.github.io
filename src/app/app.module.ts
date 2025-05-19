@@ -9,7 +9,6 @@ import { MenuComponent } from './components/menu/menu.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ExperienceComponent } from './pages/experience/experience.component';
-import { PortfolioComponent } from './pages/portfolio/portfolio.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CardExperienceComponent } from './components/card-experience/card-experience.component';
 import { AngularFireModule } from '@angular/fire/compat';
@@ -33,7 +32,6 @@ import { ProjectsComponent } from './pages/projects/projects.component';
     HomeComponent,
     AboutComponent,
     ExperienceComponent,
-    PortfolioComponent,
     FooterComponent,
     CardExperienceComponent,
     TecnologiesComponent,

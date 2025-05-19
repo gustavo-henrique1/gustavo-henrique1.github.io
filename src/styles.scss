@@ -4,11 +4,12 @@
 body {
   --background-white-color: #{$background-white-color};
   --background-gray-color: #{$background-gray-color};
-  --border-color: #{$border-color};
   --title-color: #{$title-color};
   --text-color: #{$text-color};
   --text-gray: #{$text-gray};
   --button-color: #{$button-color};
+  --hover-text-button: #{$hover-text-button};
+  --border-color: #{$border-color};
 }
 
 body.dark-mode {
@@ -18,6 +19,8 @@ body.dark-mode {
   --text-color: #{$text-color-dark};
   --text-gray: #{$text-gray-dark};
   --button-color: #{$button-color-dark};
+  --hover-text-button: #{$hover-text-button-dark};
+  --border-color: #{$border-color-dark};
 }
 
 * {

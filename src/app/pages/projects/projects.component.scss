@@ -7,6 +7,7 @@
 .text-area-projects {
   width: 40%;
   height: max-content !important;
+  min-height: 460px;
   display: flex;
   flex-direction: column;
   justify-content: space-between !important;
@@ -184,7 +185,7 @@
 
 .button-view:hover {
   transition: 0.3s;
-  background: var(--title-color);
+  background: #000000;
   cursor: pointer;
 }
 
@@ -312,7 +313,7 @@
     background-color: var(--title-color);
 
     span {
-      color: #ffffff;
+      color: var(--hover-text-button);
     }
   }
 
@@ -401,6 +402,11 @@
   .image-area-project,
   .itens-project {
     display: none !important;
+  }
+
+  .text-area-projects {
+    height: fit-content !important;
+    min-height: unset !important;
   }
 }
 
