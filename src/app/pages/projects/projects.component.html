@@ -33,7 +33,7 @@
     >
       <div class="card-project" (click)="openModal(selectedProject)">
         <div class="image-view"></div>
-        <img [src]="selectedProject.imageUrl" [alt]="selectedProject.name" />
+        <img [src]="selectedProject?.imageUrl" [alt]="selectedProject.name" />
       </div>
       <div class="card-project card-project-background"></div>
 
@@ -112,7 +112,7 @@
           </div>
 
           <img
-            [src]="selectedProject.imageUrl"
+            [src]="selectedProject?.imageUrl"
             class="img-fluid"
             alt="Project Image"
           />

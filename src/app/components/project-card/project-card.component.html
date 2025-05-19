@@ -1,7 +1,7 @@
 <div class="card d-flex position-relative">
   <div
     class="image"
-    [ngStyle]="{ 'background-image': 'url(' + project.imageUrl + ')' }"
+    [ngStyle]="{ 'background-image': 'url(' + project?.imageUrl + ')' }"
     (click)="handleClick(project)"
   >
     <div class="image-view"></div>
