@@ -28,7 +28,7 @@
       </div>
     </div>
     <div
-      class="image-area d-flex align-items-start justify-content-start"
+      class="image-area d-flex align-items-start justify-content-start image-area-project"
       data-aos="zoom-in-left"
     >
       <div class="card-project" (click)="openModal(selectedProject)">
@@ -43,6 +43,17 @@
           <p>/ 4</p>
         </div>
       </div>
+    </div>
+
+    <div class="card-area">
+      <app-project-card
+        *ngFor="let project of projects; let i = index"
+        data-aos="fade-up"
+        data-aos-easing="ease-in-back"
+        [attr.data-aos-delay]="50 * (i + 1)"
+        [project]="project"
+        [handleClick]="openModal.bind(this)"
+      ></app-project-card>
     </div>
   </div>
 </section>

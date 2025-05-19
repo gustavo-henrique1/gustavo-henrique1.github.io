@@ -43,7 +43,7 @@
   color: var(--title-color);
 }
 
-.image-area {
+.image-area-project {
   width: 684px;
   height: 460px;
   position: relative;
@@ -68,6 +68,7 @@
   background: var(--background-white-color);
   border: 1px solid var(--border-color);
   z-index: 1;
+  border-radius: 3px;
 }
 
 .card-project img {
@@ -75,9 +76,11 @@
   height: 100%;
   z-index: 2;
   object-fit: cover;
+  border-radius: 3px;
 }
 
 .image-view {
+  border-radius: 3px;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -124,6 +127,12 @@
       font-size: 25px;
     }
   }
+}
+
+.card-area {
+  display: none;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 // --------
@@ -384,11 +393,20 @@
   .text-area {
     justify-content: flex-start !important;
   }
+
+  .card-area {
+    display: flex;
+  }
+
+  .image-area-project,
+  .itens-project {
+    display: none !important;
+  }
 }
 
 @media (max-width: 800px) {
   .text-area,
-  .image-area {
+  .image-area-project {
     width: 100% !important;
   }
 }
@@ -404,7 +422,7 @@
     font-size: 16px;
   }
 
-  .image-area {
+  .image-area-project {
     height: 250px !important;
   }
 }
@@ -412,5 +430,15 @@
 @media (max-width: 720px) {
   .modal-body {
     padding: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .card-area app-project-card {
+    width: 100% !important;
+
+    .card {
+      width: 100% !important;
+    }
   }
 }

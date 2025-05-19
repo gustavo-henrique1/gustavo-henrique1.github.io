@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card d-flex position-relative">
   <div
     class="image"
     [ngStyle]="{ 'background-image': 'url(' + project.imageUrl + ')' }"
@@ -13,9 +13,6 @@
         [style.backgroundImage]="'url(' + project.icon + ')'"
       ></div>
       <p>{{ project.name }}</p>
-    </div>
-    <div class="views">
-      <div class="tag-project">{{ project.tag }}</div>
     </div>
   </div>
 </div>

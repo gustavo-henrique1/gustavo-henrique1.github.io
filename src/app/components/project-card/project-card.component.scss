@@ -1,7 +1,7 @@
 .card {
   width: 262.5px;
   height: 250px;
-  background: var(--background-white-color);
+  background: var(--background-gray-color);
   border: none;
 }
 
@@ -80,7 +80,7 @@ p {
     box-sizing: border-box;
     padding: 2px 15px;
     border-radius: 3px;
-    background: var(--title-color-light) !important;
+    background: var(--background-white-color) !important;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -111,27 +111,5 @@ p {
   .icon {
     font-size: 15px !important;
     transition: 0.5s;
-  }
-}
-
-.icon:hover {
-  cursor: pointer;
-  color: #ea64d9 !important;
-}
-
-.liked {
-  color: #ea64d9 !important;
-  animation: pulse 0.3s ease-in-out;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.5);
-  }
-  100% {
-    transform: scale(1);
   }
 }
