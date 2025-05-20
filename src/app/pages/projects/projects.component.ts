@@ -38,6 +38,26 @@ export class ProjectsComponent implements OnInit {
     this.selectedProject = project;
   }
 
+  nextProject() {
+    const currentIndex = this.projects.findIndex(
+      (p) => p === this.selectedProject
+    );
+    const nextIndex = currentIndex + 1;
+    if (nextIndex < this.projects.length) {
+      this.selectProject(this.projects[nextIndex]);
+    }
+  }
+
+  previousProject() {
+    const currentIndex = this.projects.findIndex(
+      (p) => p === this.selectedProject
+    );
+    const prevIndex = currentIndex - 1;
+    if (prevIndex >= 0) {
+      this.selectProject(this.projects[prevIndex]);
+    }
+  }
+
   goToLink() {
     window.open(this.selectedProject.urlProject, '_blank');
   }

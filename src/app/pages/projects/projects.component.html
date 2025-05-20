@@ -42,6 +42,20 @@
           <h2>0{{ selectedProject.id }}</h2>
           <p>/ 4</p>
         </div>
+        <div class="progress">
+          <div
+            class="status-progress"
+            [style.width.%]="selectedProject?.id * 25"
+          ></div>
+        </div>
+      </div>
+      <div class="buttons-select">
+        <div class="button-select" (click)="previousProject()">
+          <i class="fa-solid fa-arrow-left"></i>
+        </div>
+        <div class="button-select" (click)="nextProject()">
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
       </div>
     </div>
 
