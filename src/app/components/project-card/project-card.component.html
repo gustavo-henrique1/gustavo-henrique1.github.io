@@ -22,11 +22,10 @@
     <p class="title">Safe <span>Route</span></p>
     <p class="description">{{ project.description }}</p>
     <div class="technologies">
-      <fa-icon
-        *ngFor="let icon of project.icons"
-        [icon]="icon"
-        class="icon-prooject"
-      ></fa-icon>
+      <div *ngFor="let icon of project.icons" class="icon-text">
+        <fa-icon [icon]="icon" class="icon-prooject"></fa-icon>
+        <span>Teste</span>
+      </div>
     </div>
   </div>
   <div>

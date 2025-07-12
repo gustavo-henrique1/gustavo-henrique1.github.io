@@ -48,11 +48,15 @@ p {
 .star-card {
   position: relative;
 
+  .icon-star {
+    font-size: 10px !important;
+  }
+
   .stars-container {
     opacity: 0;
     position: absolute;
-    top: 40px;
-    right: 20px;
+    top: 14px;
+    right: 12px;
     display: flex;
     gap: 3px;
   }
@@ -68,7 +72,6 @@ p {
 
 .card:hover {
   transition: 0.3s;
-  cursor: pointer;
   border: 1px solid var(--title-color);
 
   .stars-container {
@@ -82,7 +85,7 @@ p {
     width: 100% !important;
   }
 
-  .stars-container {
-    top: 60px !important;
-  }
+  // .stars-container {
+  //   top: 60px !important;
+  // }
 }

@@ -41,6 +41,28 @@
       }
     }
   }
+
+  .icon-text {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+
+    span {
+      font-size: 14px;
+      display: inline-block;
+      max-width: 0;
+      opacity: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      transition: max-width 0.4s ease, opacity 0.4s ease;
+      margin-left: 8px; /* espaçamento entre ícone e texto */
+    }
+  }
+
+  .icon-text:hover span {
+    max-width: 200px; /* largura máxima para mostrar o texto todo */
+    opacity: 1;
+  }
 }
 
 .card:hover {

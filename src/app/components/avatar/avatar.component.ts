@@ -19,13 +19,16 @@ export class AvatarComponent implements AfterViewInit {
   private fbxLoader = new FBXLoader();
   private model: THREE.Object3D | null = null;
   private headBone: THREE.Object3D | null = null;
-
-  // Novos ossos dos braços
   private leftArmBone: THREE.Object3D | null = null;
   private rightArmBone: THREE.Object3D | null = null;
 
   private clock = new THREE.Clock();
   private mouse = new THREE.Vector2();
+
+  // >>> Variáveis para piscar naturalmente
+  private blinkTimer = 0;
+  private blinkDuration = 0.5; // em segundos
+  private blinkCooldown = 0.5 + Math.random() * 0.5;
 
   ngAfterViewInit(): void {
     this.initScene();
@@ -35,11 +38,13 @@ export class AvatarComponent implements AfterViewInit {
 
   private initScene(): void {
     const canvas = this.canvasRef.nativeElement;
-    const width = window.innerWidth;
-    const height = window.innerHeight;
+
+    // ❗ Ajuste aqui para reduzir o tamanho do canvas e evitar sobras
+    const width = 320; // Largura ideal ajustada para o avatar
+    const height = 400;
 
     this.scene = new THREE.Scene();
-    this.scene.background = null; // fundo transparente
+    this.scene.background = null;
 
     this.camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
     this.camera.position.set(0, 1.5, 1);
@@ -51,8 +56,6 @@ export class AvatarComponent implements AfterViewInit {
     });
     this.renderer.setSize(width, height);
     this.renderer.setPixelRatio(window.devicePixelRatio);
-
-    // Define cor transparente para o fundo do renderer
     this.renderer.setClearColor(0x000000, 0);
 
     const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
@@ -86,20 +89,9 @@ export class AvatarComponent implements AfterViewInit {
         this.model = fbx;
         this.scene.add(fbx);
 
-        // Ossos que queremos manipular
         this.headBone = fbx.getObjectByName('Head') || null;
         this.leftArmBone = fbx.getObjectByName('LeftArm') || null;
         this.rightArmBone = fbx.getObjectByName('RightArm') || null;
-
-        if (!this.headBone) {
-          console.warn('Cabeça ("Head") não encontrada no modelo!');
-        }
-        if (!this.leftArmBone) {
-          console.warn('Braço esquerdo ("LeftArm") não encontrado no modelo!');
-        }
-        if (!this.rightArmBone) {
-          console.warn('Braço direito ("RightArm") não encontrado no modelo!');
-        }
 
         const box = new THREE.Box3().setFromObject(fbx);
         const center = new THREE.Vector3();
@@ -117,8 +109,9 @@ export class AvatarComponent implements AfterViewInit {
   }
 
   private onWindowResize = () => {
-    const width = window.innerWidth;
-    const height = window.innerHeight;
+    // ❗ Evite usar window.innerWidth para canvas do avatar (use tamanho fixo)
+    const width = 320;
+    const height = 400;
 
     this.camera.aspect = width / height;
     this.camera.updateProjectionMatrix();
@@ -132,10 +125,9 @@ export class AvatarComponent implements AfterViewInit {
 
   private animate = () => {
     requestAnimationFrame(this.animate);
-
     this.controls.update();
 
-    // Rotacionar a cabeça com base na posição do mouse
+    // Rotação da cabeça
     if (this.headBone) {
       const maxRotationX = THREE.MathUtils.degToRad(15);
       const maxRotationY = THREE.MathUtils.degToRad(30);
@@ -144,12 +136,55 @@ export class AvatarComponent implements AfterViewInit {
       this.headBone.rotation.x = -this.mouse.y * maxRotationX;
     }
 
-    // Abaixar os braços para ficarem retos para baixo
+    // Braços para baixo
     if (this.leftArmBone) {
       this.leftArmBone.rotation.x = THREE.MathUtils.degToRad(90);
     }
     if (this.rightArmBone) {
       this.rightArmBone.rotation.x = THREE.MathUtils.degToRad(90);
+    }
+
+    // >>> Piscar naturalmente
+    const delta = this.clock.getDelta();
+    this.blinkTimer += delta;
+
+    if (this.model) {
+      this.model.traverse((child) => {
+        if (
+          (child as THREE.Mesh).morphTargetInfluences &&
+          (child as THREE.Mesh).morphTargetDictionary
+        ) {
+          const mesh = child as THREE.Mesh;
+          const dict = mesh.morphTargetDictionary!;
+          const influences = mesh.morphTargetInfluences!;
+
+          const blinkL = dict['eyeBlinkLeft'];
+          const blinkR = dict['eyeBlinkRight'];
+
+          if (blinkL !== undefined && blinkR !== undefined) {
+            if (this.blinkTimer >= this.blinkCooldown) {
+              const blinkProgress =
+                1 -
+                Math.abs(
+                  this.blinkTimer - this.blinkCooldown - this.blinkDuration / 2
+                ) /
+                  (this.blinkDuration / 2);
+              const blinkStrength = THREE.MathUtils.clamp(blinkProgress, 0, 1);
+
+              influences[blinkL] = blinkStrength;
+              influences[blinkR] = blinkStrength;
+
+              if (this.blinkTimer >= this.blinkCooldown + this.blinkDuration) {
+                this.blinkTimer = 0;
+                this.blinkCooldown = 3 + Math.random() * 3; // novo intervalo
+              }
+            } else {
+              influences[blinkL] = 0;
+              influences[blinkR] = 0;
+            }
+          }
+        }
+      });
     }
 
     this.renderer.render(this.scene, this.camera);
