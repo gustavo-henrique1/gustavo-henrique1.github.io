@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
 @Component({
   selector: 'app-project-card',
@@ -7,7 +8,15 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ProjectCardComponent implements OnInit {
   @Input() handleClick!: (project: any) => void;
-  @Input() project: any;
+  @Input() project!: {
+    id: number;
+    imageUrl: string;
+    title: string;
+    name: string;
+    icon: string;
+    icons: IconDefinition[];
+    description: string;
+  };
 
   constructor() {}
 

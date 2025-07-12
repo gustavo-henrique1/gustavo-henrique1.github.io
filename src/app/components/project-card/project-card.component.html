@@ -1,4 +1,4 @@
-<div class="card d-flex position-relative">
+<!-- <div class="card d-flex position-relative">
   <div
     class="image"
     [ngStyle]="{ 'background-image': 'url(' + project?.imageUrl + ')' }"
@@ -14,5 +14,22 @@
       ></div>
       <p>{{ project?.name }}</p>
     </div>
+  </div>
+</div> -->
+
+<div class="card" (click)="handleClick(project)">
+  <div class="about-project">
+    <p class="title">Safe <span>Route</span></p>
+    <p class="description">{{ project.description }}</p>
+    <div class="technologies">
+      <fa-icon
+        *ngFor="let icon of project.icons"
+        [icon]="icon"
+        class="icon-prooject"
+      ></fa-icon>
+    </div>
+  </div>
+  <div>
+    <img src="assets/images/project-teste.png" class="image-project" />
   </div>
 </div>
