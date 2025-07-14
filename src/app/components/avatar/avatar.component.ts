@@ -1,6 +1,5 @@
 import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader';
 
 @Component({
@@ -15,7 +14,6 @@ export class AvatarComponent implements AfterViewInit {
   private scene!: THREE.Scene;
   private camera!: THREE.PerspectiveCamera;
   private renderer!: THREE.WebGLRenderer;
-  private controls!: OrbitControls;
   private fbxLoader = new FBXLoader();
   private model: THREE.Object3D | null = null;
   private headBone: THREE.Object3D | null = null;
@@ -47,7 +45,7 @@ export class AvatarComponent implements AfterViewInit {
     this.scene.background = null;
 
     this.camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
-    this.camera.position.set(0, 1.5, 1);
+    this.camera.position.set(0, 1.3, 1.3);
 
     this.renderer = new THREE.WebGLRenderer({
       canvas,
@@ -65,11 +63,6 @@ export class AvatarComponent implements AfterViewInit {
     directionalLight.position.set(0, 2, 4);
     this.scene.add(directionalLight);
 
-    this.controls = new OrbitControls(this.camera, this.renderer.domElement);
-    this.controls.enableDamping = true;
-    this.controls.enableZoom = false;
-    this.controls.enablePan = false;
-
     window.addEventListener('resize', this.onWindowResize);
     window.addEventListener('mousemove', this.onMouseMove);
   }
@@ -78,9 +71,9 @@ export class AvatarComponent implements AfterViewInit {
     this.fbxLoader.load(
       'assets/images/meu-avatar.fbx',
       (fbx) => {
-        console.log('Modelo FBX carregado:', fbx);
+        // console.log('Modelo FBX carregado:', fbx);
         fbx.traverse((obj) => {
-          console.log(obj.name);
+          // console.log(obj.name);
         });
 
         fbx.scale.set(1.8, 1.8, 1.8);
@@ -99,7 +92,6 @@ export class AvatarComponent implements AfterViewInit {
 
         const targetY = 1.5;
         this.camera.lookAt(0, targetY, 0);
-        this.controls.target.set(0, targetY, 0);
       },
       undefined,
       (error) => {
@@ -125,7 +117,6 @@ export class AvatarComponent implements AfterViewInit {
 
   private animate = () => {
     requestAnimationFrame(this.animate);
-    this.controls.update();
 
     // Rotação da cabeça
     if (this.headBone) {
@@ -138,10 +129,10 @@ export class AvatarComponent implements AfterViewInit {
 
     // Braços para baixo
     if (this.leftArmBone) {
-      this.leftArmBone.rotation.x = THREE.MathUtils.degToRad(90);
+      this.leftArmBone.rotation.x = THREE.MathUtils.degToRad(75);
     }
     if (this.rightArmBone) {
-      this.rightArmBone.rotation.x = THREE.MathUtils.degToRad(90);
+      this.rightArmBone.rotation.x = THREE.MathUtils.degToRad(75);
     }
 
     // >>> Piscar naturalmente

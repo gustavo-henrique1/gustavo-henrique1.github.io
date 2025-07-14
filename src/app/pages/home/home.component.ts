@@ -6,6 +6,8 @@ import {
   faBehance,
   faFigma,
 } from '@fortawesome/free-brands-svg-icons';
+import { faCircle, faX } from '@fortawesome/free-solid-svg-icons';
+
 import * as AOS from 'aos';
 import { saveAs } from 'file-saver';
 
@@ -20,6 +22,8 @@ export class HomeComponent implements OnInit {
   faBehance = faBehance;
   faFigma = faFigma;
   faDownload = faCloudArrowDown;
+  faCircle = faCircle;
+  faX = faX;
 
   ngOnInit() {
     AOS.init();

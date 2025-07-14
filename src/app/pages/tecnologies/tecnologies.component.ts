@@ -8,6 +8,9 @@ import {
   faFigma,
   faBootstrap,
   faGitAlt,
+  faReact,
+  faNodeJs,
+  faPhp,
 } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
@@ -21,57 +24,97 @@ export class TecnologiesComponent {
       icon: faAngular,
       title: 'Angular',
       knowledgeLevel: 4,
-      description: `é um framework JavaScript para desenvolver aplicações web
-            escaláveis e de alto desempenho.`,
+      description: `Framework`,
+    },
+    {
+      icon: faReact,
+      title: 'React',
+      knowledgeLevel: 4,
+      description: `Framework`,
+    },
+    {
+      icon: faNodeJs,
+      title: 'Node.js',
+      knowledgeLevel: 4,
+      description: `Runtime`,
+    },
+    {
+      icon: faPhp,
+      title: 'PHP',
+      knowledgeLevel: 4,
+      description: `Framework`,
+    },
+    {
+      icon: faNodeJs,
+      title: 'MySQL',
+      knowledgeLevel: 4,
+      description: `Runtime`,
     },
     {
       icon: faJs,
       title: 'JavaScript',
       knowledgeLevel: 4,
-      description: `é uma linguagem de programação versátil usada para criar
-            interatividade em páginas web e aplicativos.`,
+      description: `Programação`,
+    },
+    {
+      icon: faJs,
+      title: 'TypeScript',
+      knowledgeLevel: 4,
+      description: `Programação`,
     },
     {
       icon: faSass,
       title: 'SCSS',
       knowledgeLevel: 4,
-      description: `é uma linguagem de extensão do CSS, oferecendo recursos como
-            variáveis e reutilização de estilos.`,
+      description: `Programação`,
     },
     {
       icon: faCss3,
       title: 'CSS',
       knowledgeLevel: 4,
-      description: `é uma linguagem de estilo usada para definir a estilização, aparência e o
-            layout de páginas web.`,
+      description: `Programação`,
     },
     {
       icon: faBootstrap,
       title: 'Bootstrap',
       knowledgeLevel: 3,
-      description: `é um framework CSS que facilita a criação de sites
-            responsivos com componentes pré-estilizados e flexível.`,
+      description: `Framework`,
     },
     {
       icon: faFigma,
       title: 'Figma',
       knowledgeLevel: 4,
-      description: `é uma ferramenta de design colaborativo para criar interfaces
-            e protótipos de forma interativa.`,
+      description: `Framework`,
     },
     {
       icon: faGithub,
       title: 'GitHub',
       knowledgeLevel: 3,
-      description: `é uma plataforma de hospedagem de código-fonte que facilita
-            colaboração e controle de versões.`,
+      description: `Framework`,
     },
     {
       icon: faGitAlt,
       title: 'GitFlow',
       knowledgeLevel: 3,
-      description: `é uma ramificação que organiza o desenvolvimento com
-       branches para features, releases e correções.`,
+      description: `Framework`,
+    },
+    {
+      icon: faFigma,
+      title: 'Figma',
+      knowledgeLevel: 4,
+      description: `Framework`,
+    },
+    {
+      icon: faGithub,
+      title: 'GitHub',
+      knowledgeLevel: 3,
+      description: `Framework`,
+    },
+    {
+      icon: faGitAlt,
+      title: 'GitFlow',
+      knowledgeLevel: 3,
+      description: `Framework`,
     },
   ];
 }

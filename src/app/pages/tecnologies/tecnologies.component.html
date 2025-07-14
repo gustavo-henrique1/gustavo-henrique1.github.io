@@ -1,5 +1,5 @@
 <section
-  class="d-flex align-items-center justify-content-center background-gray"
+  class="d-flex align-items-center justify-content-center background-white"
   id="tecnologies"
 >
   <div
@@ -9,25 +9,19 @@
       <div class="tag">
         <h6>SKILLS</h6>
       </div>
-      <div>
-        <div class="lines-and-title">
-          <div class="line-title"></div>
-          <h2>Tecnologias</h2>
-          <div class="line-title"></div>
-        </div>
-        <h5>Principais tecnologias que adquiri conhecimento</h5>
-      </div>
+      <h2>Habilidades & <span>Recursos</span></h2>
+      <h5>
+        Desenvolvo soluções inovadoras combinando frameworks e ferramentas de
+        ponta.
+      </h5>
     </div>
-    <div class="card-area">
+    <div class="card-area" data-aos="fade-up" data-aos-easing="ease-in-back">
       <app-technologie-card
         *ngFor="let specialization of specializations; let i = index"
         [icon]="specialization.icon"
         [title]="specialization.title"
         [description]="specialization.description"
         [knowledgeLevel]="specialization.knowledgeLevel"
-        data-aos="fade-up"
-        data-aos-easing="ease-in-back"
-        [attr.data-aos-delay]="50 * (i + 1)"
       ></app-technologie-card>
     </div>
   </div>

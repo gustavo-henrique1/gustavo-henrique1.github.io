@@ -1,3 +1,8 @@
+#tecnologies {
+  height: auto !important;
+  min-height: 100vh !important;
+}
+
 .container-technologies {
   flex-direction: column;
 }
@@ -10,9 +15,6 @@
 
 .header-section {
   width: 100%;
-  margin-bottom: 30px !important;
-  align-items: center;
-  justify-content: center;
 
   h5 {
     width: fit-content;
@@ -20,15 +22,15 @@
 }
 
 .tag {
-  background: var(--background-white-color);
+  background: var(--background-gray-color);
 }
 
-// @media (max-width: 600px) {
-//   .card-area app-technologie-card {
-//     width: 100% !important;
+@media (max-width: 620px) {
+  .card-area app-technologie-card {
+    width: 100% !important;
 
-//     .card {
-//       width: max-content !important;
-//     }
-//   }
-// }
+    .card {
+      width: max-content !important;
+    }
+  }
+}

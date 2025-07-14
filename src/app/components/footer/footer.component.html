@@ -1,69 +1,74 @@
-<footer>
+<section
+  class="d-flex align-items-center justify-content-center background-white section-project"
+  id="portfolio"
+>
   <div
-    class="container container-menu d-flex align-itens-center justify-content-between"
+    class="container container-technologies d-flex justify-content-start align-items-start flex-column"
   >
-    <div class="">
-      <img
-        src="assets/images/logo-gustavo.png"
-        style="width: 100px"
-        *ngIf="!isDarkMode"
-      />
-      <img
-        src="assets/images/logo-gustavo-dark.png"
-        style="width: 100px"
-        *ngIf="isDarkMode"
-      />
-      <p>
-        Design e código com propósito. <br />
-        Projetado com paixão e desenvolvido <br />
-        com atenção aos detalhes.
-      </p>
-      <nav>
-        <ul class="socials">
-          <app-social-card
-            [icon]="faLinkedin"
-            link="https://www.linkedin.com/in/gustavo-henrique-885918199/"
-          ></app-social-card>
-          <app-social-card
-            [icon]="faGithub"
-            link="https://github.com/gustavo-henrique1"
-          ></app-social-card>
-          <app-social-card
-            [icon]="faBehance"
-            link="https://www.behance.net/gustavohenrique63"
-          ></app-social-card>
-          <app-social-card [icon]="faFigma"></app-social-card>
+    <div class="content-footer">
+      <div>
+        <img
+          src="assets/images/logo-gustavo.png"
+          style="width: 100px"
+          *ngIf="!isDarkMode"
+        />
+        <img
+          src="assets/images/logo-gustavo-dark.png"
+          style="width: 100px"
+          *ngIf="isDarkMode"
+        />
+        <p>
+          Design e código com propósito. <br />
+          Projetado com paixão e desenvolvido <br />
+          com atenção aos detalhes.
+        </p>
+        <nav>
+          <ul class="socials">
+            <app-social-card
+              [icon]="faLinkedin"
+              link="https://www.linkedin.com/in/gustavo-henrique-885918199/"
+            ></app-social-card>
+            <app-social-card
+              [icon]="faGithub"
+              link="https://github.com/gustavo-henrique1"
+            ></app-social-card>
+            <app-social-card
+              [icon]="faBehance"
+              link="https://www.behance.net/gustavohenrique63"
+            ></app-social-card>
+            <app-social-card [icon]="faFigma"></app-social-card>
+          </ul>
+        </nav>
+      </div>
+      <div class="itens-menu">
+        <ul>
+          <li class="nav-item">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">Sobre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#experience">Experiência</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#technologies">Conhecimento</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#portfolio">Portfólio</a>
+          </li>
         </ul>
-      </nav>
+      </div>
+      <div class="itens-menu">
+        <i class="fa-solid fa-quote-left quote"></i>
+        <h5>A interface é a alma de uma aplicação.</h5>
+        <p>Linus Torvalds.</p>
+      </div>
     </div>
-    <div class="itens-menu">
-      <ul>
-        <li class="nav-item">
-          <a class="nav-link" href="#home">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#about">Sobre</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#experience">Experiência</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#technologies">Conhecimento</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#portfolio">Portfólio</a>
-        </li>
-      </ul>
-    </div>
-    <div class="itens-menu">
-      <i class="fa-solid fa-quote-left quote"></i>
-      <h5>A interface é a alma de uma aplicação.</h5>
-      <p>Linus Torvalds.</p>
+    <div class="copy">
+      <div class="container d-flex align-itens-center justify-content-center">
+        <p>© 2025 copyright - Gustavo Henrique</p>
+      </div>
     </div>
   </div>
-  <div class="copy">
-    <div class="container d-flex align-itens-center justify-content-center">
-      <p>© 2025 copyright - Gustavo Henrique</p>
-    </div>
-  </div>
-</footer>
+</section>

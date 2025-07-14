@@ -1,6 +1,12 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { PortfolioService } from 'src/app/services/portfolio.service';
 import * as bootstrap from 'bootstrap';
+import {
+  faReact,
+  faNodeJs,
+  faSass,
+  faFigma,
+  faPhp,
+} from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-projects',
@@ -9,54 +15,65 @@ import * as bootstrap from 'bootstrap';
   encapsulation: ViewEncapsulation.None,
 })
 export class ProjectsComponent implements OnInit {
-  projects: any[] = [];
+  projects = [
+    {
+      id: 1,
+      imageUrl: 'assets/images/saferoute-project.png',
+      title: 'SafeRoute é um app para rotas seguras',
+      name: 'Culture',
+      icon: 'assets/images/logo-saferoute.png',
+      icons: [faReact, faNodeJs, faSass, faFigma, faPhp],
+      description:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s.",
+    },
+    {
+      id: 2,
+      imageUrl: 'assets/images/saferoute-project.png',
+      title: 'SafeRoute é um app para rotas seguras',
+      name: 'Culture',
+      icon: 'assets/images/logo-saferoute.png',
+      icons: [faReact, faNodeJs, faSass, faFigma, faPhp],
+      description:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s.",
+    },
+    {
+      id: 3,
+      imageUrl: 'assets/images/saferoute-project.png',
+      title: 'SafeRoute é um app para rotas seguras',
+      name: 'Culture',
+      icon: 'assets/images/logo-saferoute.png',
+      icons: [faReact, faNodeJs, faSass, faFigma, faPhp],
+      description:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s.",
+    },
+    {
+      id: 4,
+      imageUrl: 'assets/images/saferoute-project.png',
+      title: 'SafeRoute é um app para rotas seguras',
+      name: 'Culture',
+      icon: 'assets/images/logo-saferoute.png',
+      icons: [faReact, faNodeJs, faSass, faFigma, faPhp],
+      description:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s.",
+    },
+  ];
   selectedProject: any = {};
 
-  constructor(private portfolioService: PortfolioService) {}
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-    this.loadProjects();
-    this.selectedProject = this.projects[0];
-  }
-
-  loadProjects(): void {
-    this.portfolioService
-      .getProjects()
-      .then((projects) => {
-        this.projects = projects;
-
-        if (this.projects.length > 0) {
-          this.selectedProject = this.projects[0];
-        }
-      })
-      .catch((error) => {
-        console.error('Error loading projects:', error);
-      });
-  }
-
-  selectProject(project: any) {
-    this.selectedProject = project;
-  }
-
-  nextProject() {
-    const currentIndex = this.projects.findIndex(
-      (p) => p === this.selectedProject
-    );
-    const nextIndex = currentIndex + 1;
-    if (nextIndex < this.projects.length) {
-      this.selectProject(this.projects[nextIndex]);
-    }
-  }
-
-  previousProject() {
-    const currentIndex = this.projects.findIndex(
-      (p) => p === this.selectedProject
-    );
-    const prevIndex = currentIndex - 1;
-    if (prevIndex >= 0) {
-      this.selectProject(this.projects[prevIndex]);
-    }
-  }
+  // loadProjects(): void {
+  //   this.portfolioService
+  //     .getProjects()
+  //     .then((projects) => {
+  //       this.projects = projects;
+  //       if (this.projects.length > 0) {
+  //         this.selectedProject = this.projects[0];
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error loading projects:', error);
+  //     });
+  // }
 
   goToLink() {
     window.open(this.selectedProject.urlProject, '_blank');

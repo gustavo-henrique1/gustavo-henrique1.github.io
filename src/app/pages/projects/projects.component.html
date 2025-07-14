@@ -1,65 +1,21 @@
 <section
-  class="d-flex align-items-center justify-content-center background-gray section-project"
+  class="d-flex align-items-center justify-content-center background-white section-project"
   id="portfolio"
 >
   <div
-    class="container container-technologies container-projects d-flex align-items-start flex-column"
+    class="container container-technologies d-flex justify-content-start align-items-start flex-column"
   >
-    <div class="text-area text-area-projects" data-aos="zoom-in-right">
-      <div class="header-section">
-        <div class="tag">
-          <h6>PORTFÓLIO</h6>
-        </div>
-        <div class="line-and-title">
-          <h2>Principais projetos</h2>
-        </div>
-        <h5>Meus trabalhos recentes</h5>
+    <div class="header-section" data-aos="fade-in" data-aos-duration="1400">
+      <div class="tag">
+        <h6>PORTFÓLIO</h6>
       </div>
-      <div class="itens-project">
-        <div
-          class="text-project"
-          *ngFor="let project of projects; let i = index"
-          [class.selected-project]="selectedProject === project"
-          (click)="selectProject(project)"
-        >
-          <span class="number-project">0{{ project.id }}</span>
-          {{ project.name }}
-        </div>
-      </div>
+      <h2>Projetos <span>Recentes</span></h2>
+      <h5>
+        Desenvolvo soluções inovadoras combinando frameworks e ferramentas de
+        ponta.
+      </h5>
     </div>
-    <div
-      class="image-area d-flex align-items-start justify-content-start image-area-project"
-      data-aos="zoom-in-left"
-    >
-      <div class="card-project" (click)="openModal(selectedProject)">
-        <div class="image-view"></div>
-        <img [src]="selectedProject?.imageUrl" [alt]="selectedProject.name" />
-      </div>
-      <div class="card-project card-project-background"></div>
-
-      <div class="data-project">
-        <div class="order">
-          <h2>0{{ selectedProject.id }}</h2>
-          <p>/ 4</p>
-        </div>
-        <div class="progress">
-          <div
-            class="status-progress"
-            [style.width.%]="selectedProject?.id * 25"
-          ></div>
-        </div>
-      </div>
-      <div class="buttons-select">
-        <div class="button-select" (click)="previousProject()">
-          <i class="fa-solid fa-arrow-left"></i>
-        </div>
-        <div class="button-select" (click)="nextProject()">
-          <i class="fa-solid fa-arrow-right"></i>
-        </div>
-      </div>
-    </div>
-
-    <div class="card-area">
+    <div class="projects-area">
       <app-project-card
         *ngFor="let project of projects; let i = index"
         data-aos="fade-up"

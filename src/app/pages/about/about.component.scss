@@ -1,9 +1,9 @@
 .container-about {
   align-items: flex-start !important;
-}
 
-.header-section {
-  margin-bottom: 35px;
+  p {
+    font-size: 14px;
+  }
 }
 
 .p-top {
@@ -121,6 +121,10 @@ p {
   align-items: center;
   justify-content: flex-start;
   gap: 8px;
+}
+
+.emoji-p {
+  color: var(--title-color);
 }
 
 .card-skill h3 fa-icon {

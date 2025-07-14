@@ -1,22 +1,51 @@
 <div class="side-menu">
-  <div class="space"></div>
   <div class="content-itens">
-    <div class="item selected-item">
-      <span class="material-symbols-rounded icon-menu"> home </span>
-    </div>
-    <div class="item">
-      <span class="material-symbols-rounded icon-menu"> ar_on_you </span>
-    </div>
-    <div class="item">
-      <span class="material-symbols-rounded icon-menu"> neurology </span>
-    </div>
-    <div class="item">
-      <span class="material-symbols-rounded icon-menu"> school </span>
-    </div>
-    <div class="item">
-      <span class="material-symbols-rounded icon-menu"> code_blocks </span>
+    <div class="item logo">
+      <img src="assets/images/icon-logo.png" alt="" style="width: 35px" />
     </div>
     <div class="parting-line"></div>
+    <div class="item" [ngClass]="{ 'selected-item': activeSection === 'home' }">
+      <a class="nav-link" href="#home">
+        <span class="material-symbols-rounded icon-menu"> home </span>
+      </a>
+    </div>
+    <div
+      class="item"
+      [ngClass]="{ 'selected-item': activeSection === 'about' }"
+    >
+      <a class="nav-link" href="#about">
+        <span class="material-symbols-rounded icon-menu"> ar_on_you </span>
+      </a>
+    </div>
+    <div
+      class="item"
+      [ngClass]="{ 'selected-item': activeSection === 'tecnologies' }"
+    >
+      <a class="nav-link" href="#tecnologies">
+        <span class="material-symbols-rounded icon-menu"> neurology </span>
+      </a>
+    </div>
+    <div
+      class="item"
+      [ngClass]="{ 'selected-item': activeSection === 'experience' }"
+    >
+      <a class="nav-link" href="#experience">
+        <span class="material-symbols-rounded icon-menu"> school </span>
+      </a>
+    </div>
+    <div
+      class="item"
+      [ngClass]="{ 'selected-item': activeSection === 'portfolio' }"
+    >
+      <a class="nav-link" href="#portfolio">
+        <span class="material-symbols-rounded icon-menu"> code_blocks </span>
+      </a>
+    </div>
+    <div class="parting-line"></div>
+    <div class="item" (click)="toggleDarkMode()">
+      <span class="material-symbols-rounded icon-menu">
+        {{ darkModeIcon }}
+      </span>
+    </div>
   </div>
-  <div class="space"></div>
 </div>

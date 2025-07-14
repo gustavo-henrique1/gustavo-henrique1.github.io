@@ -9,106 +9,172 @@
       <div class="tag background-gray">
         <h6>EXPERIÊNCIA</h6>
       </div>
-      <div class="line-and-title">
-        <h2>Trajetória profissional</h2>
-        <div class="line-title"></div>
-      </div>
+      <h2>Trajetória <span>Profissional</span></h2>
       <h5>Como adquiri minhas habilidades e conhecimentos</h5>
     </div>
 
     <div
-      class="experience-area d-flex"
-      data-aos="fade-up"
-      data-aos-duration="1500"
+      class="container-experience"
+      data-aos="fade-in"
+      data-aos-duration="1400"
     >
-      <div class="option-card">
-        <p class="sub-menu-text">Profissional</p>
-        <div
-          class="option d-flex align-items-center justify-content-between"
-          [class.active-option]="0 === activeIndex"
-          (click)="showContent(0)"
-        >
-          <div
-            class="d-flex align-items-center justify-content-center icon-text"
-          >
-            <span class="material-symbols-rounded">{{ optionOne.icon }}</span>
-            <p>{{ optionOne.text }}</p>
+      <div class="column">
+        <h6>Experiência</h6>
+        <div class="column-experience">
+          <div class="line-area">
+            <div class="line"></div>
+            <span class="material-symbols-rounded"> circle </span>
+            <span class="material-symbols-rounded"> circle </span>
           </div>
-          <span class="material-symbols-rounded icon-arrow">chevron_right</span>
-        </div>
-        <p class="sub-menu-text">Educação</p>
-        <div
-          *ngFor="let option of options; let i = index"
-          class="option d-flex align-items-center justify-content-between"
-          [class.active-option]="option.id === activeIndex"
-          (click)="showContent(option.id)"
-        >
-          <div
-            class="d-flex align-items-center justify-content-center icon-text"
-          >
-            <span class="material-symbols-rounded">{{ option.icon }}</span>
-            <p>{{ option.text }}</p>
-          </div>
-          <span class="material-symbols-rounded icon-arrow">chevron_right</span>
-        </div>
-      </div>
+          <div class="experience-area">
+            <div class="card-experience">
+              <div class="header-experience">
+                <div class="title-card">
+                  <span>Desenvolvedor</span> Front-end Jr
+                </div>
+                ALPE • 2021 - 2023
+              </div>
+              <div class="content-experience">
+                <p>
+                  <span class="material-symbols-rounded emoji-p">
+                    data_object
+                  </span>
+                  Desenvolvimento com Angular e Typescript.
+                </p>
 
-      <div class="box-experience">
-        <div *ngFor="let card of experiences; let i = index">
-          <app-card-experience
-            [imageUrl]="card?.imageUrl"
-            [title]="card.title"
-            [subtitle]="card.subtitle"
-            [timing]="card.timing"
-            [local]="card.local"
-            [text]="card.text"
-          ></app-card-experience>
-          <div *ngIf="i == 0" class="divider"></div>
+                <p>
+                  <span class="material-symbols-rounded emoji-p"> api </span>
+                  Integração com API REST.
+                </p>
+                <p>
+                  <span class="material-symbols-rounded emoji-p">
+                    bug_report
+                  </span>
+                  Correções de bugs funcionais.
+                </p>
+                <p>
+                  <span class="material-symbols-rounded emoji-p">
+                    add_box
+                  </span>
+                  Desenvolvimento de novas features.
+                </p>
+              </div>
+            </div>
+            <div class="card-experience">
+              <div class="header-experience">
+                <div class="title-card">
+                  <span>Estagiário</span> Design UI/UX
+                </div>
+                ALPE • 2020 - 2021
+              </div>
+              <div class="content-experience">
+                <p>
+                  <span class="material-symbols-rounded emoji-p">
+                    assignment
+                  </span>
+                  Entrevista com os clientes.
+                </p>
+                <p>
+                  <span class="material-symbols-rounded emoji-p">
+                    brightness_alert
+                  </span>
+                  Mapeamento de dores e necessidades.
+                </p>
+                <p>
+                  <span class="material-symbols-rounded emoji-p">
+                    bar_chart
+                  </span>
+                  Entendimento de mercado.
+                </p>
+                <p>
+                  <span class="material-symbols-rounded emoji-p">
+                    computer_arrow_up
+                  </span>
+                  Prototipação e validação de idéias.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="box-experience">
-        <div *ngFor="let card of superior; let i = index">
-          <app-card-experience
-            [imageUrl]="card?.imageUrl"
-            [title]="card.title"
-            [subtitle]="card.subtitle"
-            [timing]="card.timing"
-            [local]="card.local"
-            [text]="card.text"
-          ></app-card-experience>
-          <div *ngIf="i == 0" class="divider"></div>
-        </div>
-      </div>
-      <div class="box-experience">
-        <div *ngFor="let card of tecnic; let i = index">
-          <app-card-experience
-            [imageUrl]="card?.imageUrl"
-            [title]="card.title"
-            [subtitle]="card.subtitle"
-            [timing]="card.timing"
-            [local]="card.local"
-            [text]="card.text"
-          ></app-card-experience>
-          <div *ngIf="i == 0" class="divider"></div>
-        </div>
-      </div>
-      <div
-        class="box-experience box-experience-scroll"
-        (scroll)="onScroll($event)"
-      >
-        <div class="arrow-bottom" *ngIf="arrowVisible">
-          <fa-icon [icon]="faChevronDown"></fa-icon>
-        </div>
-        <div *ngFor="let card of certifications; let i = index">
-          <app-card-experience
-            [imageUrl]="card?.imageUrl"
-            [title]="card.title"
-            [subtitle]="card.subtitle"
-            [timing]="card.timing"
-            [local]="card.local"
-            [text]="card.text"
-          ></app-card-experience>
-          <div *ngIf="i != 2" class="divider"></div>
+      <div class="column">
+        <h6>Educação</h6>
+        <div class="column-experience">
+          <div class="line-area">
+            <div class="line"></div>
+            <span class="material-symbols-rounded"> circle </span>
+            <span class="material-symbols-rounded"> circle </span>
+          </div>
+          <div class="experience-area">
+            <div class="card-experience">
+              <div class="header-experience">
+                <div class="title-card">
+                  <span>Liderança e Gestão</span> em Tecnologia
+                </div>
+                Pós-graduação
+              </div>
+              <div class="content-experience">
+                <p>
+                  <span class="material-symbols-rounded emoji-p">
+                    emoji_objects
+                  </span>
+                  Inovação alinhada a tecnologia.
+                </p>
+                <p>
+                  <span class="material-symbols-rounded emoji-p">
+                    Cognition
+                  </span>
+                  Planejamento estratégico de negócio.
+                </p>
+                <p>
+                  <span class="material-symbols-rounded emoji-p">
+                    avg_time
+                  </span>
+                  Governança de TI e gestão de riscos.
+                </p>
+                <p>
+                  <span class="material-symbols-rounded emoji-p">
+                    next_week
+                  </span>
+                  Gestão de projetos ágeis.
+                </p>
+              </div>
+            </div>
+            <div class="card-experience">
+              <div class="header-experience">
+                <div class="title-card">
+                  <span>Análise e Desenvolvimento</span> de Sistemas
+                </div>
+                Graduação
+              </div>
+              <div class="content-experience">
+                <p>
+                  <span class="material-symbols-rounded emoji-p">
+                    flowchart
+                  </span>
+                  Fundamentos e lógica de programação.
+                </p>
+                <p>
+                  <span class="material-symbols-rounded emoji-p">
+                    dataset
+                  </span>
+                  Modelagem e análise de sistemas.
+                </p>
+                <p>
+                  <span class="material-symbols-rounded emoji-p">
+                    manage_search
+                  </span>
+                  Direcionamentos sobre UI/UX.
+                </p>
+                <p>
+                  <span class="material-symbols-rounded emoji-p">
+                    smart_toy
+                  </span>
+                  Análise e utomação de processos.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

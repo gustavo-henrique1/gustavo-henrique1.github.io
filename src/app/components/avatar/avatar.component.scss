@@ -1,8 +1,21 @@
 canvas {
-  width: 430px !important;
-  height: 500px !important;
+  width: 530px !important;
+  height: 600px !important;
   height: auto;
   display: block;
   outline: none;
-  border-radius: 46.2%;
+}
+
+@media (max-width: 1200px) {
+  canvas {
+    width: 500px !important;
+    height: 570px !important;
+  }
+}
+
+@media (max-width: 800px) {
+  canvas {
+    width: 330px !important;
+    height: 400px !important;
+  }
 }

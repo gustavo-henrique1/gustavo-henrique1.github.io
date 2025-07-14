@@ -10,6 +10,7 @@ body {
   --button-color: #{$button-color};
   --hover-text-button: #{$hover-text-button};
   --border-color: #{$border-color};
+  --icon-color: #{$icon-color};
 }
 
 body.dark-mode {
@@ -21,13 +22,19 @@ body.dark-mode {
   --button-color: #{$button-color-dark};
   --hover-text-button: #{$hover-text-button-dark};
   --border-color: #{$border-color-dark};
+  --icon-color: #{$icon-color};
 }
 
 * {
   margin: 0;
   padding: 0;
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
   vertical-align: baseline;
+}
+
+html,
+body {
+  height: 100% !important;
 }
 
 html {
@@ -55,8 +62,9 @@ section {
   width: 100%;
   height: 100vh !important;
   max-width: 100vw !important;
-  padding: 120px 100px 0 100px !important;
-  margin-top: -24px !important;
+  padding: 0 100px !important;
+  box-sizing: border-box;
+  padding-left: 180px !important;
 }
 
 .background-white {
@@ -91,7 +99,7 @@ section {
 // big-text-home
 h1 {
   font-size: 45px;
-  font-weight: 900;
+  font-weight: 600;
   color: var(--title-color);
   margin: 0 !important;
 }
@@ -100,10 +108,13 @@ h1 {
 h2 {
   font-size: 34px;
   color: var(--title-color);
-  font-weight: 700;
+  font-weight: 600;
   width: fit-content;
   margin: 0;
-  margin-bottom: 5px;
+
+  span {
+    color: var(--text-color);
+  }
 }
 
 // text-home
@@ -118,17 +129,16 @@ h4 {
 // sub-title
 h5 {
   width: 100%;
-  font-size: 16px;
-  color: var(--title-color);
+  font-size: 18px;
+  color: var(--text-color);
   line-height: 1.6rem;
   margin: 0;
-  margin-bottom: 10px;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 // id-page
 h6 {
-  font-size: 15px;
+  font-size: 12px;
   color: var(--title-color);
   letter-spacing: 1px;
   margin: 0;
@@ -149,7 +159,8 @@ p {
 .header-section {
   display: flex;
   flex-direction: column;
-  margin-bottom: 60px;
+  gap: 20px;
+  padding-bottom: 70px;
 }
 
 .tag {
@@ -158,7 +169,7 @@ p {
   border-radius: 5px;
   padding: 10px 25px;
   box-sizing: border-box;
-  margin-bottom: 16px;
+  margin-bottom: 5px;
 }
 
 // line-title
