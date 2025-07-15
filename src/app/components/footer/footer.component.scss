@@ -1,3 +1,10 @@
+#footer {
+  height: auto !important;
+  min-height: unset !important;
+  padding-bottom: 40px !important;
+  padding-top: 70px !important;
+}
+
 .content-footer {
   width: 100%;
   display: flex;
@@ -13,10 +20,11 @@
 }
 
 .copy {
-  padding: 40px 0;
+  padding: 40px 0 0 0;
 
   p {
     color: var(--title-color);
+    margin: 0 !important;
   }
 }
 
@@ -29,19 +37,19 @@ p {
 }
 
 .quote {
-  font-size: 30px;
+  font-size: 20px;
   color: var(--title-color);
   margin-bottom: 2px;
 }
 
 .itens-menu h5 {
-  font-size: 16px;
+  font-size: 18px !important;
   font-style: italic;
   margin: 0;
 }
 
 .itens-menu p {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--text-color);
 }
 
@@ -61,6 +69,11 @@ nav ul {
   color: var(--title-color);
 }
 
+.nav-item,
+.text-footer {
+  font-size: 14px !important;
+}
+
 @media (max-width: 1200px) {
   .content-footer {
     flex-direction: column;
@@ -77,5 +90,9 @@ nav ul {
 
   .quote {
     margin-top: 20px;
+  }
+
+  .copy {
+    padding-bottom: 60px !important;
   }
 }

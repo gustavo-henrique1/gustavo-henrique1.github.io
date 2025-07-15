@@ -64,6 +64,10 @@
     max-width: 200px; /* largura máxima para mostrar o texto todo */
     opacity: 1;
   }
+
+  .image-project {
+    width: 440px;
+  }
 }
 
 .card:hover {
@@ -82,7 +86,7 @@
 @media (max-width: 640px) {
   .card {
     .image-project {
-      width: 100%;
+      width: 200px;
     }
   }
 }

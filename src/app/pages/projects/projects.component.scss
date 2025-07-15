@@ -1,16 +1,13 @@
 @import "aos/dist/aos.css";
 
-// #portfolio {
-//   height: auto !important;
-//   min-height: 100vh !important;
-//   background: red !important;
-// }
+#portfolio {
+  padding-top: 160px !important;
+}
 
 .section-project {
   height: max-content !important;
   max-height: max-content !important;
   box-sizing: border-box;
-  padding-top: 100px !important;
 }
 
 .tag {
@@ -123,6 +120,7 @@
     width: 100%;
 
     .description-area {
+      align-items: center;
       gap: 15px;
     }
 
@@ -270,6 +268,9 @@
 }
 
 @media (max-width: 1200px) {
+  #portfolio {
+    padding-top: 50px !important;
+  }
   .section-project {
     height: max-content !important;
     max-height: max-content !important;
@@ -296,12 +297,58 @@
     height: fit-content !important;
     min-height: unset !important;
   }
+
+  .modal-body {
+    padding-bottom: 100px !important;
+  }
 }
 
 @media (max-width: 800px) {
   .text-area,
   .image-area-project {
     width: 100% !important;
+  }
+
+  .modal .header h3 {
+    font-size: 20px !important;
+    margin-bottom: 30px !important;
+  }
+
+  .image-header {
+    width: 38px !important;
+    height: 38px !important;
+  }
+
+  .description-area {
+    margin-bottom: 10px !important;
+  }
+
+  .dev-description {
+    h5 {
+      font-size: 14px;
+    }
+
+    p {
+      font-size: 12px !important;
+    }
+  }
+
+  .description-buttons {
+    margin-bottom: 20px !important;
+  }
+
+  .description-project {
+    font-size: 14px !important;
+  }
+
+  .circle-image {
+    min-width: 45px !important;
+    min-height: 45px !important;
+  }
+
+  .footer-modal {
+    margin-top: 30px !important;
+    gap: 20px !important;
   }
 }
 

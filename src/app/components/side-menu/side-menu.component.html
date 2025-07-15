@@ -1,7 +1,9 @@
 <div class="side-menu">
   <div class="content-itens">
     <div class="item logo item-dark">
-      <img [src]="srcIcon" alt="" style="width: 35px" />
+      <a class="nav-link" href="#home">
+        <img [src]="srcIcon" alt="" style="width: 35px" />
+      </a>
     </div>
     <div class="parting-line"></div>
     <div class="item" [ngClass]="{ 'selected-item': activeSection === 'home' }">

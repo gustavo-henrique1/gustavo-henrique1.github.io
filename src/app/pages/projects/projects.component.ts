@@ -40,8 +40,8 @@ export class ProjectsComponent {
       imageUrl: 'assets/images/saferoute-project.png',
       imageCard: 'assets/images/safe-route-mockup.png',
       title: 'SafeRoute é um app para rotas seguras',
-      name: 'Safe',
-      subname: 'Route',
+      name: 'Culture',
+      subname: '',
       icon: 'assets/images/logo-saferoute.png',
       urlProject: 'https://gustavo-henrique1.github.io/secret-word/',
       icons: [

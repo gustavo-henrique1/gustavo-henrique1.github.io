@@ -155,6 +155,10 @@ nav ul {
     width: 100%;
     background: var(--background-white-color);
   }
+
+  .text-cv {
+    display: none;
+  }
 }
 
 @media (max-width: 800px) {
