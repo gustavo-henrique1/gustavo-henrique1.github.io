@@ -15,9 +15,11 @@ export class ProjectCardComponent implements OnInit {
   @Input() handleClick!: (project: any) => void;
   @Input() project!: {
     id: number;
+    imageCard: string;
     imageUrl: string;
     title: string;
     name: string;
+    subname: string;
     icon: string;
     icons: NamedIcon[]; // agora é array de objetos com icon + name
     description: string;

@@ -1,11 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IconDefinition } from '@fortawesome/free-brands-svg-icons';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
-
-import {
-  FontAwesomeModule,
-  FaIconLibrary,
-} from '@fortawesome/angular-fontawesome';
 
 @Component({
   selector: 'app-technologie-card',

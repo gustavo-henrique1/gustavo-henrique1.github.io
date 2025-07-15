@@ -39,3 +39,5 @@ declare module 'three/examples/jsm/loaders/DRACOLoader' {
     dispose(): void;
   }
 }
+
+declare module 'matter-js';

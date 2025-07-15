@@ -1,15 +1,17 @@
 <div class="card" (click)="handleClick(project)">
   <div class="about-project">
-    <p class="title">Safe <span>Route</span></p>
+    <p class="title">
+      {{ project.name }} <span>{{ project.subname }}</span>
+    </p>
     <p class="description">{{ project.description }}</p>
     <div class="technologies">
       <div *ngFor="let icon of project.icons" class="icon-text">
-        <fa-icon [icon]="icon.icon" class="icon-prooject"></fa-icon>
+        <fa-icon [icon]="icon.icon" class="icon-project"></fa-icon>
         <span>{{ icon.name }}</span>
       </div>
     </div>
   </div>
   <div>
-    <img src="assets/images/project-teste.png" class="image-project" />
+    <img [src]="project.imageCard" class="image-project" style="width: 430px" />
   </div>
 </div>

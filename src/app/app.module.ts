@@ -11,7 +11,6 @@ import { ExperienceComponent } from './pages/experience/experience.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CardExperienceComponent } from './components/card-experience/card-experience.component';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { TecnologiesComponent } from './pages/tecnologies/tecnologies.component';
 import {
   FontAwesomeModule,
   FaIconLibrary,
@@ -22,6 +21,7 @@ import { NgxTypedJsModule } from 'ngx-typed-js';
 import { AvatarComponent } from './components/avatar/avatar.component';
 import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import { MatIconModule } from '@angular/material/icon';
+import { TecnologiesComponent } from './pages/technologies/technologies.component';
 
 @NgModule({
   declarations: [
