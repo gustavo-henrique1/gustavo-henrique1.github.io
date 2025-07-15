@@ -1,44 +1,86 @@
-import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
+import {
+  Component,
+  AfterViewInit,
+  ElementRef,
+  ViewChild,
+  Input,
+  OnChanges,
+  SimpleChanges,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 import * as THREE from 'three';
-import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { ThemeService } from 'src/app/services/theme.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-avatar',
   templateUrl: './avatar.component.html',
   styleUrls: ['./avatar.component.scss'],
 })
-export class AvatarComponent implements AfterViewInit {
+export class AvatarComponent
+  implements AfterViewInit, OnChanges, OnInit, OnDestroy
+{
+  @Input() visible: boolean = true;
+
   @ViewChild('canvas', { static: true })
   canvasRef!: ElementRef<HTMLCanvasElement>;
 
   private scene!: THREE.Scene;
   private camera!: THREE.PerspectiveCamera;
   private renderer!: THREE.WebGLRenderer;
-  private fbxLoader = new FBXLoader();
+  private gltfLoader = new GLTFLoader();
+
   private model: THREE.Object3D | null = null;
   private headBone: THREE.Object3D | null = null;
   private leftArmBone: THREE.Object3D | null = null;
   private rightArmBone: THREE.Object3D | null = null;
 
+  private lightModel: THREE.Object3D | null = null;
+  private darkModel: THREE.Object3D | null = null;
+
   private clock = new THREE.Clock();
   private mouse = new THREE.Vector2();
-
-  // >>> Variáveis para piscar naturalmente
   private blinkTimer = 0;
-  private blinkDuration = 0.5; // em segundos
-  private blinkCooldown = 0.5 + Math.random() * 0.5;
+  private blinkDuration = 0.5;
+  private blinkCooldown = 0.1 + Math.random() * 0.1;
+  private shouldRender = true;
+
+  private isDarkMode = false;
+  private themeSub!: Subscription;
+
+  constructor(private themeService: ThemeService) {}
+
+  ngOnInit(): void {
+    this.themeSub = this.themeService.darkMode$.subscribe((isDark) => {
+      const changed = this.isDarkMode !== isDark;
+      this.isDarkMode = isDark;
+      if (changed) this.swapModel();
+    });
+  }
 
   ngAfterViewInit(): void {
     this.initScene();
-    this.loadModel();
+    this.preloadModels();
     this.animate();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['visible']) {
+      this.shouldRender = this.visible;
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.themeSub?.unsubscribe();
+    window.removeEventListener('resize', this.onWindowResize);
+    window.removeEventListener('mousemove', this.onMouseMove);
   }
 
   private initScene(): void {
     const canvas = this.canvasRef.nativeElement;
-
-    // ❗ Ajuste aqui para reduzir o tamanho do canvas e evitar sobras
-    const width = 320; // Largura ideal ajustada para o avatar
+    const width = 320;
     const height = 400;
 
     this.scene = new THREE.Scene();
@@ -67,44 +109,48 @@ export class AvatarComponent implements AfterViewInit {
     window.addEventListener('mousemove', this.onMouseMove);
   }
 
-  private loadModel(): void {
-    this.fbxLoader.load(
-      'assets/images/meu-avatar.fbx',
-      (fbx) => {
-        // console.log('Modelo FBX carregado:', fbx);
-        fbx.traverse((obj) => {
-          // console.log(obj.name);
-        });
+  private preloadModels(): void {
+    this.gltfLoader.load('assets/images/avatar.glb', (gltf) => {
+      this.lightModel = gltf.scene;
+      if (!this.isDarkMode) this.swapModel();
+    });
 
-        fbx.scale.set(1.8, 1.8, 1.8);
-        fbx.position.set(0, -1.5, 0);
+    this.gltfLoader.load('assets/images/avatar-dark.glb', (gltf) => {
+      this.darkModel = gltf.scene;
+      if (this.isDarkMode) this.swapModel();
+    });
+  }
 
-        this.model = fbx;
-        this.scene.add(fbx);
+  private swapModel(): void {
+    const sourceModel = this.isDarkMode ? this.darkModel : this.lightModel;
+    if (!sourceModel) return;
 
-        this.headBone = fbx.getObjectByName('Head') || null;
-        this.leftArmBone = fbx.getObjectByName('LeftArm') || null;
-        this.rightArmBone = fbx.getObjectByName('RightArm') || null;
+    // Remove o modelo anterior da cena
+    if (this.model) {
+      this.scene.remove(this.model);
+    }
 
-        const box = new THREE.Box3().setFromObject(fbx);
-        const center = new THREE.Vector3();
-        box.getCenter(center);
+    // Adiciona o novo modelo diretamente (sem clone!)
+    this.model = sourceModel;
+    this.scene.add(this.model);
 
-        const targetY = 1.5;
-        this.camera.lookAt(0, targetY, 0);
-      },
-      undefined,
-      (error) => {
-        console.error('Erro ao carregar o FBX:', error);
-      }
-    );
+    // Posiciona e ajusta escala do modelo
+    this.model.scale.set(1.8, 1.8, 1.8);
+    this.model.position.set(0, -1.5, 0);
+    this.model.rotation.set(0, 0, 0);
+
+    // Atualiza os bones com base no novo modelo
+    this.headBone = this.model.getObjectByName('Head') || null;
+    this.leftArmBone = this.model.getObjectByName('LeftArm') || null;
+    this.rightArmBone = this.model.getObjectByName('RightArm') || null;
+
+    // Reposiciona câmera
+    this.camera.lookAt(0, 1.5, 0);
   }
 
   private onWindowResize = () => {
-    // ❗ Evite usar window.innerWidth para canvas do avatar (use tamanho fixo)
     const width = 320;
     const height = 400;
-
     this.camera.aspect = width / height;
     this.camera.updateProjectionMatrix();
     this.renderer.setSize(width, height);
@@ -118,16 +164,15 @@ export class AvatarComponent implements AfterViewInit {
   private animate = () => {
     requestAnimationFrame(this.animate);
 
-    // Rotação da cabeça
+    if (!this.shouldRender) return;
+
     if (this.headBone) {
       const maxRotationX = THREE.MathUtils.degToRad(15);
       const maxRotationY = THREE.MathUtils.degToRad(30);
-
       this.headBone.rotation.y = this.mouse.x * maxRotationY;
       this.headBone.rotation.x = -this.mouse.y * maxRotationX;
     }
 
-    // Braços para baixo
     if (this.leftArmBone) {
       this.leftArmBone.rotation.x = THREE.MathUtils.degToRad(75);
     }
@@ -135,7 +180,6 @@ export class AvatarComponent implements AfterViewInit {
       this.rightArmBone.rotation.x = THREE.MathUtils.degToRad(75);
     }
 
-    // >>> Piscar naturalmente
     const delta = this.clock.getDelta();
     this.blinkTimer += delta;
 
@@ -167,7 +211,7 @@ export class AvatarComponent implements AfterViewInit {
 
               if (this.blinkTimer >= this.blinkCooldown + this.blinkDuration) {
                 this.blinkTimer = 0;
-                this.blinkCooldown = 3 + Math.random() * 3; // novo intervalo
+                this.blinkCooldown = 3 + Math.random() * 3;
               }
             } else {
               influences[blinkL] = 0;

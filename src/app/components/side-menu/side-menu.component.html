@@ -1,7 +1,7 @@
 <div class="side-menu">
   <div class="content-itens">
     <div class="item logo">
-      <img src="assets/images/icon-logo.png" alt="" style="width: 35px" />
+      <img [src]="srcIcon" alt="" style="width: 35px" />
     </div>
     <div class="parting-line"></div>
     <div class="item" [ngClass]="{ 'selected-item': activeSection === 'home' }">

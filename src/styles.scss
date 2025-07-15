@@ -11,6 +11,7 @@ body {
   --hover-text-button: #{$hover-text-button};
   --border-color: #{$border-color};
   --icon-color: #{$icon-color};
+  --color-outfit: #{$color-outfit};
 }
 
 body.dark-mode {
@@ -23,6 +24,7 @@ body.dark-mode {
   --hover-text-button: #{$hover-text-button-dark};
   --border-color: #{$border-color-dark};
   --icon-color: #{$icon-color};
+  --color-outfit: #{$color-outfit-dark};
 }
 
 * {
@@ -253,6 +255,21 @@ p {
 }
 
 @media (max-width: 988px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  h5 {
+    font-size: 16px;
+  }
+
+  .description-home {
+    font-size: 16px !important;
+  }
 }
 
 @media (max-width: 900px) {

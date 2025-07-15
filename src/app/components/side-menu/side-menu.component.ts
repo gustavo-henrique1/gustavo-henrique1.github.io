@@ -1,4 +1,11 @@
-import { AfterViewInit, Component } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  EventEmitter,
+  Output,
+} from '@angular/core';
+import { ThemeService } from 'src/app/services/theme.service';
 
 @Component({
   selector: 'app-side-menu',
@@ -6,9 +13,17 @@ import { AfterViewInit, Component } from '@angular/core';
   styleUrl: './side-menu.component.scss',
 })
 export class SideMenuComponent implements AfterViewInit {
+  @Output() darkModeChanged = new EventEmitter<boolean>();
+
   activeSection: string = 'home';
   darkMode = false;
   darkModeIcon = 'moon_stars';
+  srcIcon = '';
+
+  constructor(
+    private cdr: ChangeDetectorRef,
+    private themeService: ThemeService
+  ) {}
 
   ngAfterViewInit() {
     const sections = document.querySelectorAll('section');
@@ -36,7 +51,11 @@ export class SideMenuComponent implements AfterViewInit {
     });
 
     this.darkMode = this.getCookie('darkMode') === 'true';
-    this.darkModeIcon = this.darkMode ? 'clear_day' : 'moon_stars';
+    document.body.classList.toggle('dark-mode', this.darkMode);
+
+    this.togleIcons();
+
+    this.cdr.detectChanges();
   }
 
   scrollToSection(sectionId: string) {
@@ -54,7 +73,8 @@ export class SideMenuComponent implements AfterViewInit {
     this.darkMode = !this.darkMode;
     document.body.classList.toggle('dark-mode', this.darkMode);
     this.setCookie('darkMode', this.darkMode ? 'true' : 'false', 30);
-    this.darkModeIcon = this.darkMode ? 'clear_day' : 'moon_stars';
+    this.themeService.setDarkMode(this.darkMode);
+    this.togleIcons();
   }
 
   setCookie(name: string, value: string, days: number) {
@@ -73,5 +93,12 @@ export class SideMenuComponent implements AfterViewInit {
       if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
     }
     return '';
+  }
+
+  togleIcons() {
+    this.darkModeIcon = this.darkMode ? 'clear_day' : 'moon_stars';
+    this.srcIcon = this.darkMode
+      ? 'assets/images/icon-logo-dark.png'
+      : 'assets/images/icon-logo.png';
   }
 }

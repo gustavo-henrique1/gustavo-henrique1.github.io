@@ -10,9 +10,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { ExperienceComponent } from './pages/experience/experience.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CardExperienceComponent } from './components/card-experience/card-experience.component';
-import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { environment } from '../environments/environment';
 import { TecnologiesComponent } from './pages/tecnologies/tecnologies.component';
 import {
   FontAwesomeModule,
@@ -47,7 +45,6 @@ import { MatIconModule } from '@angular/material/icon';
     AppRoutingModule,
     FontAwesomeModule,
     AngularFirestoreModule,
-    AngularFireModule.initializeApp(environment.firebase),
     MatIconModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
