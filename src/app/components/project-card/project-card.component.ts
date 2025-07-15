@@ -1,6 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
+interface NamedIcon {
+  icon: IconDefinition;
+  name: string;
+}
+
 @Component({
   selector: 'app-project-card',
   templateUrl: './project-card.component.html',
@@ -14,7 +19,7 @@ export class ProjectCardComponent implements OnInit {
     title: string;
     name: string;
     icon: string;
-    icons: IconDefinition[];
+    icons: NamedIcon[]; // agora é array de objetos com icon + name
     description: string;
   };
 
