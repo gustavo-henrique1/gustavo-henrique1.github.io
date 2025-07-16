@@ -65,10 +65,12 @@
 @media (max-width: 1200px) {
   .side-menu {
     width: 100vw;
-    height: 50px;
+    height: auto;
     bottom: 0;
     top: unset;
     background: var(--background-gray-color);
+    padding-bottom: 44px;
+    padding-top: 10px !important;
   }
 
   .item {

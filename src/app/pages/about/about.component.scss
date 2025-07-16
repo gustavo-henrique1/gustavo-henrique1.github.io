@@ -4,7 +4,7 @@
 }
 
 .container-about {
-  align-items: flex-start !important;
+  align-items: center !important;
 
   p {
     font-size: 14px;
@@ -149,6 +149,10 @@ p {
     border: 0;
   }
 
+  .container-about {
+    align-items: flex-start !important;
+  }
+
   .image-area {
     width: 50% !important;
   }
@@ -161,6 +165,10 @@ p {
 @media (max-width: 800px) {
   .container-about {
     gap: 20px;
+  }
+
+  .image-area {
+    display: none;
   }
 }
 
