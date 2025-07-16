@@ -22,6 +22,7 @@ import { AvatarComponent } from './components/avatar/avatar.component';
 import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import { MatIconModule } from '@angular/material/icon';
 import { TecnologiesComponent } from './pages/technologies/technologies.component';
+import { AboutSkillsComponent } from './components/about-skills/about-skills.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { TecnologiesComponent } from './pages/technologies/technologies.componen
     ProjectsComponent,
     AvatarComponent,
     SideMenuComponent,
+    AboutSkillsComponent,
   ],
   imports: [
     NgxTypedJsModule,

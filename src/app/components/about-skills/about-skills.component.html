@@ -1,0 +1,17 @@
+<div class="skills-section">
+  <h2>Skills</h2>
+  <div class="skills-floating-grid">
+    <div
+      class="floating-skill"
+      *ngFor="let skill of skills; let i = index"
+      [ngStyle]="{
+        backgroundColor: skill.color,
+        animationDelay: i * 200 + 'ms',
+        animationDuration: 6 + i + 's'
+      }"
+    >
+      <div class="pointer"></div>
+      {{ skill.name }}
+    </div>
+  </div>
+</div>
