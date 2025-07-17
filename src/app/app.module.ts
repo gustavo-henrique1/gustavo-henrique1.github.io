@@ -23,6 +23,7 @@ import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import { MatIconModule } from '@angular/material/icon';
 import { TecnologiesComponent } from './pages/technologies/technologies.component';
 import { AboutSkillsComponent } from './components/about-skills/about-skills.component';
+import { SplashScreenComponent } from './components/splash-screen/splash-screen.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { AboutSkillsComponent } from './components/about-skills/about-skills.com
     AvatarComponent,
     SideMenuComponent,
     AboutSkillsComponent,
+    SplashScreenComponent,
   ],
   imports: [
     NgxTypedJsModule,
