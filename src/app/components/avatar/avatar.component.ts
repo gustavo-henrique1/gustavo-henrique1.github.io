@@ -8,23 +8,23 @@ import {
   SimpleChanges,
   OnDestroy,
   OnInit,
-} from '@angular/core';
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { ThemeService } from 'src/app/services/theme.service';
-import { Subscription } from 'rxjs';
+} from "@angular/core";
+import * as THREE from "three";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { ThemeService } from "src/app/services/theme.service";
+import { Subscription } from "rxjs";
 
 @Component({
-  selector: 'app-avatar',
-  templateUrl: './avatar.component.html',
-  styleUrls: ['./avatar.component.scss'],
+  selector: "app-avatar",
+  templateUrl: "./avatar.component.html",
+  styleUrls: ["./avatar.component.scss"],
 })
 export class AvatarComponent
   implements AfterViewInit, OnChanges, OnInit, OnDestroy
 {
   @Input() visible: boolean = true;
 
-  @ViewChild('canvas', { static: true })
+  @ViewChild("canvas", { static: true })
   canvasRef!: ElementRef<HTMLCanvasElement>;
 
   private scene!: THREE.Scene;
@@ -58,6 +58,13 @@ export class AvatarComponent
       this.isDarkMode = isDark;
       if (changed) this.swapModel();
     });
+
+    this.checkDarkMode();
+    const observer = new MutationObserver(() => this.checkDarkMode());
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
   }
 
   ngAfterViewInit(): void {
@@ -67,15 +74,15 @@ export class AvatarComponent
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['visible']) {
+    if (changes["visible"]) {
       this.shouldRender = this.visible;
     }
   }
 
   ngOnDestroy(): void {
     this.themeSub?.unsubscribe();
-    window.removeEventListener('resize', this.onWindowResize);
-    window.removeEventListener('mousemove', this.onMouseMove);
+    window.removeEventListener("resize", this.onWindowResize);
+    window.removeEventListener("mousemove", this.onMouseMove);
   }
 
   private initScene(): void {
@@ -105,17 +112,17 @@ export class AvatarComponent
     directionalLight.position.set(0, 2, 4);
     this.scene.add(directionalLight);
 
-    window.addEventListener('resize', this.onWindowResize);
-    window.addEventListener('mousemove', this.onMouseMove);
+    window.addEventListener("resize", this.onWindowResize);
+    window.addEventListener("mousemove", this.onMouseMove);
   }
 
   private preloadModels(): void {
-    this.gltfLoader.load('assets/images/avatar.glb', (gltf) => {
+    this.gltfLoader.load("assets/images/avatar.glb", (gltf) => {
       this.lightModel = gltf.scene;
       if (!this.isDarkMode) this.swapModel();
     });
 
-    this.gltfLoader.load('assets/images/avatar-dark.glb', (gltf) => {
+    this.gltfLoader.load("assets/images/avatar-dark.glb", (gltf) => {
       this.darkModel = gltf.scene;
       if (this.isDarkMode) this.swapModel();
     });
@@ -140,9 +147,9 @@ export class AvatarComponent
     this.model.rotation.set(0, 0, 0);
 
     // Atualiza os bones com base no novo modelo
-    this.headBone = this.model.getObjectByName('Head') || null;
-    this.leftArmBone = this.model.getObjectByName('LeftArm') || null;
-    this.rightArmBone = this.model.getObjectByName('RightArm') || null;
+    this.headBone = this.model.getObjectByName("Head") || null;
+    this.leftArmBone = this.model.getObjectByName("LeftArm") || null;
+    this.rightArmBone = this.model.getObjectByName("RightArm") || null;
 
     // Reposiciona câmera
     this.camera.lookAt(0, 1.5, 0);
@@ -193,8 +200,8 @@ export class AvatarComponent
           const dict = mesh.morphTargetDictionary!;
           const influences = mesh.morphTargetInfluences!;
 
-          const blinkL = dict['eyeBlinkLeft'];
-          const blinkR = dict['eyeBlinkRight'];
+          const blinkL = dict["eyeBlinkLeft"];
+          const blinkR = dict["eyeBlinkRight"];
 
           if (blinkL !== undefined && blinkR !== undefined) {
             if (this.blinkTimer >= this.blinkCooldown) {
@@ -211,7 +218,7 @@ export class AvatarComponent
 
               if (this.blinkTimer >= this.blinkCooldown + this.blinkDuration) {
                 this.blinkTimer = 0;
-                this.blinkCooldown = 3 + Math.random() * 3;
+                this.blinkCooldown = 1 + Math.random() * 1;
               }
             } else {
               influences[blinkL] = 0;
@@ -224,4 +231,8 @@ export class AvatarComponent
 
     this.renderer.render(this.scene, this.camera);
   };
+
+  checkDarkMode() {
+    this.isDarkMode = document.body.classList.contains("dark-mode");
+  }
 }

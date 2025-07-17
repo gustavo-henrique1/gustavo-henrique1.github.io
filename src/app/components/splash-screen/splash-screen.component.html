@@ -1,0 +1,20 @@
+<div class="splash-container" *ngIf="show">
+  <div class="splash-content">
+    <h1>Bem-vindo ao meu portfólio!</h1>
+    <img
+      src="assets/images/logo-gustavo.png"
+      style="width: 100px"
+      *ngIf="!isDarkMode"
+    />
+    <img
+      src="assets/images/logo-gustavo-dark.png"
+      style="width: 100px"
+      *ngIf="isDarkMode"
+    />
+    <div class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</div>
