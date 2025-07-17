@@ -5,6 +5,30 @@
   height: auto !important;
 }
 
+#home {
+  .mouse-circle {
+    position: fixed;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: rgba(80, 80, 80, 0.4); // cinza transparente
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.15s ease, left 0.05s ease, top 0.05s ease;
+    border: 1px solid var(--border-color);
+
+    &.clicked {
+      transform: scale(1.5);
+    }
+  }
+}
+
+.typewriter {
+  white-space: nowrap;
+  overflow: hidden;
+  margin-left: 4px;
+}
+
 .text-area {
   display: flex;
   flex-direction: column;
@@ -165,9 +189,14 @@ nav ul {
   .container-about {
     gap: 20px;
   }
+
   .image-area {
     width: 100%;
     align-items: center;
     justify-content: center;
+  }
+
+  .typewriter {
+    font-size: 26px !important;
   }
 }
